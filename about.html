@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — the Bull &amp; the Bear</title>
+  <link rel="icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f7f4ef; --ink: #141210; --muted: #6b6560; --rule: #ddd8d0;
+      --accent: #b8360a; --accent2: #1a3a5c; --card-bg: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 1160px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    header { border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.85rem; flex-shrink: 0; }
+    .logo-wrap img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .site-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    nav a.active { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+    .page-wrap { max-width: 760px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .page-divider { width: 48px; height: 3px; background: var(--accent); margin: 1.5rem 0 2.5rem; }
+    .page-body { font-size: 1.05rem; line-height: 1.85; color: #3a3530; }
+    .page-body p { margin-bottom: 1.5rem; }
+    .page-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin: 2.5rem 0 1rem; font-weight: 600; }
+    .page-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin: 2rem 0 0.75rem; }
+    .page-body ul, .page-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .page-body li { margin-bottom: 0.5rem; }
+    .page-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .page-body strong { color: var(--ink); font-weight: 600; }
+    .page-body a { color: var(--accent); text-decoration: underline; }
+    .page-figure { margin: 2rem 0; text-align: center; }
+    .page-figure img { max-width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); }
+    .page-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    footer { border-top: 1px solid var(--rule); background: var(--ink); color: var(--cream); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .footer-logo img { width: 36px; height: 36px; border-radius: 50%; }
+    .footer-logo span { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(247,244,239,0.5); line-height: 1.6; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.4); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,244,239,0.7); margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(247,244,239,0.1); max-width: var(--max); margin: 0 auto; padding: 1.25rem 2rem; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(247,244,239,0.35); }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 1.25rem; } nav { gap: 1.25rem; }
+      .page-wrap { padding: 3rem 1.25rem 4rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="The Bull & the Bear logo" onerror="this.style.display='none'" />
+        <span class="site-name">the Bull &amp; the Bear</span>
+      </a>
+      <nav>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html"' class="active"'>About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <h1 class="page-title">About</h1>
+    <div class="page-divider"></div>
+    <div class="page-body">
+<figure class="page-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/42-drewg-sr25-40mj-2.jpg" alt="" class="wp-image-30" style="border-top-left-radius:150px;border-bottom-right-radius:150px;object-fit:cover"/></figure>
+</div>
+<h2 class="wp-block-heading has-text-align-left">Meet the Author: Drew Golden</h2>
+<p>Hello! My name is Drew Golden, and I am currently a freshman enrolled in Lehigh University's College of Business. Since my freshman year of high school, when I first got access to a brokerage account, I've immersed myself in the markets at every opportunity. I've fallen in love with the process of identifying and researching different companies as well as studying broader market data and trends. Through this blog, I hope to educate myself and others by diving into topics that I find engaging and relevant to current market conditions. Thank you for following along!</p>
+<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://www.instagram.com/drewgolden_?igsh=YjFqN2phd2IyaTJ5\u0026amp;utm_source=qr","service":"instagram"} /-->
+
+<!-- wp:social-link {"url":"https://www.linkedin.com/in/drewcgolden/","service":"linkedin"} /-->
+
+<!-- wp:social-link {"url":"drewcgolden@gmail.com","service":"mail"} /--></ul>
+</div>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+          <span>the Bull &amp; the Bear</span>
+        </div>
+        <p class="footer-tagline">Independent investment research.<br/>Think for yourself.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="index.html">Market Commentary</a>
+        <a href="index.html">Investment Theses</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025–2026 the Bull &amp; the Bear</span>
+      <span>Independent investment research</span>
+    </div>
+  </footer>
+
+</body>
+</html>
