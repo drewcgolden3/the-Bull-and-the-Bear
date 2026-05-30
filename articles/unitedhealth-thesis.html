@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Thesis: UnitedHealth Group Inc. — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/unitedhealth-thesis.png" alt="Investment Thesis: UnitedHealth Group Inc." onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">November 30, 2025</span>
+    </div>
+    <h1 class="article-title">Investment Thesis: UnitedHealth Group Inc.</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into UnitedHealth stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/11/screenshot-2025-11-29-at-12.36.46-pm.png?w=1024" alt="" class="wp-image-270"/><figcaption class="wp-element-caption">Photo: Interfaith Center on Corporate Responsibility </figcaption></figure>
+<h2 class="wp-block-heading">Fundamental Analysis of UnitedHealth:</h2>
+<p>UnitedHealth Group has stabilized well after capitulating nearly 60% in April-August of 2025. </p>
+<p><strong>Why did UNH share prices fall so much?</strong></p>
+<p>UnitedHealth experienced what can be described as a margin collapse in the early part of 2025. They announced that its medical-care ratio (MCR) — the share of premiums going to medical claims — deteriorated sharply. MCR surged to near 90%, up from the norms of around 82%. As a result, far less of each premium dollar was left for administrative costs and profit, <a href="https://www.trefis.com/stock/unh/articles/571541/unitedhealth-stocks-freefall-from-600-to-250-where-does-this-end/2025-08-01?utm_source=chatgpt.com">compressing margins severely</a>. Thus, the company's profitability plummeted. </p>
+<p>This resulted in a rare and significant earnings and revenue miss in April and the stock responded with a historic drop of over 20%, its largest single day loss since the 1990s. </p>
+<p>This was supplemented by both legal and executive leadership issues, which further accelerated the stock's decline. </p>
+<p><strong>Why I think there is hope for a strong recovery:</strong></p>
+<p>Let's take a look at their most recent <a href="https://www.unitedhealthgroup.com/newsroom/2025/2025-10-28-uhg-reports-third-quarter-2025-results-and-raises-full-year-2025-earnings-outlook.html">earnings report</a> (Q3). UNH announced a surge in revenue, up to $113.2 billion, up 12% year-over-year. This "return to sustained growth" is very encouraging for shareholders as much of the decline seen in the summer was due to earnings and revenue misses. </p>
+<p>The company also <a href="https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2025/unh-reports-third-quarter-2025-results-and-raises-full-year-2025-earnings-outlook.pdf">raised</a> their full year 2025 earnings outlook to at least $14.90 per share. This resumption of strong guidance is also very encouraging considering UNH <a href="https://www.valuethemarkets.com/analysis/unitedhealth-group-stock-unh-adjusted-profit-forecast-raises-concerns?utm_source=chatgpt.com">slashed its full-year profit forecast</a> in April and even suspended its guidance earlier in the year.    </p>
+<p>Further, the tech and data subsidiary of UnitedHealth, Optum, has incredible long term growth potential. Optum is responsible for the operations, tech, data, and care delivery of UnitedHealth. Optum's revenues grew <a href="https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2025/unh-reports-third-quarter-2025-results-and-raises-full-year-2025-earnings-outlook.pdf">8% year-over-year</a> as reported in UNH's Q3 '25 results. What is most enticing about Optum in my eyes is that many other large health insurance companies, like Cigna and Humana, have integrated it into their business models. Optum is the dominant claims processor in the US and this sector of UNH is well positioned to continue its strong profitability growth for years to come. </p>
+<p>Moving on from Optum, it is critical for UnitedHealth to bring its MCR back to normal levels to ensure profitability. </p>
+<p>One of the main reasons their MCR spiked was due to mis-pricing of its plans. Medical inflation remains elevated in both “unit costs” (cost per service) and “intensity of services delivered” (volume and complexity). Both of these have outpaced what UNH had priced into its premiums. As a result, how much care costs are rising significantly exceeded UNH’s pricing increases, leading to a larger share of premiums being spent on care. </p>
+<p>Their road back to a normal MCR will not be quick or easy but I believe it is very possible. Below is the timeline I believe is likely:</p>
+<p>First half 2026: Pricing resets begin to show → MCR drifts down</p>
+<p>Second half 2026: If utilization stabilizes, MCR could return to 86–87%</p>
+<p>2027: Potential return to "normal" levels (~84–85%), if macro and regulatory conditions cooperate</p>
+<p>This guidance is in alignment with how long it has typically taken previous price shocks (2009, 2015, 2020) to normalize. </p>
+<p>In their most recent report, revenue growth has remained very strong, and they have an incredibly large market-share, serving over 50.1 million people domestically. </p>
+<p>Thus, if UNH can return to stronger profitability, by lowering MCR to normal levels, share prices will surge. </p>
+<h2 class="wp-block-heading">Technical Analysis of $UNH </h2>
+<p>$UNH has rebounded over 40% from its August lows. In the process, price has filled a daily gap (denoted by the uppermost box on the daily chart). </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/11/screenshot-2025-11-30-at-12.56.45-pm.png?w=1024" alt="" class="wp-image-280"/><figcaption class="wp-element-caption">Weekly chart of $UNH (LEFT) Daily Chart of $UNH (RIGHT) </figcaption></figure>
+<p>Since Halloween, $UNH has fallen just over 10%. I see this as a healthy pull-back, fueled in part by the recent broader downtrend in the market.  </p>
+<p>On the weekly time frame, price has just filled a fair value gap (FVG) and the strength the stock has shown over the past few days makes me believe this level may hold as a sustainable bottom. </p>
+<p>However, there is a chance price wants to go lower and fill the daily gap shown by the bottom most grey box on the daily chart. This would be the lowest I would expect price to go if it is going to continue higher. Though this is a real possibility, I don't think it is very likely. </p>
+<h2 class="wp-block-heading">My take:</h2>
+<p>Due to profitability concerns and the amount that $UNH has fallen, all-time highs are not attainable in the near future. However, I do believe that $UNH strength can and will continue and my target sits around <a href="https://tradingfinder.com/education/forex/ict-equilibrium/">equilibrium</a> of the sharp move down at <strong>$416</strong>. </p>
+<p>Recent struggles make $UNH a very unpredictable stock right now. Despite this, its monstrous market share, strong revenue growth, and Optum potential make the current price a great entry point for a long term investment. </p>
+<p>In the short term, I think a price in the $400 range is easily attainable. However, there is also a strong case for UNH to go lower first before making a run higher. </p>
+<p>While the short-term outlook remains uncertain, <strong>I believe this is an attractive moment to begin building, or adding to, a long-term position in this healthcare giant.</strong> Once profitability normalizes, a return to all-time highs in the coming years is achievable, representing nearly 90% upside from current levels.</p>
+<p><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/"><strong>Disclaimer</strong></a></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

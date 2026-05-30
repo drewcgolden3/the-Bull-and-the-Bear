@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Playing It Safe Could Cost You: Rethinking Index Fund Investing — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/index-fund-investing.jpg" alt="Why Playing It Safe Could Cost You: Rethinking Index Fund Investing" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Opinion</span>
+      <span class="article-date">October 19, 2025</span>
+    </div>
+    <h1 class="article-title">Why Playing It Safe Could Cost You: Rethinking Index Fund Investing</h1>
+    <div class="article-body">
+<p>Should investors keep funneling their savings into index funds, or is it time to explore smarter alternatives?</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/wall-street.jpg" alt="Wall Street - Definition, Overview, History, Stockmarket Crashes" class="wp-image-87" /></figure>
+<p class="is-style-text-subtitle"><strong>What is an index fund and why have they been the investment of choice for many?  </strong></p>
+<p>Index funds aim to replicate the performance of a specific market index, such as the S&amp;P 500, Nasdaq 100, or the Dow. </p>
+<p>Lets take VOO, the Vanguard ETF which tracks the S&amp;P 500, for example. Vanguard buys shares of all (or a representative sample) of the 500 largest U.S. companies in roughly the same proportions as the index. Since Apple makes up about 7% of the S&amp;P 500, then 7% of an investor's money in Vanguard's fund goes into Apple.</p>
+<p class="is-style-text-subtitle"><strong>What are the benefits of index funds? </strong></p>
+<p>Index funds have a wide range of benefits which make it understandable why trillions of dollars are held in them. </p>
+<p>Index funds have <strong>low fees </strong>since they're passively managed, meaning there’s no expensive team of analysts trading stocks. </p>
+<p>They also offer <strong>consistent market performance</strong>. Most actively managed funds don't even outperform the market over long periods. </p>
+<p>One of the most attractive parts of investing in an index fund is its <strong>simplicity</strong>. Investors can simply buy, hold, and buy more for decades without having to do much work at all. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/screenshot-2025-10-19-at-12.40.25-pm.png?w=962" alt="" class="wp-image-69" /></figure>
+<p class="is-style-text-annotation">Chart of the S&amp;P 500: 1998-2025</p>
+<p class="is-style-text-subtitle"><strong>Why reinvent the wheel? </strong></p>
+<p>Though index funds remain a fantastic investment for most, lets take a look at a simple strategy that can increase investor returns at limited risk. </p>
+<p><strong>Ex: Google</strong></p>
+<p>Since the Covid-19 pandemic, Google stock (GOOG) has soared over 400%, reaching all time highs of almost $260. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/screenshot-2025-10-19-at-1.07.29-pm.png?w=900" alt="" class="wp-image-76" /></figure>
+<p>Now, of course, we must look at what happened during the market downturn during 2022 and during the most recent collapse in April. </p>
+<p><strong>Google</strong> shed nearly <strong>45%</strong> during the bear market in 2022 and around <strong>30% </strong>in response to President Trump's tariffs. </p>
+<p>In the same time periods, the <strong>S&amp;P 500</strong> fell <strong>28%</strong> and <strong>22%</strong>,<strong> </strong>respectively. </p>
+<p class="is-style-text-subtitle"><strong>The Strategy</strong></p>
+<p>Individual stocks typically outperform indexes in a bull market and vice versa in a bear market; this is nothing new. However, bear markets provide extraordinary buying opportunities for companies like Google. This is what most people miss by investing strictly in safe assets since the once the bull market returns, strong individual stocks almost always vastly outperform indexes.  </p>
+<p><strong>Investors should allocate enough capital to stable assets like U.S. government bonds, commodities, and index funds to stay secure, while using the remainder to pursue higher returns through quality stocks.</strong></p>
+<p>By having enough money in secure assets, investors have the freedom to purchase high quality companies that are either struggling or undervalued based on their P/E ratio. Though this takes more effort and more time than simply throwing money into an index fund and forgetting about it, the difference in returns is significant.   </p>
+<p class="is-style-text-subtitle"><strong>A recent example</strong>:</p>
+<p><strong>UnitedHealth Group (UNH)</strong></p>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/img_0384.jpg?w=721" alt="" class="wp-image-79" /></figure>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/10/img_0383.jpg?w=779" alt="" class="wp-image-78" /></figure>
+</figure>
+<div class="wp-block-group"><p>UnitedHealth Group took a profound hit, shedding nearly 60% from April to July, due to weak guidance, leadership uncertainty, and legal issues. Despite all of these concerns however, UnitedHealth remained the clear #1 healthcare provider in the United States, generating almost $400 billion in revenue for FY 2024.</p>
+</div>
+<p> It is impossible to pick the exact bottom but by dollar cost averaging, starting in June and ending in August, I have been able to gain around a 40% return in the same time the S&amp;P 500 has climbed 12%.  </p>
+<p class="is-style-text-subtitle"><strong>Conclusion</strong></p>
+<p>While index funds like VOO have proven to be some of the most reliable and efficient ways to build long-term wealth, they aren’t the only option for investors to maximize returns. The greatest ROI often comes from taking advantage of market dislocations and buying <strong>strong, fundamentally sound companies</strong> when retail fear drives prices down. </p>
+<p>By keeping a foundation in stable assets such as government bonds, commodities, and index funds, investors can manage risk while maintaining the flexibility to capitalize on high-quality stocks during market downturns. </p>
+<p>Though index funds remain the centerpiece of smart investing, the future belongs to those who combine stability with selective opportunity. </p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

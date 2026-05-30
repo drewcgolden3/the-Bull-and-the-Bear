@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Market’s Awkward Phase: Understanding the Current Range in Major Indices — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/markets-awkward-phase.png" alt="The Market’s Awkward Phase: Understanding the Current Range in Major Indices" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">March 23, 2026</span>
+    </div>
+    <h1 class="article-title">The Market’s Awkward Phase: Understanding the Current Range in Major Indices</h1>
+    <div class="article-body">
+<p>In this article, I will examine potential catalysts that could drive the market to break out of its current multi-month range and how the war in Iran plays a large role.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/03/Screenshot-2026-03-23-at-12.25.00-PM-1024x674.png" alt="" class="wp-image-631"/></figure>
+<p>As I’m writing this in late March 2026, the market has spent the better part of the past six months moving sideways, with little progress since early September. </p>
+<p>Periods of consolidation are a natural part of any market cycle, especially after a strong move in either direction. They also often lay the groundwork for whatever comes next. Below, I have outlined what will need to happen (in my view) for major indices to break out of the range to the upside vs downside. </p>
+<h4 class="wp-block-heading"><strong>The Bullish Case</strong></h4>
+<p>We are to see prices higher from here, I think the roadmap is relatively clear. The first thing I’m watching is whether the major indices, especially the Nasdaq and the S&amp;P, can continue to hold their 200-day simple moving averages. At a basic level, the 200 SMA represents the average closing price of a security over the last 200 trading days. This differs from exponential moving averages (EMA) that weigh recent prices more strongly, making it quicker to respond. When price respects the 200 SMA on pullbacks, it shows that underlying demand remains, even if momentum has stalled in the short term. In a market that’s been consolidating for months, holding that level matters even more because it tells you this is likely a pause within an uptrend rather than the early stages of a reversal. Price is currently testing this level, and the next few days and weeks should be telling.</p>
+<p>However, technicals alone won’t be enough to drive the next leg higher. The macro backdrop is playing a much larger role right now, with the situation in Iran being a key variable. Markets have already shown how sensitive they are to headlines out of the region (oil spikes, risk-off moves, or sudden relief rallies as seen this morning (3/23)). If we start to see a genuine de-escalation, or even just a stabilization in the situation, that removes a layer of uncertainty that’s been weighing on sentiment. I don't think it will take a full resolution, but a simple shift away from worst-case expectations could be enough to flip sentiment more bullish. </p>
+<h4 class="wp-block-heading"><strong>The Bearish Case</strong></h4>
+<p>On the flip side, I also see a relatively well-defined downside case. If tensions in Iran are to escalate, whether through direct conflict or continued disruptions to energy markets, that uncertainty isn't handled well by the markets. The response would likely be more severe, especially since major indices are already lacking momentum. </p>
+<p>The longer price continues to chop around in this range, the more I lean toward this scenario. Additionally, a deeper retracement would be healthy and likely necessary to support a more sustainable move higher.</p>
+<p>A clean break and move below the 200-day moving average, catalyzed by Iran escalations, would likely lead to something similar to what we saw around this time last year in response to President Trump's tariffs. Below is the daily chart of NQ futures around this time last year, showing a consolidation phase, a strong break below the 200-day moving average (blue line), and then a sustained drop of 20%+ before a recovery. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/03/Screenshot-2026-03-23-at-11.43.09-AM-1024x808.png" alt="" class="wp-image-624"/><figcaption class="wp-element-caption">NQ CME Group Futures Daily Chart (Jan '25 - April '25)</figcaption></figure>
+<h4 class="wp-block-heading"><strong>Conclusion</strong></h4>
+<p>Heading into the next few weeks, I am skeptically leaning towards the bull case with the 200 SMA holding, geopolitical noise fading, and the market using this consolidation as a sort of launching pad. However, as I described in the bear case, I do think a further retracement is healthy and possibly necessary to see sustained prices higher. </p>
+<p>In the meantime, I’m closely watching developments in Iran alongside how price reacts around the 200-day moving average. Ultimately, time will tell whether the market breaks out of this range and if it does, which direction it chooses.</p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

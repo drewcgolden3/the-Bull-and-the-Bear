@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMAT investment thesis - Is Applied Materials Becoming Overbought? — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/amat-thesis.png" alt="AMAT investment thesis - Is Applied Materials Becoming Overbought?" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">January 18, 2026</span>
+    </div>
+    <h1 class="article-title">AMAT investment thesis - Is Applied Materials Becoming Overbought?</h1>
+    <div class="article-body">
+<p>Applied Materials shares have risen more than 100% since early September, driven largely by increasingly aggressive capital expenditure plans from its largest customers. As enthusiasm around AI infrastructure and semiconductor investment has accelerated, AMAT has become a core beneficiary of that narrative.</p>
+<p>The question now isn’t whether Applied Materials is a great company—it clearly is—but whether the stock has moved too far, too fast.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-17-at-9.19.20-PM-1024x683.png" alt="" class="wp-image-491"/><figcaption class="wp-element-caption">Getty Images</figcaption></figure>
+<h4 class="wp-block-heading"><strong>Background - what is Applied Materials and why the explosion in stock price?</strong></h4>
+<p>Applied Materials specializes in materials engineering solutions that power nearly every new semiconductor and advanced display worldwide. What this means is that they form the base of much of the AI trade. </p>
+<p>Some of their biggest customers and AI leaders, such as TSMC, Samsung, Intel, and Apple, have all begun raising capex projections, signaling increased demand ahead. This has most directly led to the surge in stock price. </p>
+<p>That optimism has translated into a powerful rally in the stock. But while the business outlook has improved, the valuation has expanded far more rapidly than the underlying fundamentals. This is, in essence, the opposite of what I talk about in my <a href="https://thebullandthebear.blog/the-compression-conviction-framework/" data-type="page" data-id="402">Compression and Conviction Framework</a>. In that case, the price of a stock falls further than the fundamentals indicate, and when that happens, I see a good buying opportunity. With Applied Materials, I see a stock that is disproportionately valued.  </p>
+<h4 class="wp-block-heading"><strong>What Concerns Me </strong></h4>
+<p>There are three main things that lead me to believe AMAT is overvalued.</p>
+<ol class="wp-block-list"><li><strong>Current earnings reports do not correlate with stock price increase</strong><ul class="wp-block-list"><li>Historically, AMAT's PE ratio has hovered around the 20-25 range. On the back of this surge in share price, the stock is now trading at a PE ratio of over 36.5.</li>
+<li>Earnings have not been a key driver of the stock's rise. In fact, EPS has been relatively stagnant since Q4 of '23, hovering around <a href="https://www.macrotrends.net/stocks/charts/AMAT/applied-materials/eps-earnings-per-share-diluted">$2.00</a>. While forward expectations have improved, realized earnings have not yet caught up to the magnitude of the stock’s rally. This leaves two paths forward: either earnings grow materially to bring the P/E back toward its historical 20–25 range, or the stock price adjusts downward to re-align valuation with fundamentals.<br></li>
+</ul>
+</li>
+<li><strong>If the market chooses to rotate out of tech, AMAT could feel the pain</strong><ul class="wp-block-list"><li>If capital begins rotating away from technology, as I discussed in my <a href="https://thebullandthebear.blog/2025/12/30/stock-market-outlook-for-2026/" data-type="post" data-id="433">2026 outlook</a>, AMAT’s elevated valuation leaves little room for error. At historically stretched multiples, rotation alone can trigger a decline.</li>
+</ul>
+</li>
+<li><strong>Limited to zero wiggle room on execution</strong><ul class="wp-block-list"><li>At these levels, the stock is no longer pricing in strong performance—it’s pricing in near‑perfect outcomes.</li>
+<li>Management is projecting increased demand in the second half of 2026. That may very well materialize. But if that demand is delayed, softened, or fails to meet expectations, the downside risk begins to far outweigh the upside potential. Much of the good news appears to be already priced into the stock, while any disappointment could quickly knock AMAT off course.</li>
+</ul>
+</li>
+</ol>
+<h4 class="wp-block-heading"><strong>In Conclusion</strong></h4>
+<p>Applied Materials remains a fundamentally strong company with durable competitive advantages and a compelling long-term outlook. In fact, it was my stock of the month back in <a href="https://thebullandthebear.blog/octobers-stock-pick/" data-type="page" data-id="141">October</a>, and I continue to believe in the strength of its business model.</p>
+<p>However, after an extraordinary rally and with valuation stretched well beyond historical norms, the stock currently has limited margin for error. While I'm tempted to short AMAT given the setup, the quality of the business and the persistence of momentum make that a risky proposition. If the broader market continues rewarding growth and AI-driven narratives, AMAT could remain elevated longer than expected.</p>
+<p>That said, if capital rotates out of technology, the stock looks vulnerable to a steep decline, regardless of how well the company continues to execute.</p>
+<p>For me, this is less a question of whether Applied Materials is a great business and more a question of when the stock once again offers an attractive entry point. I give AMAT a <strong>hold/sell </strong>rating at its current price of $327. </p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

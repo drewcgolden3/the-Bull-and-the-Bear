@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is the Nasdaq the New Meme Coin? — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/nasdaq-meme-coin.png" alt="Is the Nasdaq the New Meme Coin?" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">April 17, 2026</span>
+    </div>
+    <h1 class="article-title">Is the Nasdaq the New Meme Coin?</h1>
+    <div class="article-body">
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/04/Screenshot-2026-04-15-at-10.41.10-AM.png" alt="" class="wp-image-673"/></figure>
+<p>There was a time when "volatile asset" meant something like a penny stock, crypto, or something retail traders threw a few hundred dollars at the hopes of becoming rich overnight. Today, that description increasingly fits the Nasdaq 100, one of the most widely held indices in the world.</p>
+<p>Over the past year and a half, the market has experienced unprecedented manipulation and price swings, often directly influenced by a single social media account.</p>
+<p><strong>Tariffs, Tweets, and the April Collapse</strong></p>
+<p>Back in April 2025, President Trump's so-called "Liberation Day" tariff announcement wreaked havoc on global markets. The S&amp;P 500 fell nearly 20% in seven weeks around that time frame before quickly recovering. The Nasdaq, more deeply exposed to global supply chains, took an even harder hit.</p>
+<p>What made it surreal wasn't just the drop or the reversal... it was the rapidness with which both occurred. It took just a month and a half for the Nasdaq to plummet over 25%. Less than 3 months later, the index hit a new all-time high, gaining over 35% from the bottom. Despite the tariff situation still being a threat, rhetoric softened, and traders eagerly reentered the market.  A tweet here, a press conference there, and suddenly, billions of dollars in market cap reappeared as if nothing had happened.</p>
+<p>As of late, policy hasn't been announced through legislation or formal briefings. Instead, the president publicizes anything and everything of importance on Truth Social. Often, Trump walks back on his new policies just to reimpose them two weeks later. For long-term investors trying to value businesses on fundamentals, it's maddening. </p>
+<p><strong>The Iran War</strong></p>
+<p>The outbreak of the Iran conflict on February 28 pushed oil prices to record highs and sent equities sharply lower. A month later, on April 7th, a ceasefire announcement reversed a significant portion of that move, and further news from the Middle East this week sent the Nasdaq up over 6%. Although this recovery is great, it feels strangely similar to what we experienced at exactly the same time last year. </p>
+<p>This entire recovery rally is off the back of a 2-week ceasefire agreement between the US and Iran, opening the Strait of Hormuz and bringing oil prices closer to normal levels. What happens if and when this ceasefire agreement falls through? The US and Iran clearly don't trust each other, as seen in their tumultuous relationship since the Islamic Revolution in the late 1970s. </p>
+<p>Numerous Trump tweets about the war have been denied by the Iranian regime. Who is to be trusted? </p>
+<p>This grey area of information and the lack of official announcements make me lean towards the ceasefire agreement either being extended or broken. </p>
+<p>Though the Strait is confirmed open by Iran, the US still has a naval blockade on the passage and is denying ships from exporting Iranian oil. In response, Iran threatened "<a href="https://www.nbcnews.com/world/iran/live-blog/live-updates-israel-lebanon-ceasefire-trump-iran-talks-hormuz-summit-rcna332294" data-type="link" data-id="https://www.nbcnews.com/world/iran/live-blog/live-updates-israel-lebanon-ceasefire-trump-iran-talks-hormuz-summit-rcna332294">necessary measures</a>" if the blockade is not lifted. </p>
+<p>The current path that we are on does not point towards a swift and clean end to the war, though this is what the market has priced in. What is unsettling to me, and likely many other traders and investors, is that one Trump tweet could reverse this entire move. On the flip side, a different Trump tweet could ignite a rally of another 5-10%.  </p>
+<p><strong>Is the Nasdaq a Meme Coin? </strong></p>
+<p>So, while no, the Nasdaq is obviously not a "meme coin," the behavior it's exhibited recently is very similar to what is common with incredibly volatile assets, like meme coins. The 5% swings on a single post, the flash crashes on tariff rumors, and the V-shaped recoveries on any hints of diplomacy look far from a mature, cornerstone asset class.</p>
+<p>While this volatility is puzzling, it also offers incredible opportunity for investors who are able to play it correctly. </p>
+<p>Good luck!</p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

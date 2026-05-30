@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Thesis : Meta Platforms, Inc. — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/meta-thesis.png" alt="Investment Thesis : Meta Platforms, Inc." onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">November 7, 2025</span>
+    </div>
+    <h1 class="article-title">Investment Thesis : Meta Platforms, Inc.</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into Meta stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<figure class="article-figure"><img src="https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2023/06/0/0/meta.jpg?ve=1&amp;tl=1" alt="Meta will invest in AI-generated characters and profiles to drive up  engagement | Fox Business" /></figure>
+<h2 class="wp-block-heading">Fundamental Analysis of Meta: </h2>
+<p>Lets first take a look at <a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q3/Meta-09-30-2025-Exhibit-99-1-Final.pdf">Meta's Q3 earnings report.</a> </p>
+<p>Meta Platforms, Inc. reported Q3 earnings on Oct 29th. Since then, the stock has taken nearly a 20% hit. </p>
+<h3 class="wp-block-heading">The Positives </h3>
+<p>Meta's revenue has increased over <a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q3/Meta-09-30-2025-Exhibit-99-1-Final.pdf">26% year-over-year</a>. They delivered quarterly revenue of over $51 million, well above the consensus estimate of $49.5 billion. Meta's growth is undeniable and they are well positioned going into what is historically their strongest quarter. </p>
+<p>The majority of Meta's revenue comes from their ability to monetize advertisements. Encouragingly, the price of ads on Meta Platforms increased by <a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q3/Meta-09-30-2025-Exhibit-99-1-Final.pdf">10% year-over-year</a>.</p>
+<p>Further, Meta's PE ratio is currently just over <a href="https://www.cnbc.com/quotes/META">21</a>... well below its <a href="https://www.wisesheets.io/pe-ratio/META?utm_source=chatgpt.com">historical average of 30.68</a>. This puts Meta Platforms at a significant discount and a very attractive entry price. </p>
+<h3 class="wp-block-heading">The Concerns </h3>
+<p><a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q3/Meta-09-30-2025-Exhibit-99-1-Final.pdf">EPS came in at $1.05</a>, pitifully lower than consensus estimates of $6.70. However, the reason for this was simple and unimportant in the long-term health of the company. Meta was hit with a one-time tax charge of $15.93 billion, which hiked the tax rate to ~87% for the quarter. </p>
+<p>Further, and more importantly, expenses and capital expenditures are rising aggressively. Meta increased outlook on capex to <a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q3/Meta-09-30-2025-Exhibit-99-1-Final.pdf">$70-$72 billion</a> and forecasted that 2026 costs will also grow due to infrastructure, AI investments, and talent compensation.  </p>
+<p>Investors are concerned about this aggressive front-loading since where and when returns will come isn't clearly defined. To many, this feels eerily similar to the Dot-Com bubble. </p>
+<p>I, however, already outlined how <a href="https://thebullandthebear.blog/2025/11/02/big-tech-earnings-reality-check-is-the-ai-surge-echoing-the-dot-com-era/">this time is far different</a>. </p>
+<h2 class="wp-block-heading">Takeaways </h2>
+<p>Meta's ability to capitalize on their heavy AI investment is pivotal for their future success. </p>
+<p>I believe Meta’s ballooning capex, though relatively eye-opening, is more cause for excitement than concern. Meta is building massive in-house infrastructure that will reduce their reliance on external cloud providers and lower long-term costs. Once this infrastructure is in place, the company can scale AI projects more efficiently and with greater profitability than their competitions who rent computing power. </p>
+<p>Further, improvements in AI will give small businesses and creators an enhanced ability to generate ad copy and images. From here, these ads can be optimized by AI through collected data. This will lower the creative and financial barrier to entry and allow Meta to onboard millions more advertisers globally. This is significant as advertisement income accounts for around <a href="https://www.trefis.com/data/companies/META/no-login-required/CGDqaanj/Meta-Platforms-Revenues-How-Does-META-Make-Money-">98% of Meta's revenue</a>. </p>
+<h2 class="wp-block-heading">Technical Analysis of $META</h2>
+<p>When trends reverse, gaps in stocks work as magnets for price. </p>
+<p>As $META came into the gap seen in the image below, we saw a clear reaction. It is hard to tell at this time if price will continue to hold this level but I think the probability is high based on the strong reaction out of the gap this afternoon (Nov 7).  </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/11/screenshot-2025-11-07-at-10.14.12-pm.png?w=1024" alt="" class="wp-image-203" /><figcaption class="wp-element-caption">Meta daily chart: May '25 - Nov '25</figcaption></figure>
+<p>Since gaps act as magnets for price, I would like to see Meta return to and fill in the gap made after earnings were released. This gives us a very modest short-term price target of $680.  </p>
+<p>The last time we saw this sharp of a gap below the 50 day SMA was in response to earnings was in April of 2024. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/11/screenshot-2025-11-07-at-10.23.49-pm.png?w=504" alt="" class="wp-image-208" style="aspect-ratio:1.431837350734674;width:645px;height:auto" /><figcaption class="wp-element-caption">Meta daily chart: April '24 - July '24</figcaption></figure>
+<p>As I talked about with <a href="https://thebullandthebear.blog/2025/11/05/investment-thesis-uber/">$UBER</a>, a sharp gap below the 50 day SMA is typically followed by a sizable bounce to rebalance price. In this example from April, $META fully recovered, reaching new all-time highs. </p>
+<h2 class="wp-block-heading">Final Verdict </h2>
+<p>Meta Platforms, Inc. remains very fundamentally strong. They, in my eyes, run the world with their Instagram and Facebook applications. Ad revenue from these apps will only increase with AI improvements and this is significant since advertising accounts for 98% of Meta's income. </p>
+<p>Their aggressive AI spending leaves some room for concern, but overall, I believe it is cause for excitement. As Meta CEO Mark Zuckerberg said in their Q3 '25 report, "If we deliver even a fraction of the opportunity ahead, then the next few years will be the most exciting period in our history." </p>
+<p>Due to these factors, I have $META as a <strong>strong short term buy</strong> with targets at the low end of the earnings gap (<strong>$680</strong>). </p>
+<p>For the long term, I am a little more skeptical but I do believe they will capitalize on their AI investments. The question is just: When? </p>
+<p>Meta's fundamentals are strong and the current price level that $META is at is a very attractive entry point for a long term position. I have $META as a <strong>long term buy</strong>. </p>
+<p><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/"><strong>Disclaimer</strong></a></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

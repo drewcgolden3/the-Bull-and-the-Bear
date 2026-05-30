@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buying the Dip: What April’s Stock Market Tariff Collapse Teaches Investors — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/buying-the-dip.png" alt="Buying the Dip: What April’s Stock Market Tariff Collapse Teaches Investors" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">October 14, 2025</span>
+    </div>
+    <h1 class="article-title">Buying the Dip: What April’s Stock Market Tariff Collapse Teaches Investors</h1>
+    <div class="article-body">
+<p>In the span of only about twelve days, the S&amp;P 500 fell over 15% while its counterpart, the NASDAQ 100, shed over 20%. </p>
+<figure class="article-figure"><img src="https://s.france24.com/media/display/aabdf476-1485-11f0-a521-005056bf30b7/w:1280/p:16x9/main%20%282%29-1.png" alt="Trade war: Is China better equipped to confront Trump than in 2018?" /><figcaption class="wp-element-caption">                                                                                                                                                    <sub>Credit: Studio graphique France Médias Monde</sub></figcaption></figure>
+<p class="is-style-text-subtitle">Why did this happen?</p>
+<p>As stocks neared all-time highs in late February, trade tensions between the US and China began to mount. The resulting concern about American securities and fears of slowing economic growth led to a sharp downturn in stock prices. As US President Donald Trump began to threaten China and the rest of the world with steep tariffs, Chinese President Xi Jinping retaliated, warning of reciprocal duties. This all culminated on April 2nd when President Trump unveiled sweeping tariffs in what he called "Liberation Day".</p>
+<p class="is-style-text-subtitle">"Liberation Day" and its impact  </p>
+<p>Trump announced a<strong> baseline 10% tariff on all imports</strong> and targeted China with tariffs almost quadruple the baseline. The ensuing madness led to a 16% drop on the NASDAQ 100 in only four trading days, a near all time low of 3 on CNN's Fear and Greed Index, and many retail traders withdrawing their money from the market. </p>
+<p>What happened after the market bottomed on April 7th is a rally that  has seldom been seen (with the exception of Covid-19) in the modern market. </p>
+<p class="is-style-text-subtitle">What retail investors can learn</p>
+<p>While many retail investors panicked and sold their securities, hedge funds drooled at the opportunity. Between April 2 and April 10, total stock sell-off from retail and institutional investors totaled about $27 billion. In that same interval, hedge funds and index funds bought into that selling </p>
+<p><strong>Index funds / ETFs</strong> added <strong>$9.07 billion</strong></p>
+<p><strong>Hedge funds</strong> added a net <strong>$8.05 billion</strong></p>
+<p class="is-style-text-annotation"> <a href="https://www.spglobal.com/market-intelligence/en/news-insights/articles/2025/4/institutional-retail-investors-shed-27b-in-us-stocks-in-early-april-selloff-88521825?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener">S&amp;P Global</a></p>
+<p class="is-style-text-subtitle">In conclusion</p>
+<p>Those who bought into the opportunity and took on risk have enjoyed a near 55% gain on their investment into the NASDAQ 100 since April 7th at the time of writing this blog. History shows that the market is resilient and that selling when fear is the highest, though logical, does not lead to optimal results. Instead, investors must learn to invest when fear is high and prices are low and be increasingly cautions when greed and prices are rising. </p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

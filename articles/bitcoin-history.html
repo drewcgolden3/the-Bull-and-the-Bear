@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin: History, Cycles, and Why Patience Matters — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/bitcoin-history.png" alt="Bitcoin: History, Cycles, and Why Patience Matters" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">February 24, 2026</span>
+    </div>
+    <h1 class="article-title">Bitcoin: History, Cycles, and Why Patience Matters</h1>
+    <div class="article-body">
+<p>As someone who has never fully bought into cryptocurrency, I set out to learn more about Bitcoin. I discuss my findings in this article. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/02/Screenshot-2026-02-24-at-3.36.18-PM.png" alt="" class="wp-image-577"/></figure>
+<h4 class="wp-block-heading"><strong>Bitcoin and its History</strong></h4>
+<p><strong>What is Bitcoin?</strong></p>
+<p>Bitcoin is a decentralized digital monetary network that allows users to transfer value without relying on a central authority, such as a bank or government. It was introduced in 2009 by the anonymous creator under the name "Satoshi Nakamoto" in the aftermath of the global financial crisis. Its fixed supply of 21 million coins is enforced by code and vastly differs from typical currencies, which can expand depending on central bank decisions. In October 2008, Nakamoto published a nine-page paper titled <em>“Bitcoin: A Peer-to-Peer Electronic Cash System.”</em> The proposal was simple but at the time, very radical... to create a system that allows online payments to be sent directly from one party to another without going through a financial institution. This introduced the "blockchain".</p>
+<p><strong>What is the blockchain?</strong></p>
+<p>The blockchain is, in simple terms, a public ledger... defined as a transparent digital record-keeping system accessible to anyone. Every transaction ever made in Bitcoin is recorded here, and unlike a private bank ledger, Bitcoin’s ledger is public and distributed across thousands of computers around the world. Bitcoin transactions are recorded together in groups called "blocks," and every 10ish minutes, these blocks are added to previous blocks to form a "chain". Importantly, each block contains a list of recent transactions, a reference to the previous block, and a signature that secures it. Since each block references the one before it, tampering with a past transaction would require rewriting every subsequent block, across thousands of independent computers, all at the same time.</p>
+<h4 class="wp-block-heading"><strong>The Pattern that has Caught my Eye</strong></h4>
+<p>I never participated in the crypto euphoria, well, mainly because I wasn't investing during the bull run post-COVID. From there, however, I watched from the sidelines simply because I didn't know much about what Bitcoin was or its use case. However, after doing some research, a clear pattern has caught my eye.</p>
+<p><strong>The Crypto Cycle</strong></p>
+<p>Since its inception, Bitcoin has moved in pronounced boom-bust waves roughly every four years. These cycles are not perfectly symmetrical, and they are not guaranteed to continue, but historically, they have followed a surprisingly consistent structure tied to one core event... the Bitcoin halving. </p>
+<p>New Bitcoin enters circulation through mining rewards. Approximately every four years, the reward miners receive for validating blocks is cut in half, this is where the name "halving" comes from.</p>
+<p>2009: 50 BTC per block</p>
+<p>2012: 25 BTC</p>
+<p>2016: 12.5 BTC</p>
+<p>2020: 6.25 BTC</p>
+<p>2024: 3.125 BTC</p>
+<p>This process will continue until the maximum 21 million supply is reached.</p>
+<p>If you think about this in basic economic terms, if demand remains constant or increases while new (not existing) supply declines, this suggests upward price pressure over time.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/02/Screenshot-2026-02-24-at-4.33.40-PM-1024x864.png" alt="" class="wp-image-587"/><figcaption class="wp-element-caption">Bitcoin "halving" cycles since 2016</figcaption></figure>
+<p>If you look at the graph, the pattern becomes clear. Around 17 months after the halving, bitcoin hits a new all-time high. From that time, Bitcoin has historically capitulated around 80% in the span of 13 months. </p>
+<p>The above chart, which was made and edited on my own, only shows data from the most recent 3 cycles. Below, I have pulled another chart which shows how this pattern has repeated itself since the first halving of Bitcoin in 2012. Though there is no guarantee that past trends are going to continue in the future, this pattern is very hard to ignore, especially since it seems to be playing out again right in front of our eyes.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/02/Screenshot-2026-02-24-at-8.09.52-PM-1024x542.png" alt="" class="wp-image-594"/><figcaption class="wp-element-caption">masterthecrypto.com</figcaption></figure>
+<p>Crypto is far from my expertise, and much of what I now know about it I have learned from the research done to make this article. Despite this, I found this pattern too clear not to share. It shows that a rapid recovery after a decline of the current nature is very unlikely. Instead, after capitulation, there is typically an accumulation phase that I project, based on past data, to be around the <strong>$25k-$35k level</strong>. If Bitcoin defies its prior structure and pushes to new all-time highs next month, I am comfortable missing that move. </p>
+<p>It appears to me that these cycles reward patience, and if Bitcoin follows its historical patterns, patience could offer a far better entry than acting out of urgency.</p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

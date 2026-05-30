@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What happened to Oracle (ORCL) Stock: Oracle Investment Thesis — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/oracle-thesis.png" alt="What happened to Oracle (ORCL) Stock: Oracle Investment Thesis" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">December 13, 2025</span>
+    </div>
+    <h1 class="article-title">What happened to Oracle (ORCL) Stock: Oracle Investment Thesis</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into Oracle stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/12/Screenshot-2025-12-13-at-11.28.21-AM-1024x569.png" alt="" class="wp-image-368"/><figcaption class="wp-element-caption">Oracle Corp. headquarters in Austin, Texas</figcaption></figure>
+<h4 class="wp-block-heading"><strong>What is Oracle? </strong></h4>
+<p>Oracle Corp. began in the late 1970s as a database technology company. Since then, it has added both enterprise software and cloud computing to its large array of services offered. Many of the world’s largest organizations rely on the company, including big names like Microsoft, UnitedHealth Group, and Uber, among many others. </p>
+<h4 class="wp-block-heading"><strong>Fundamental analysis: Explaining the near 50% drop since September</strong></h4>
+<p>When looking over Oracle's most recent earnings <a href="https://s23.q4cdn.com/440135859/files/doc_earnings/2026/q2/earnings-result/2q26-pressrelease-final.pdf" data-type="link" data-id="https://s23.q4cdn.com/440135859/files/doc_earnings/2026/q2/earnings-result/2q26-pressrelease-final.pdf">release</a>, results are strong and I see a very solid foundation/ growth model. This begins with Remaining Performance Obligations (RPO), which ended Q2 at about $523B (up ~438% YoY), driven by big new deals (Meta, NVIDIA, etc.). Oracle also said the slice of RPO expected to be recognized in the next 12 months <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-oracles-q2-2026-earnings-beat-expectations-stock-rises-93CH-4402062">grew 40% YoY</a>, which is the key “conversion speed” datapoint. </p>
+<p>The cost of pulling revenue forward is cash, and as a result, they reported Q2 capex of $12B and free cash flow of -$10B. Further, they raised FY26 capex expectations to be about $15B higher than what they had forecasted after Q1. These numbers are concerning and two of the main drivers of the recent plummet in share price. The bullish twist is management’s claim that most of this is <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-oracles-q2-2026-earnings-beat-expectations-stock-rises-93CH-4402062">“revenue-generating equipment”</a> bought late in the build cycle, so cash spent can convert into revenue relatively quickly as capacity comes.</p>
+<p>Despite management's claims, I still do have concern over the negative free cash flow balance and the immense amount of money the company is putting toward capex. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/12/Screenshot-2025-12-13-at-9.15.25-PM-1024x562.png" alt="" class="wp-image-374"/><figcaption class="wp-element-caption">Oracle debt-to-equity ratio compared to peers </figcaption></figure>
+<p>On top of this, Oracle’s debt-to-equity ratio towers over its peers, signaling a much more leveraged approach. However, part of that is likely inflated by years of buybacks, which shrink equity. The tradeoff to this is less financial flexibility and much higher sensitivity to interest costs. Despite this, Oracle’s $523B in RPO suggests demand is there, which helps explain why management is willing to have negative free cash flow today as it ramps data-center capex. The key question, though, is whether that backlog converts into revenue and cash fast enough to justify the leverage. </p>
+<h4 class="wp-block-heading"><strong>Technical Analysis of $ORCL</strong></h4>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/12/Screenshot-2025-12-13-at-9.41.29-PM-1024x853.png" alt="" class="wp-image-377"/><figcaption class="wp-element-caption">Daily Chart of $ORCL (Jun '25-Dec '25) - TradingView</figcaption></figure>
+<p>The drop since $ORCL experienced a historical 35% gain on September 10th has been significant. </p>
+<p>This chart is very exciting to me considering price is currently retesting the gap (grey box) that was created after earnings in June. First, I would like to see price sweep the lows marked by the blue line. From there, I am confident we can see at least an 8% short-term gain to rebalance the gap created by Oracle's recent Q2 earnings report. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/12/Screenshot-2025-12-13-at-9.46.12-PM-1024x624.png" alt="" class="wp-image-379"/><figcaption class="wp-element-caption">TradingView</figcaption></figure>
+<p>Now, there is always a case for price to go lower. Momentum and short-term retail fear can easily move the price of $ORCL further down, but I believe that this week will teach us a lot. </p>
+<p>If price ends up wicking below this low and showing a strong reaction off of it, I have a short-term price target of <strong>$202</strong>. It will be clearer in the coming week if this will end up presenting itself or if price wants to shoot through this gap and continue lower. If the latter occurs, a short-term play is not on the table, and I would instead recommend looking into a long-term position.  </p>
+<h4 class="wp-block-heading"><strong>Final thoughts: </strong></h4>
+<p>I am moderately bullish on Oracle stock for a few reasons. </p>
+<p>The positives: High revenue potential, strong existing customer base, good business model, lots of high-end deals. </p>
+<p>The negatives: Negative cash-flow, concerningly high debt-equity ratio.</p>
+<p>Due to these factors, I will personally begin a very small long-term position in Oracle as I believe that there is a direct road to incredible profitability <em>if</em> their AI bets pan out. The amount they are spending, coupled with the amount of debt they are taking on makes me nervous, and that's what is keeping me from rating this stock as a buy. </p>
+<p>Thus, I have Oracle as a <strong>neutral</strong>/<strong>skeptical buy</strong> in the long-term, with the possibility of near 10% short-term upside if what I outlined above plays out.  </p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a> </strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

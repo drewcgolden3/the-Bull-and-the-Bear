@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buying Low vs. Buying Wrong: Why Some Selloffs are Justified — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/buying-low-vs-wrong.png" alt="Buying Low vs. Buying Wrong: Why Some Selloffs are Justified" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">January 6, 2026</span>
+    </div>
+    <h1 class="article-title">Buying Low vs. Buying Wrong: Why Some Selloffs are Justified</h1>
+    <div class="article-body">
+<p>You've probably heard the saying "buy the dip," but what does that really mean? In this post, I will discuss why all dips are not created equal. </p>
+<figure class="article-figure"><a href="https://markets.businessinsider.com/news/stocks/stock-market-most-photographed-trader-peter-tuchman-wall-steet-nyse-2023-3"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-06-at-8.53.15-PM-1024x485.png" alt="" class="wp-image-465"/></a><figcaption class="wp-element-caption">Peter Tuchman on the floor of the New York Stock Exchange (Business Insider)</figcaption></figure>
+<p>It’s easy to simply "buy low", but not every stock that’s fallen from its highs is a bargain. Every selloff creates the illusion of opportunity, but not every selloff is a mistake by the market. Some declines are driven by fear, while others are driven by fundamentals. This key distinction is what differentiates buying low from buying wrong.</p>
+<p>To illustrate this fact, let's dive into a case study looking at why Nike (NKE) has remained stuck in a rut, down around 60% since its all-time highs in 2021.  </p>
+<h4 class="wp-block-heading"><strong>Nike (NKE) Case Study</strong></h4>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-06-at-9.27.14-PM-1024x569.png" alt="" class="wp-image-468"/><figcaption class="wp-element-caption">Weekly Chart of NKE (~Sep 2020 - Jan 2025)</figcaption></figure>
+<p>Nike has more than halved since 2021, while the S&amp;P 500 has gained nearly 30%. Such a downturn of a large and well established company is eye opening but has proven to be a poor buying opportunity over the past few years. </p>
+<p>The decline in NKE share price has not been due to arbitrary factors. For decades, Nike was a growth stock, with high margins and high market share. During Covid specifically, Nike flourished. As shoppers were forced to go online, direct-to-consumer (DTC) sales <a href="https://www.nasdaq.com/articles/nike-stock-has-lost-value-4-years-straight-will-2026-be-different">skyrocketed</a>. DTC sales allow for Nike to sell products without a 3rd party and thus lead to better margins on all of its products. Since this time, however, Nike’s direct-to-consumer channel has eroded. Weaker demand for its current products has led to lower prices and shrinking margins. </p>
+<p>Further, Nike's revenue has remained stagnant since mid-2022, while the rest of the market has experienced rapid growth. </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-06-at-9.46.35-PM-1024x250.png" alt="" class="wp-image-470"/><figcaption class="wp-element-caption">Nike Quarterly Revenue Growth 2012-2025 (<a href="https://www.macrotrends.net/stocks/charts/NKE/nike/revenue" data-type="link" data-id="https://www.macrotrends.net/stocks/charts/NKE/nike/revenue">Macrotrends</a>)</figcaption></figure>
+<p>In fact, quarterly revenue has actually declined since Nov '22 from $13.3B to $12.4B in Nov '25. This revenue decline represents a shift in Nike's value. This justifies the decrease in Nike's market cap since 2021, from $281B to $96B. </p>
+<p>Nike also experienced a <a href="https://www.fool.com/investing/2025/12/18/nike-stock-plummets-time-to-buy/?utm_source=nasdaq&amp;utm_medium=feed&amp;utm_campaign=article&amp;referring_guid=afc01c11-7ab3-4450-af0a-6fb5efd20891">sharp decline</a> (of almost 17% in Q2 '25) in sales to China. For one reason or another, Chinese consumers have begun to opt for other options in athletic wear in the past few years. Lululemon, a competitor of Nike, has experienced a surge in Chinese sales, <a href="https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/annual-reports/lululemon-2024-annual-report.pdf" data-type="link" data-id="https://corporate.lululemon.com/~/media/Files/L/Lululemon/investors/annual-reports/lululemon-2024-annual-report.pdf">up 46%</a> in Q3 '25.  </p>
+<p>Speaking of Lululemon, Nike has found itself in a much more competitive environment over the past few years. Brands like Vuori, Alo, and Lululemon have all taken a large share of the athletic wear market, while Hoka and OnCloud have eaten away at their running shoe business. </p>
+<h4 class="wp-block-heading"><strong>Conclusion</strong></h4>
+<p>Nike didn’t become a bad business... But it did become a <strong>less valuable one</strong> than the market had previously priced in.</p>
+<p>The compression of share price was not due to an emotional selloff but instead a repricing of expectations. Buying Nike simply because it was down from its highs ignored the reason it was down in the first place. Until margins stabilize and revenue begins to show signs of recovery, Nike remains properly valued due to a fundamental shift in profitability. </p>
+<p>In conclusion, true opportunity lies not in how far a stock has fallen, but in whether its fundamentals can support a recovery.</p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

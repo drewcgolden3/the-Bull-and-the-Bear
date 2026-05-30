@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Stocks Tank: Generational Buying Opportunity or a Trap? — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/software-stocks-tank.png" alt="Software Stocks Tank: Generational Buying Opportunity or a Trap?" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">January 26, 2026</span>
+    </div>
+    <h1 class="article-title">Software Stocks Tank: Generational Buying Opportunity or a Trap?</h1>
+    <div class="article-body">
+<p>Software giants like Adobe, Salesforce, and Intuit have been caught in the market’s growing anxiety over AI as investors fear it could ultimately undercut their business models. Adobe is down more than 50% from its November 2021 peak, while Salesforce and Intuit have each fallen roughly 30% from their all-time highs.</p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-25-at-9.34.01-PM-1024x592.png" alt="" class="wp-image-513"/><figcaption class="wp-element-caption">Adobe World Headquarters — San Jose, California</figcaption></figure>
+<p>In this article, I will focus on Adobe and why it offers a compelling opportunity at current levels.</p>
+<h4 class="wp-block-heading"><strong>Fundamental Analysis</strong></h4>
+<p>To begin, Adobe hasn't missed earnings expectations since 2019, and hasn’t missed on earnings <em>or</em> revenue since 2020. </p>
+<p>The company <a href="https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01215202/a54gu6y5tegrrf.pdf">reported</a> record revenue of $23.77 billion in FY2025, which represents 11% year-over-year growth. This extends a now 11-year stretch of double-digit revenue growth for Adobe. Below is a bar chart of the company's annual revenue.</p>
+<figure class="article-figure"><a href="https://stockanalysis.com/stocks/adbe/revenue/"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-25-at-9.54.07-PM-1024x566.png" alt="" class="wp-image-515"/></a><figcaption class="wp-element-caption"><a href="https://stockanalysis.com/stocks/adbe/revenue/"><em>Stockanalysis.com</em></a></figcaption></figure>
+<p>In my eyes, revenue speaks louder than narrative. A vast number of investors have sounded alarms on how AI will make Adobe's business obsolete. I instead ask: What if AI can enhance what Adobe already has?</p>
+<p>Adobe can integrate its AI tools into its already existing products and improve the consumer experience. These tools (Firefly, Acrobat AI Assistant, GenStudio) are already experiencing sweeping adoption.</p>
+<p>Anil Chakravarthy, president, Digital Experience Business at Adobe had the following to say about Adobe's AI adoption. </p>
+<blockquote class="wp-block-quote"><p>“AI is no longer a future bet, it’s a competitive advantage today.” </p>
+</blockquote>
+<p>The capabilities of AI within the Adobe ecosystem will only make what the company offers more attractive to enterprise clients. Yes, generative AI will likely dominate low-tier public content creation, removing much of Adobe's involvement at the low end of the market, but should investors even care about this?</p>
+<p>Enterprise buyers care about: </p>
+<ul class="wp-block-list"><li>Brand consistency</li>
+<li>Legal safety</li>
+<li>Collaboration</li>
+<li>Workflow integration</li>
+<li>Governance and permissions</li>
+</ul>
+<p>They are not shopping for the cheapest image generator. In fact, they have been and will continue to be willing to pay a premium for top-of-the-line software, which is what Adobe offers. AI has allowed Adobe to increase the value of its products. With artificial intelligence integrated, fewer designers can do more work, companies can experience faster turnaround, and lower total labor costs.</p>
+<p>I think management sums this up perfectly in their Q1 '25 earnings <a href="https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/21305202/c56hryhwgerfaw.pdf">call</a>. </p>
+<blockquote class="wp-block-quote"><p>"Our generative AI innovation is infused across the breadth of our products and its impact is influencing billions of ARR across acquisition, retention and value expansion as customers benefit from these new capabilities. This strength is also reflected in our AI-first standalone and add-on products such as Acrobat AI Assistant, Firefly App and Services and GenStudio for Performance Marketing, which have already contributed greater than $125M book of business exiting Q1 FY25 and we expect this AI book of business to double by the end of FY25."</p>
+</blockquote>
+<p>The market narrative that AI threatens Adobe is increasingly disconnected from the company’s operating performance and user adoption trends, creating a growing and eye-opening divergence between earnings growth and share price performance. Adobe's 10-year historical PE average is around 45, yet shares now trade at a multiple of just 17.94. In accordance with my <a href="https://thebullandthebear.blog/the-compression-conviction-framework/" data-type="page" data-id="402">Compression and Conviction</a> framework, I see this as a complete mispricing of a fundamentally sound company.</p>
+<h4 class="wp-block-heading"><strong>Technical Analysis </strong></h4>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-26-at-9.25.30-AM-1024x622.png" alt="" class="wp-image-527"/><figcaption class="wp-element-caption">$ADBE chart - weekly timeframe</figcaption></figure>
+<p>From a technical standpoint, $ADBE appears to have far more liquidity to the upside than downside, with most major sell-side levels already swept. If $ADBE wants to continue lower, the only remaining level I would anticipate being hit is the $275 price point, marked by the low blue line. From there, I expect a sustained move to the upside, if aided by a strengthening of sentiment around software stocks. </p>
+<p>If price continues lower towards $275, I expect a bit of an accumulation period before a reversal, first targeting highs within the Q1 '25 earnings gap denoted by the upper blue line (below). From there, the next feasible draw on liquidity would be the unmitigated Q4 '24 earnings gap marked by the grey box.  </p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2026/01/Screenshot-2026-01-26-at-1.10.01-PM-1024x560.png" alt="" class="wp-image-528"/><figcaption class="wp-element-caption">$ADBE chart - daily timeframe</figcaption></figure>
+<p>If earnings remain strong and sentiment switches even slightly in favor of the bulls, there is more than enough liquidity to see this sustained move play out. </p>
+<h4 class="wp-block-heading"><strong>In Conclusion</strong></h4>
+<p>Markets are forward-looking, but they are not always precise. In Adobe’s case, fear has traveled much faster than fundamentals. Earnings continue to grow, revenue remains on a decade-long expansion trajectory, and AI adoption across Adobe’s ecosystem is accelerating. Despite this good news, the stock trades as if the company’s competitive position is permanently impaired.</p>
+<p>If generative AI truly threatened Adobe’s core business, the weakness would already be visible in customer behavior, revenue growth, or margins. Instead, we see the opposite: expanding enterprise adoption, rising value per customer, and AI-driven products contributing meaningfully to bookings. The narrative suggests disruption, though the numbers suggest strength.</p>
+<p>At a sub-18x earnings multiple, Adobe is priced like a dying company. The more fundamentals and valuation diverge, the more probable this setup becomes. That disconnect is, in my eyes, the opportunity. </p>
+<p>Whether the bottom is tomorrow or months from now is nearly impossible to predict, and that's why I have personally been dollar-cost averaging my holdings since the $345 price point.  </p>
+<p>With all this said, Adobe is a short-term gamble as sustained upside potential remains difficult to attain with current sentiment. However, as a long-term position, I have Adobe as a<strong> strong buy</strong> as long as earnings continue at their current growth rate. </p>
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/" data-type="post" data-id="181">Disclaimer</a></strong></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

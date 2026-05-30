@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Banks and Hedge Funds Predict Markets… or Create the Moves Themselves? — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/banks-hedge-funds.png" alt="Do Banks and Hedge Funds Predict Markets… or Create the Moves Themselves?" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">December 5, 2025</span>
+    </div>
+    <h1 class="article-title">Do Banks and Hedge Funds Predict Markets… or Create the Moves Themselves?</h1>
+    <div class="article-body">
+<p>It seems like every week, new headlines light up with the same story: A hedge fund just took a massive position. A big bank upgraded a stock. An institution quietly accumulated millions of shares. </p>
+<p>Like clockwork, the stock typically moves dramatically in the institution's direction. To retail investors, this looks like magic… as if these institutions possess a sixth sense the rest of us don’t. The question this has gotten me asking however, is this: </p>
+<p>Are institutions winning because they’re actually smarter, or does the news of their trade move prices in their favor, making it look like skill?</p>
+<p>In other words:<br><strong>Do they predict the market, or do they <em>create</em> the move?</strong></p>
+<figure class="article-figure"><img src="https://thebullandthebear.blog/wp-content/uploads/2025/12/Screenshot-2025-12-04-at-5.23.35-PM.png" alt="" class="wp-image-347"/><figcaption class="wp-element-caption">AI Generated Image</figcaption></figure>
+<h4 class="wp-block-heading"><strong>Two recent events that have me questioning:</strong></h4>
+<ol class="wp-block-list"><li>News of Michael Burry's put options on both Nvida and Palantir <ul class="wp-block-list"><li>13F filings were <a href="https://finance.yahoo.com/news/michael-burry-buys-puts-nvidia-131753320.html">released</a> on November 4th that disclosed the hedge fund manager's large short stake in both companies.</li>
+<li>$PLTR and $NVDA are trading nearly 15% and 12% lower, respectively, than they were at market close on Nov 3rd. </li>
+</ul>
+</li>
+<li>Reveal of Berkshire Hathaway's stake in Google<ul class="wp-block-list"><li>After the market closed on Friday, Nov 14th, Warren Buffett revealed Berkshire Hathaway's <a href="https://www.reuters.com/business/finance/berkshire-buys-shares-google-parent-alphabet-sells-more-apple-2025-11-14/">$4.3 billion stake</a> in Google. </li>
+<li>This sent shares around 3% higher in after-hours trading and $GOOG shares are trading over 16% higher since the announcement.</li>
+</ul>
+</li>
+</ol>
+<h4 class="wp-block-heading"><strong>Digging deeper: </strong></h4>
+<p>After the 13F filings were released about Burry's large stake against both AI companies, totaling around $1.1 billion in total exposure, news headlines began piling in. Burry is known for his successful bid against the 2008 housing market that became famous in Hollywood's "<a href="https://www.imdb.com/title/tt1596363/">The Big Short</a>." </p>
+<p>Headlines immediately framed it as “The Big Short guy is betting against the AI boom.” That narrative is powerful since Burry isn’t just some random fund manager; he’s the face of one of the most famous short trades in history. </p>
+<p>With both stocks trading well over 10% off their highs, it almost doesn't matter if Burry was fundamentally correct. The knowledge of his trade alone has become a catalyst, giving every nervous holder an excuse to sell. Don't get me wrong, obviously, Michael Burry is a skilled investor with a very impressive track record. However, things like this make me wonder if large hedge fund managers have begun to perform sub-par research and analysis on new holdings, knowing that news of their trade will likely be enough to catapult price in their direction. </p>
+<p>A similar idea is seen with Buffett's addition of Google to Berkshire Hathaway's portfolio. The firm's quarterly SEC filing revealed a new position of roughly 17–18 million shares of Alphabet (Google), worth about $4.3–$4.9 billion. Berkshire's reputation as a long-term, value-oriented investment fund makes Google a bit different from its ordinary holdings. This excited investors, and the reaction was almost immediate. Alphabet popped in after-hours trading on the news, and from that announcement date, $GOOG has traded more than 16% higher. Some of that is broader market strength and ongoing AI optimism, sure... but it’s hard to argue that a large chunk of that gain isn't due to Berkshire’s name on the shareholder list. </p>
+<h4 class="wp-block-heading"><strong>In conclusion: </strong></h4>
+<p>This article is a little different from my usual work. I’m not offering a clean answer or a strong take... just an observation. Time and time again, I've seen huge institutions profit almost instantly once their trades become public as investors rush to follow the name and reputation behind them.</p>
+<p>This leaves me with an open question: have some big hedge funds and institutions started to lean less on deep research and more on their ability to move markets simply by revealing their positions?</p>
+<p>I personally believe that it could be a possibility, though I don't know for certain. Whatever the case, investors should understand this reality and carefully examine moves by large institutions before blindly following in their footsteps.   </p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>
