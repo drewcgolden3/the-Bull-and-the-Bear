@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>the Bull &amp; the Bear</title>
+  <meta name="description" content="Investment theses and broader market commentary." />
+  <link rel="icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f7f4ef; --ink: #141210; --muted: #6b6560; --rule: #ddd8d0;
+      --accent: #b8360a; --accent2: #1a3a5c; --card-bg: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 1160px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    header { border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.85rem; flex-shrink: 0; }
+    .logo-wrap img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .site-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    .hero { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
+    .hero-text h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+    .hero-text h1 em { font-style: italic; color: var(--accent); }
+    .hero-text p { margin-top: 1.25rem; font-size: 1.05rem; color: var(--muted); max-width: 38ch; line-height: 1.7; }
+    .hero-divider { width: 48px; height: 3px; background: var(--accent); margin: 1.5rem 0; }
+    .hero-stats { display: flex; gap: 2.5rem; }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.25rem; }
+    .hero-featured { position: relative; border-radius: 4px; overflow: hidden; }
+    .hero-featured img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; filter: brightness(0.88); }
+    .hero-featured-label { position: absolute; top: 1rem; left: 1rem; background: var(--accent); color: white; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; }
+    .hero-featured-title { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; background: linear-gradient(to top, rgba(10,8,6,0.85) 0%, transparent 100%); color: white; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+    .section-tabs { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; gap: 0; border-bottom: 2px solid var(--rule); }
+    .tab-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); padding: 1rem 1.5rem; position: relative; transition: color 0.2s; }
+    .tab-btn::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.2s; }
+    .tab-btn.active { color: var(--ink); }
+    .tab-btn.active::after { transform: scaleX(1); }
+    .tab-btn:hover { color: var(--ink); }
+    main { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+    .section-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .section-header h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+    .section-header p { font-size: 0.9rem; color: var(--muted); max-width: 48ch; text-align: right; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .articles-grid .card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .card { background: var(--card-bg); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.25s, transform 0.25s; }
+    .card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--rule); }
+    .card:first-child .card-img { height: 100%; aspect-ratio: unset; }
+    .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .card:first-child .card-body { justify-content: center; padding: 2rem 2.25rem; }
+    .card-tag { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .card-tag.thesis { color: var(--accent2); }
+    .card-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; color: var(--ink); transition: color 0.2s; }
+    .card:first-child .card-title { font-size: 1.45rem; line-height: 1.25; }
+    .card:hover .card-title { color: var(--accent); }
+    .card-date { margin-top: auto; padding-top: 1rem; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em; }
+    footer { border-top: 1px solid var(--rule); background: var(--ink); color: var(--cream); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; align-items: start; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .footer-logo img { width: 36px; height: 36px; border-radius: 50%; filter: brightness(0.9); }
+    .footer-logo span { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(247,244,239,0.5); line-height: 1.6; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.4); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,244,239,0.7); margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(247,244,239,0.1); max-width: var(--max); margin: 0 auto; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: rgba(247,244,239,0.35); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2.5rem; gap: 2.5rem; }
+      .hero-featured { display: none; }
+      .articles-grid { grid-template-columns: 1fr 1fr; }
+      .articles-grid .card:first-child { grid-column: 1 / -1; grid-template-columns: 1fr; }
+      .articles-grid .card:first-child .card-img { aspect-ratio: 16/9; height: auto; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 1.25rem; } nav { gap: 1.25rem; }
+      .section-tabs { padding: 0 1.25rem; }
+      main { padding: 2rem 1.25rem 4rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .articles-grid .card:first-child { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .section-header p { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="The Bull & the Bear logo" onerror="this.style.display='none'" />
+        <span class="site-name">the Bull &amp; the Bear</span>
+      </a>
+      <nav>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Markets. <em>Dissected.</em><br/>No noise.</h1>
+      <div class="hero-divider"></div>
+      <p>Independent investment research covering individual stock theses and macro market commentary — written for investors who think for themselves.</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" id="article-count">—</span>
+          <span class="stat-label">Articles</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Sections</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2025</span>
+          <span class="stat-label">Est.</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-featured">
+      <a href="articles/nasdaq-meme-coin.html">
+        <img src="images/nasdaq-meme-coin.png" alt="Is the Nasdaq the New Meme Coin?" />
+        <span class="hero-featured-label">Latest</span>
+        <div class="hero-featured-title">Is the Nasdaq the New Meme Coin?</div>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-tabs" role="tablist">
+    <button class="tab-btn active" role="tab" data-target="market-commentary" onclick="switchTab(this)">Market Commentary</button>
+    <button class="tab-btn" role="tab" data-target="investment-theses" onclick="switchTab(this)">Investment Theses</button>
+  </div>
+
+  <main>
+
+    <!-- MARKET COMMENTARY -->
+    <div id="market-commentary" class="section-panel active">
+      <div class="section-header">
+        <h2>Broader Market Commentary</h2>
+        <p>Macro trends, market cycles, and big-picture thinking for long-term investors.</p>
+      </div>
+      <div class="articles-grid">
+        <article class="card">
+          <a href="articles/nasdaq-meme-coin.html"><img class="card-img" src="images/nasdaq-meme-coin.png" alt="Is the Nasdaq the New Meme Coin?" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/nasdaq-meme-coin.html"><h3 class="card-title">Is the Nasdaq the New Meme Coin?</h3></a>
+            <p class="card-date">April 17, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/markets-awkward-phase.html"><img class="card-img" src="images/markets-awkward-phase.png" alt="The Market's Awkward Phase" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/markets-awkward-phase.html"><h3 class="card-title">The Market's Awkward Phase: Understanding the Current Range in Major Indices</h3></a>
+            <p class="card-date">March 23, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/bitcoin-history.html"><img class="card-img" src="images/bitcoin-history.png" alt="Bitcoin History" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/bitcoin-history.html"><h3 class="card-title">Bitcoin: History, Cycles, and Why Patience Matters</h3></a>
+            <p class="card-date">February 24, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/ai-future.html"><img class="card-img" src="images/ai-future.png" alt="AI Future" /></a>
+          <div class="card-body">
+            <span class="card-tag">Opinion</span>
+            <a href="articles/ai-future.html"><h3 class="card-title">Opinion: What I Believe the Future Looks Like With AI Integration</h3></a>
+            <p class="card-date">February 9, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/software-stocks-tank.html"><img class="card-img" src="images/software-stocks-tank.png" alt="Software Stocks Tank" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/software-stocks-tank.html"><h3 class="card-title">Software Stocks Tank: Generational Buying Opportunity or a Trap?</h3></a>
+            <p class="card-date">January 26, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/buying-low-vs-wrong.html"><img class="card-img" src="images/buying-low-vs-wrong.png" alt="Buying Low vs Wrong" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/buying-low-vs-wrong.html"><h3 class="card-title">Buying Low vs. Buying Wrong: Why Some Selloffs Are Justified</h3></a>
+            <p class="card-date">January 6, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/market-outlook-2026.html"><img class="card-img" src="images/market-outlook-2026.png" alt="Market Outlook 2026" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/market-outlook-2026.html"><h3 class="card-title">Stock Market Outlook for 2026</h3></a>
+            <p class="card-date">December 30, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/banks-hedge-funds.html"><img class="card-img" src="images/banks-hedge-funds.png" alt="Banks and Hedge Funds" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/banks-hedge-funds.html"><h3 class="card-title">Do Banks and Hedge Funds Predict Markets… or Create the Moves Themselves?</h3></a>
+            <p class="card-date">December 5, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/fear-to-opportunity.html"><img class="card-img" src="images/fear-to-opportunity.png" alt="Fear to Opportunity" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/fear-to-opportunity.html"><h3 class="card-title">From Fear to Opportunity: Understanding the Market Sell-Off and Why There Is No Need to Panic</h3></a>
+            <p class="card-date">November 21, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/softbank-nvidia.html"><img class="card-img" src="images/softbank-nvidia.png" alt="SoftBank Nvidia" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/softbank-nvidia.html"><h3 class="card-title">SoftBank Cashes Out $5.8B Stake in Nvidia: Why This Move Is Bullish for the AI Trade</h3></a>
+            <p class="card-date">November 15, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/bigtech-earnings.html"><img class="card-img" src="images/bigtech-earnings.png" alt="Big Tech Earnings" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/bigtech-earnings.html"><h3 class="card-title">Big Tech Earnings Remain Strong: Why the AI Surge Is Different Than the Dot-Com Era</h3></a>
+            <p class="card-date">November 2, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/index-fund-investing.html"><img class="card-img" src="images/index-fund-investing.jpg" alt="Index Fund Investing" /></a>
+          <div class="card-body">
+            <span class="card-tag">Opinion</span>
+            <a href="articles/index-fund-investing.html"><h3 class="card-title">Why Playing It Safe Could Cost You: Rethinking Index Fund Investing</h3></a>
+            <p class="card-date">October 19, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/buying-the-dip.html"><img class="card-img" src="images/buying-the-dip.png" alt="Buying the Dip" /></a>
+          <div class="card-body">
+            <span class="card-tag">Commentary</span>
+            <a href="articles/buying-the-dip.html"><h3 class="card-title">Buying the Dip: What April's Stock Market Tariff Collapse Teaches Investors</h3></a>
+            <p class="card-date">October 14, 2025</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- INVESTMENT THESES -->
+    <div id="investment-theses" class="section-panel">
+      <div class="section-header">
+        <h2>Investment Theses</h2>
+        <p>Deep-dive analysis on individual stocks — the bull case, the bear case, and the conviction behind each position.</p>
+      </div>
+      <div class="articles-grid">
+        <article class="card">
+          <a href="articles/googl-thesis.html"><img class="card-img" src="images/googl-thesis.png" alt="Alphabet GOOGL Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/googl-thesis.html"><h3 class="card-title">Investment Thesis: Alphabet Inc. (GOOGL)</h3></a>
+            <p class="card-date">June 3, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/amat-thesis.html"><img class="card-img" src="images/amat-thesis.png" alt="AMAT Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/amat-thesis.html"><h3 class="card-title">AMAT — Is Applied Materials Becoming Overbought?</h3></a>
+            <p class="card-date">January 18, 2026</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/oracle-thesis.html"><img class="card-img" src="images/oracle-thesis.png" alt="Oracle Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/oracle-thesis.html"><h3 class="card-title">What Happened to Oracle (ORCL) Stock: Oracle Investment Thesis</h3></a>
+            <p class="card-date">December 13, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/unitedhealth-thesis.html"><img class="card-img" src="images/unitedhealth-thesis.png" alt="UnitedHealth Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/unitedhealth-thesis.html"><h3 class="card-title">Investment Thesis: UnitedHealth Group Inc.</h3></a>
+            <p class="card-date">November 30, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/meta-thesis.html"><img class="card-img" src="images/meta-thesis.png" alt="Meta Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/meta-thesis.html"><h3 class="card-title">Investment Thesis: Meta Platforms, Inc.</h3></a>
+            <p class="card-date">November 7, 2025</p>
+          </div>
+        </article>
+        <article class="card">
+          <a href="articles/uber-thesis.html"><img class="card-img" src="images/uber-thesis.png" alt="Uber Investment Thesis" /></a>
+          <div class="card-body">
+            <span class="card-tag thesis">Investment Thesis</span>
+            <a href="articles/uber-thesis.html"><h3 class="card-title">Investment Thesis: Uber Technologies</h3></a>
+            <p class="card-date">November 5, 2025</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+          <span>the Bull &amp; the Bear</span>
+        </div>
+        <p class="footer-tagline">Independent investment research.<br/>Think for yourself.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="#" onclick="document.querySelector('[data-target=market-commentary]').click();window.scrollTo({top:0});return false;">Market Commentary</a>
+        <a href="#" onclick="document.querySelector('[data-target=investment-theses]').click();window.scrollTo({top:0});return false;">Investment Theses</a>
+        <a href="portfolio.html">My Portfolio</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 to 2026 the Bull &amp; the Bear</span>
+      <span>Independent investment research</span>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    }
+    document.getElementById('article-count').textContent = 19;
+  </script>
+
+</body>
+</html>
