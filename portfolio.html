@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio — the Bull &amp; the Bear</title>
+  <link rel="icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f7f4ef; --ink: #141210; --muted: #6b6560; --rule: #ddd8d0;
+      --accent: #b8360a; --green: #1a7a4a; --green-bg: #edf7f1;
+      --red: #b8360a; --red-bg: #fdf1ee; --card-bg: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+      --max: 1160px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    header { border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.85rem; flex-shrink: 0; }
+    .logo-wrap img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+    .site-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    nav a:hover { color: var(--ink); }
+    nav a.active { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    .page-hero { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.75rem; }
+    .page-hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-divider { width: 48px; height: 3px; background: var(--accent); margin: 1.25rem 0; }
+    .page-hero p { font-size: 1rem; color: var(--muted); max-width: 56ch; line-height: 1.7; }
+    .disclaimer { margin-top: 1rem; font-size: 0.8rem; color: var(--muted); font-style: italic; background: #f0ece5; border-left: 3px solid var(--rule); padding: 0.6rem 1rem; display: inline-block; border-radius: 0 3px 3px 0; }
+
+    .live-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); background: var(--green-bg); padding: 0.3rem 0.75rem; border-radius: 2px; margin-left: 1rem; vertical-align: middle; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .loading-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: var(--muted); background: #f0ece5; padding: 0.3rem 0.75rem; border-radius: 2px; margin-left: 1rem; }
+
+    .summary-strip { background: var(--ink); color: var(--cream); }
+    .summary-inner { max-width: var(--max); margin: 0 auto; padding: 2rem; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
+    .summary-stat { display: flex; flex-direction: column; }
+    .summary-stat .label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.45); margin-bottom: 0.25rem; }
+    .summary-stat .value { font-family: var(--mono); font-size: 1.4rem; font-weight: 500; }
+    .summary-stat .value.up { color: #5cc98a; }
+    .summary-stat .value.down { color: #f4836a; }
+    .summary-divider { width: 1px; height: 48px; background: rgba(247,244,239,0.15); flex-shrink: 0; }
+    .last-updated { margin-left: auto; font-size: 0.78rem; color: rgba(247,244,239,0.35); font-family: var(--mono); }
+
+    /* WEIGHTED TOTAL RETURN BAR */
+    .total-return-bar { background: #1a1612; border-bottom: 1px solid #2a2520; }
+    .total-return-inner { max-width: var(--max); margin: 0 auto; padding: 1.25rem 2rem; display: flex; align-items: center; gap: 2rem; }
+    .total-return-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.4); flex-shrink: 0; }
+    .total-return-value { font-family: var(--mono); font-size: 1.6rem; font-weight: 500; }
+    .total-return-value.up { color: #5cc98a; }
+    .total-return-value.down { color: #f4836a; }
+    .total-return-sub { font-size: 0.78rem; color: rgba(247,244,239,0.4); font-family: var(--mono); }
+
+    .holdings-wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .holdings-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    .holdings-header h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
+    .sort-controls { display: flex; gap: 0.5rem; }
+    .sort-btn { font-family: var(--sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.4rem 0.85rem; border: 1px solid var(--rule); border-radius: 2px; background: none; cursor: pointer; color: var(--muted); transition: all 0.2s; }
+    .sort-btn:hover, .sort-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+    .holdings-table { width: 100%; border-collapse: collapse; }
+    .holdings-table thead tr { border-bottom: 2px solid var(--ink); }
+    .holdings-table thead th { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0.75rem 1rem; text-align: left; }
+    .holdings-table thead th:not(:first-child) { text-align: right; }
+    .holdings-table tbody tr.data-row { border-bottom: 1px solid var(--rule); transition: background 0.15s; cursor: pointer; }
+    .holdings-table tbody tr.data-row:hover { background: rgba(0,0,0,0.025); }
+    .holdings-table td { padding: 1.25rem 1rem; vertical-align: middle; }
+    .holdings-table td:not(:first-child) { text-align: right; }
+
+    .ticker-cell { display: flex; align-items: center; gap: 1rem; }
+    .ticker-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.6rem; font-weight: 500; flex-shrink: 0; }
+    .ticker-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
+    .ticker-full { font-size: 0.78rem; color: var(--muted); }
+    .type-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; }
+    .type-stock { background: #e8f0f8; color: #1a3a5c; }
+    .type-etf { background: #f0e8f8; color: #4a1a5c; }
+    .return-pill { display: inline-flex; align-items: center; padding: 0.3rem 0.65rem; border-radius: 3px; font-family: var(--mono); font-size: 0.85rem; font-weight: 500; }
+    .return-pill.up { background: var(--green-bg); color: var(--green); }
+    .return-pill.down { background: var(--red-bg); color: var(--red); }
+    .return-pill.loading { background: #f0ece5; color: var(--muted); }
+    .price-cell { font-family: var(--mono); font-size: 0.9rem; color: var(--muted); }
+    .date-cell { font-size: 0.85rem; color: var(--muted); font-family: var(--mono); }
+    .thesis-link { font-size: 0.78rem; font-weight: 500; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+    .expanded-row { display: none; }
+    .expanded-row.open { display: table-row; }
+    .expanded-content { padding: 1.5rem 1rem 2rem 5rem; background: #faf8f5; border-bottom: 2px solid var(--rule); }
+    .expanded-content h4 { font-family: var(--serif); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .expanded-content p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 60ch; }
+
+    .breakdown-section { max-width: var(--max); margin: 0 auto; padding: 0 2rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .breakdown-card { background: var(--card-bg); border: 1px solid var(--rule); border-radius: 4px; padding: 1.75rem; }
+    .breakdown-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule); }
+    .bar-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .bar-label { font-size: 0.8rem; font-weight: 500; width: 80px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
+    .bar-pct { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); width: 40px; text-align: right; }
+    .perf-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .perf-row:last-child { border-bottom: none; }
+    .perf-ticker { font-family: var(--mono); font-size: 0.85rem; font-weight: 500; width: 52px; }
+    .perf-bar-wrap { flex: 1; margin: 0 1rem; height: 4px; background: var(--rule); border-radius: 2px; position: relative; }
+    .perf-bar { height: 100%; border-radius: 2px; position: absolute; top: 0; }
+    .perf-bar.up { background: var(--green); right: 50%; }
+    .perf-bar.down { background: var(--red); left: 50%; }
+    .perf-center { position: absolute; left: 50%; top: -1px; width: 1px; height: 6px; background: var(--rule); }
+    .perf-val { font-family: var(--mono); font-size: 0.82rem; width: 64px; text-align: right; }
+    .perf-val.up { color: var(--green); }
+    .perf-val.down { color: var(--red); }
+
+    footer { border-top: 1px solid var(--rule); background: var(--ink); color: var(--cream); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .footer-logo img { width: 36px; height: 36px; border-radius: 50%; }
+    .footer-logo span { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(247,244,239,0.5); line-height: 1.6; }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.4); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,244,239,0.7); margin-bottom: 0.6rem; }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(247,244,239,0.1); max-width: var(--max); margin: 0 auto; padding: 1.25rem 2rem; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(247,244,239,0.35); }
+
+    @media (max-width: 900px) {
+      .breakdown-section { grid-template-columns: 1fr; }
+      .summary-divider { display: none; }
+      .last-updated { margin-left: 0; width: 100%; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 1.25rem; } nav { gap: 1.25rem; }
+      .holdings-wrap, .breakdown-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .page-hero { padding: 2.5rem 1.25rem 2rem; }
+      .holdings-table thead th:nth-child(3), .holdings-table td:nth-child(3),
+      .holdings-table thead th:nth-child(4), .holdings-table td:nth-child(4) { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .expanded-content { padding-left: 1rem; }
+      .total-return-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+        <span class="site-name">the Bull &amp; the Bear</span>
+      </a>
+      <nav>
+        <a href="index.html">Articles</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <h1>My <em>Actual</em> Portfolio
+      <span class="loading-badge" id="live-status">⏳ Loading prices...</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p>Welcome to the Bull &amp; the Bear portfolio, opened in April 2026. I'll be logging all of my positions and the thesis behind each one here. Overall and individual return data is live.</p>
+    <div class="disclaimer">No dollar amounts shown — performance only. Not financial advice.</div>
+  </div>
+
+  <!-- Summary Strip -->
+  <div class="summary-strip">
+    <div class="summary-inner">
+      <div class="summary-stat">
+        <span class="label">Holdings</span>
+        <span class="value">8</span>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-stat">
+        <span class="label">Best Performer</span>
+        <span class="value up" id="best-performer">—</span>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-stat">
+        <span class="label">Worst Performer</span>
+        <span class="value down" id="worst-performer">—</span>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-stat">
+        <span class="label">Winners / Losers</span>
+        <span class="value" id="winners-losers">— / —</span>
+      </div>
+      <div class="last-updated" id="last-updated">Fetching...</div>
+    </div>
+  </div>
+
+  <!-- Overall Portfolio Return -->
+  <div class="total-return-bar">
+    <div class="total-return-inner">
+      <span class="total-return-label">Overall Portfolio Return</span>
+      <span class="total-return-value" id="overall-return">—</span>
+      <span class="total-return-sub" id="overall-sub">weighted avg across all positions</span>
+    </div>
+  </div>
+
+  <!-- Holdings Table -->
+  <div class="holdings-wrap">
+    <div class="holdings-header">
+      <h2>All Positions</h2>
+      <div class="sort-controls">
+        <button class="sort-btn active" onclick="sortTable('ticker', this)">Ticker</button>
+        <button class="sort-btn" onclick="sortTable('today', this)">Today</button>
+        <button class="sort-btn" onclick="sortTable('total', this)">Total</button>
+      </div>
+    </div>
+    <table class="holdings-table">
+      <thead>
+        <tr>
+          <th>Holding</th>
+          <th>Type</th>
+          <th>Purchased</th>
+          <th>Price</th>
+          <th>Today</th>
+          <th>Total Return</th>
+          <th>Thesis</th>
+        </tr>
+      </thead>
+      <tbody id="holdings-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Breakdown -->
+  <div class="breakdown-section">
+    <div class="breakdown-card">
+      <h3>Allocation by Type</h3>
+      <div class="bar-row"><span class="bar-label">Stocks</span><div class="bar-track"><div class="bar-fill" style="width:62.5%;background:var(--ink)"></div></div><span class="bar-pct">62.5%</span></div>
+      <div class="bar-row"><span class="bar-label">ETFs</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#888"></div></div><span class="bar-pct">37.5%</span></div>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)">
+        <div class="bar-row"><span class="bar-label">Tech</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#1a3a5c"></div></div><span class="bar-pct">37.5%</span></div>
+        <div class="bar-row"><span class="bar-label">Healthcare</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#1a5c3a"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row"><span class="bar-label">Fintech</span><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#5c1a1a"></div></div><span class="bar-pct">12.5%</span></div>
+        <div class="bar-row"><span class="bar-label">Broad ETF</span><div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#888"></div></div><span class="bar-pct">37.5%</span></div>
+      </div>
+    </div>
+    <div class="breakdown-card">
+      <h3>Total Return by Position</h3>
+      <div id="perf-chart"><p style="color:var(--muted);font-size:0.85rem">Loading live data...</p></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+          <span>the Bull &amp; the Bear</span>
+        </div>
+        <p class="footer-tagline">Independent investment research.<br/>Think for yourself.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="index.html">Market Commentary</a>
+        <a href="index.html">Investment Theses</a>
+        <a href="portfolio.html">My Portfolio</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="strategy.html">My Strategy</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025–2026 the Bull &amp; the Bear</span>
+      <span>Not financial advice</span>
+    </div>
+  </footer>
+
+  <script>
+    const FINNHUB_KEY = 'd8gavrhr01qlgcuifalgd8gavrhr01qlgcuifam0';
+
+    const holdings = [
+      { ticker:'GOOGL', name:'Alphabet Inc.',             type:'stock', color:'#4285f4', purchased:'April 2026',  shares:2.136599,  avgCost:351.03, thesis:'articles/googl-thesis.html', note:'Bought in April 2026 as part of a broader AI infrastructure thesis. Alphabet\'s dominance in search, cloud, and AI tooling makes it a core long-term hold.' },
+      { ticker:'UBER',  name:'Uber Technologies',         type:'stock', color:'#000000', purchased:'April 2026',  shares:17.817287, avgCost:74.50,  thesis:'articles/uber-thesis.html',        note:'Initiated in April 2026. The autonomous vehicle narrative is real, but Uber\'s network effects and platform dominance give it a strong moat in the near term.' },
+      { ticker:'META',  name:'Meta Platforms',            type:'stock', color:'#0082fb', purchased:'April 2026',  shares:3.472339,  avgCost:633.58, thesis:'articles/meta-thesis.html',        note:'Added in April 2026. META\'s ad business is firing on all cylinders and the AI monetization story is just beginning.' },
+      { ticker:'UNH',   name:'UnitedHealth Group',        type:'stock', color:'#005eb8', purchased:'April 2026',  shares:4,         avgCost:321.72, thesis:'articles/unitedhealth-thesis.html', note:'Initiated April 2026 during a significant drawdown driven by regulatory concerns. The underlying business remained strong.' },
+      { ticker:'V',     name:'Visa Inc.',                 type:'stock', color:'#1a1f71', purchased:'June 2026',   shares:2.383903,  avgCost:314.61, thesis:null,                                note:'Initiated June 2026. Visa\'s toll-road business model on global payments is one of the most durable moats in the market.' },
+      { ticker:'SCHF',  name:'Schwab Intl Equity ETF',    type:'etf',   color:'#4a90a4', purchased:'May 2026',   shares:28.763183, avgCost:26.08,  thesis:null,                                note:'Added May 2026 for international diversification. Broad exposure to developed markets outside the US.' },
+      { ticker:'SCHV',  name:'Schwab US Large-Cap Value', type:'etf',   color:'#7a9a4a', purchased:'May 2026',   shares:23.525721, avgCost:31.88,  thesis:null,                                note:'Started May 2026. A value-tilt ETF to balance the growth-heavy individual stock picks.' },
+      { ticker:'SCHB',  name:'Schwab US Broad Market',    type:'etf',   color:'#9a7a4a', purchased:'May 2026',   shares:27.377258, avgCost:27.40,  thesis:null,                                note:'Added May 2026 as a broad market anchor position. Tracks the total US equity market.' },
+    ];
+
+    let liveData = {};
+    let currentSort = 'ticker';
+    let sortDir = 1;
+
+    async function fetchQuote(ticker) {
+      const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${FINNHUB_KEY}`);
+      const data = await res.json();
+      return { price: data.c, prevClose: data.pc, todayPct: data.dp };
+    }
+
+    async function fetchAllPrices() {
+      const results = await Promise.allSettled(holdings.map(h => fetchQuote(h.ticker)));
+      let anySuccess = false;
+      results.forEach((r, i) => {
+        if (r.status === 'fulfilled' && r.value.price > 0) {
+          liveData[holdings[i].ticker] = r.value;
+          anySuccess = true;
+        }
+      });
+      return anySuccess;
+    }
+
+    function calcReturns(h) {
+      const live = liveData[h.ticker];
+      if (!live) return { price: null, todayPct: null, totalPct: null };
+      const totalPct = ((live.price - h.avgCost) / h.avgCost) * 100;
+      return { price: live.price, todayPct: live.todayPct, totalPct };
+    }
+
+    function pill(val, loading=false) {
+      if (loading || val === null) return `<span class="return-pill loading">—</span>`;
+      const cls = val >= 0 ? 'up' : 'down';
+      const sign = val >= 0 ? '+' : '';
+      return `<span class="return-pill ${cls}">${sign}${val.toFixed(2)}%</span>`;
+    }
+
+    function renderTable() {
+      const data = holdings.map(h => ({ ...h, ...calcReturns(h) }));
+      const sorted = [...data].sort((a, b) => {
+        if (currentSort === 'ticker') return a.ticker.localeCompare(b.ticker) * sortDir;
+        if (currentSort === 'today')  return ((b.todayPct ?? -999) - (a.todayPct ?? -999)) * sortDir;
+        if (currentSort === 'total')  return ((b.totalPct ?? -999) - (a.totalPct ?? -999)) * sortDir;
+        return 0;
+      });
+
+      const tbody = document.getElementById('holdings-body');
+      tbody.innerHTML = '';
+      sorted.forEach((h, i) => {
+        const loading = h.price === null;
+        const typeClass = h.type === 'etf' ? 'type-etf' : 'type-stock';
+        const typeLabel = h.type === 'etf' ? 'ETF' : 'Stock';
+        const priceStr = loading ? '—' : `$${h.price.toFixed(2)}`;
+
+        const row = document.createElement('tr');
+        row.className = 'data-row';
+        row.onclick = () => document.getElementById(`exp-${i}`)?.classList.toggle('open');
+        row.innerHTML = `
+          <td><div class="ticker-cell">
+            <div class="ticker-icon" style="background:${h.color}18;color:${h.color}">${h.ticker}</div>
+            <div><div class="ticker-name">${h.ticker}</div><div class="ticker-full">${h.name}</div></div>
+          </div></td>
+          <td><span class="type-badge ${typeClass}">${typeLabel}</span></td>
+          <td><span class="date-cell">${h.purchased}</span></td>
+          <td><span class="price-cell">${priceStr}</span></td>
+          <td>${pill(h.todayPct, loading)}</td>
+          <td>${pill(h.totalPct, loading)}</td>
+          <td>${h.thesis ? `<a class="thesis-link" href="${h.thesis}" onclick="event.stopPropagation()">Read →</a>` : '<span style="color:var(--muted);font-size:0.78rem">—</span>'}</td>
+        `;
+        tbody.appendChild(row);
+
+        const expRow = document.createElement('tr');
+        expRow.className = 'expanded-row';
+        expRow.id = `exp-${i}`;
+        expRow.innerHTML = `<td colspan="7"><div class="expanded-content"><h4>Position Notes</h4><p>${h.note}</p></div></td>`;
+        tbody.appendChild(expRow);
+      });
+
+      updateSummary(data);
+      renderPerfChart(data);
+      updateOverallReturn(data);
+    }
+
+    function updateOverallReturn(data) {
+      const loaded = data.filter(h => h.totalPct !== null && h.price !== null);
+      if (!loaded.length) return;
+
+      // Weighted average by cost basis (shares × avgCost)
+      let totalCost = 0;
+      let totalReturn = 0;
+      loaded.forEach(h => {
+        const cost = h.shares * h.avgCost;
+        const currentVal = h.shares * h.price;
+        totalCost += cost;
+        totalReturn += (currentVal - cost);
+      });
+      const overallPct = (totalReturn / totalCost) * 100;
+      const sign = overallPct >= 0 ? '+' : '';
+      const cls = overallPct >= 0 ? 'up' : 'down';
+      const el = document.getElementById('overall-return');
+      el.textContent = `${sign}${overallPct.toFixed(2)}%`;
+      el.className = `total-return-value ${cls}`;
+      document.getElementById('overall-sub').textContent = `weighted avg across ${loaded.length} positions`;
+    }
+
+    function updateSummary(data) {
+      const loaded = data.filter(h => h.totalPct !== null);
+      if (!loaded.length) return;
+      const best  = loaded.reduce((a,b) => b.totalPct > a.totalPct ? b : a);
+      const worst = loaded.reduce((a,b) => b.totalPct < a.totalPct ? b : a);
+      const winners = loaded.filter(h => h.totalPct >= 0).length;
+      const losers  = loaded.filter(h => h.totalPct < 0).length;
+      const sign = v => v >= 0 ? '+' : '';
+      document.getElementById('best-performer').textContent  = `${best.ticker} ${sign(best.totalPct)}${best.totalPct.toFixed(2)}%`;
+      document.getElementById('worst-performer').textContent = `${worst.ticker} ${sign(worst.totalPct)}${worst.totalPct.toFixed(2)}%`;
+      document.getElementById('winners-losers').textContent  = `${winners} / ${losers}`;
+      const now = new Date();
+      document.getElementById('last-updated').textContent = `Updated ${now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}`;
+    }
+
+    function renderPerfChart(data) {
+      const loaded = data.filter(h => h.totalPct !== null);
+      if (!loaded.length) return;
+      const sorted = [...loaded].sort((a,b) => b.totalPct - a.totalPct);
+      const maxAbs = Math.max(...sorted.map(h => Math.abs(h.totalPct)));
+      document.getElementById('perf-chart').innerHTML = sorted.map(h => {
+        const isUp = h.totalPct >= 0;
+        const pct = (Math.abs(h.totalPct) / maxAbs) * 45;
+        const sign = isUp ? '+' : '';
+        return `<div class="perf-row">
+          <span class="perf-ticker">${h.ticker}</span>
+          <div class="perf-bar-wrap">
+            <div class="perf-bar ${isUp?'up':'down'}" style="width:${pct}%"></div>
+            <div class="perf-center"></div>
+          </div>
+          <span class="perf-val ${isUp?'up':'down'}">${sign}${h.totalPct.toFixed(2)}%</span>
+        </div>`;
+      }).join('');
+    }
+
+    function sortTable(by, btn) {
+      if (currentSort === by) sortDir *= -1; else { currentSort = by; sortDir = 1; }
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTable();
+    }
+
+    async function init() {
+      renderTable(); // show loading state
+      const ok = await fetchAllPrices();
+      const badge = document.getElementById('live-status');
+      if (ok) {
+        badge.className = 'live-badge';
+        badge.innerHTML = '<span class="live-dot"></span> Live';
+      } else {
+        badge.className = 'loading-badge';
+        badge.textContent = '⚠️ Market closed or data unavailable';
+      }
+      renderTable();
+    }
+
+    init();
+    setInterval(async () => { await fetchAllPrices(); renderTable(); }, 60000);
+  </script>
+
+</body>
+</html>
