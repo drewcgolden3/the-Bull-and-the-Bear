@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOOGL Investment Thesis | the Bull &amp; the Bear</title>
+  <link rel="icon" href="../images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper: #fafaf8; --ink: #0f0f0e; --ink2: #2a2a28; --muted: #6e6e6a;
+      --rule: #d8d8d4; --rule-light: #ebebea; --accent: #b8360a;
+      --blue: #1a3a5c; --green: #1a5c3a;
+      --serif: 'Libre Baskerville', Georgia, serif;
+      --sans: 'IBM Plex Sans', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --max: 900px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    header { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1160px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-wrap img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+    .site-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+    .thesis-cover { border-bottom: 2px solid var(--ink); padding: 0; }
+    .cover-hero { width: 100%; height: 280px; overflow: hidden; position: relative; }
+    .cover-hero img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.75); }
+    .cover-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--paper) 100%); }
+    .cover-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    .cover-meta-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem; }
+    .doc-type { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .doc-date { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+    .cover-ticker { font-family: var(--mono); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
+    .cover-company { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cover-subtitle { font-size: 1rem; color: var(--muted); max-width: 52ch; line-height: 1.6; margin-bottom: 3rem; }
+
+    .rating-wrap { display: inline-flex; align-items: center; gap: 1rem; margin: 2rem 0; padding: 1rem 1.25rem; border: 1px solid var(--rule); background: #fff; }
+    .rating-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .rating-value { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; }
+    .rating-value.bullish { color: var(--green); }
+    .rating-divider { width: 1px; height: 24px; background: var(--rule); }
+    .conviction-wrap { display: flex; gap: 3px; }
+    .conviction-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); }
+    .conviction-dot.filled { background: var(--ink); }
+
+    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--rule); }
+    .stat-cell { padding: 1.25rem 1.5rem 1.25rem 0; border-right: 1px solid var(--rule); margin-right: 0; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    .stat-value { font-family: var(--mono); font-size: 1.1rem; font-weight: 500; }
+    .stat-value.up { color: var(--green); }
+    .stat-value.down { color: var(--accent); }
+    .stat-sub { font-size: 0.7rem; color: var(--muted); margin-top: 0.15rem; }
+
+    .thesis-body { max-width: var(--max); margin: 0 auto; padding: 0 2rem 6rem; }
+    .section { border-top: 1px solid var(--rule); padding: 2.5rem 0; }
+    .section-header { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: baseline; margin-bottom: 1.75rem; }
+    .section-num { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding-top: 0.2rem; }
+    .section-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; }
+    .section-content { padding-left: calc(80px + 2rem); }
+    .section-content p { font-size: 0.95rem; line-height: 1.8; color: var(--ink2); margin-bottom: 1.25rem; }
+    .section-content p:last-child { margin-bottom: 0; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
+    .data-table thead tr { border-bottom: 2px solid var(--ink); }
+    .data-table thead th { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0.5rem 0.75rem; text-align: left; }
+    .data-table thead th:not(:first-child) { text-align: right; }
+    .data-table tbody tr { border-bottom: 1px solid var(--rule-light); }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody td { padding: 0.6rem 0.75rem; color: var(--ink2); font-family: var(--mono); font-size: 0.82rem; }
+    .data-table tbody td:first-child { font-family: var(--sans); font-weight: 500; color: var(--ink); }
+    .data-table tbody td:not(:first-child) { text-align: right; }
+    .up { color: var(--green); }
+    .down { color: var(--accent); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .case-block { padding: 1.25rem; border: 1px solid var(--rule); }
+    .case-block.bull { border-left: 3px solid var(--green); }
+    .case-block.bear { border-left: 3px solid var(--accent); }
+    .case-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .case-block.bull .case-label { color: var(--green); }
+    .case-block.bear .case-label { color: var(--accent); }
+    .case-block ul { list-style: none; padding: 0; }
+    .case-block li { font-size: 0.88rem; color: var(--ink2); line-height: 1.6; padding: 0.4rem 0; border-bottom: 1px solid var(--rule-light); display: flex; gap: 0.5rem; }
+    .case-block li:last-child { border-bottom: none; }
+    .case-block li::before { content: '—'; color: var(--muted); flex-shrink: 0; }
+
+    .valuation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 1.5rem 0; }
+    .val-cell { background: var(--paper); padding: 1.25rem; }
+    .val-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .val-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 500; }
+    .val-num.up { color: var(--green); }
+    .val-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .verdict-block { background: var(--ink); color: var(--paper); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .verdict-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,250,248,0.45); margin-bottom: 0.75rem; }
+    .verdict-text { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; line-height: 1.7; font-style: italic; }
+
+    .disclosure { border-top: 2px solid var(--ink); padding: 1.5rem 0; margin-top: 3rem; }
+    .disclosure p { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); line-height: 1.7; }
+
+    footer { border-top: 1px solid var(--rule); background: var(--ink); color: #fafaf8; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 2.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 50%; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(250,250,248,0.5); transition: color 0.2s; }
+    .footer-links a:hover { color: #fafaf8; }
+    .footer-copy { font-family: var(--mono); font-size: 0.7rem; color: rgba(250,250,248,0.3); }
+
+    @media (max-width: 700px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+      .valuation-grid { grid-template-columns: 1fr 1fr; }
+      .section-header { grid-template-columns: 1fr; gap: 0.25rem; }
+      .section-content { padding-left: 0; }
+      .header-inner { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .cover-inner, .thesis-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo-wrap">
+        <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+        <span class="site-name">the Bull &amp; the Bear</span>
+      </a>
+      <div class="nav-links">
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../strategy.html">My Strategy</a>
+        <a href="../about.html">About</a>
+      </div>
+      <a class="nav-back" href="../index.html">← All Articles</a>
+    </div>
+  </header>
+
+  <div class="thesis-cover">
+    <div class="cover-hero">
+      <img src="../images/googl-thesis.png" alt="Google headquarters" />
+      <div class="cover-hero-overlay"></div>
+    </div>
+    <div class="cover-inner">
+      <div class="cover-meta-top">
+        <span class="doc-type">Investment Thesis | GOOGL</span>
+        <span class="doc-date">June 3, 2026</span>
+      </div>
+      <div class="cover-ticker">NASDAQ: GOOGL</div>
+      <h1 class="cover-company">Alphabet Inc.</h1>
+      <p class="cover-subtitle">Google's parent company is not just surviving the AI transition. It is deploying AI across the most powerful product ecosystem on earth. This is a long-term hold with a path to becoming the first $10 trillion company.</p>
+
+      <div class="rating-wrap">
+        <span class="rating-label">Rating</span>
+        <div class="rating-divider"></div>
+        <span class="rating-value bullish">BULLISH</span>
+        <div class="rating-divider"></div>
+        <span class="rating-label">Conviction</span>
+        <div class="conviction-wrap">
+          <div class="conviction-dot filled"></div>
+          <div class="conviction-dot filled"></div>
+          <div class="conviction-dot filled"></div>
+          <div class="conviction-dot filled"></div>
+          <div class="conviction-dot"></div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-label">Market Cap</div>
+          <div class="stat-value">$4.38T</div>
+          <div class="stat-sub">as of June 3, 2026</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">P/E Ratio</div>
+          <div class="stat-value">~29x</div>
+          <div class="stat-sub">in line with 10yr avg</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Revenue (FY25)</div>
+          <div class="stat-value">$402.8B</div>
+          <div class="stat-sub">+15% YoY</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Entry Price</div>
+          <div class="stat-value">$351.03</div>
+          <div class="stat-sub">avg cost basis</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Return Since</div>
+          <div class="stat-value up">+2.03%</div>
+          <div class="stat-sub">since April 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-body">
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Business Overview</h2>
+      </div>
+      <div class="section-content">
+        <p>Alphabet Inc. is the parent company of Google, the world's dominant search engine, and operates one of the most diversified technology ecosystems on the planet. Its revenue is organized into three primary segments: Google Services (Search, YouTube, Google Play, and hardware), Google Cloud, and other bets, including Waymo, its autonomous vehicle unit.</p>
+        <p>Google Search remains the company's core engine, generating $224.5 billion in revenue in FY2025, or roughly 56% of total revenue. YouTube has grown into a $40.4B annual advertising business and is increasingly complemented by subscription revenue through YouTube Premium and YouTube TV. Google Cloud, the segment with the highest growth velocity, finished FY2025 at $58.7B with an annual run-rate that surpassed $70B by year-end and is accelerating rapidly into 2026.</p>
+        <p>With over 350 million paid subscriptions across its consumer services and 3 billion+ users across its product suite, Alphabet has one of the largest and most monetizable user bases of any company in history.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Financial Snapshot</h2>
+      </div>
+      <div class="section-content">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>FY 2023</th>
+              <th>FY 2024</th>
+              <th>FY 2025</th>
+              <th>YoY (24 to 25)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Revenue</td>
+              <td>$307.4B</td>
+              <td>$350.0B</td>
+              <td>$402.8B</td>
+              <td class="up">+15.1%</td>
+            </tr>
+            <tr>
+              <td>Google Search Revenue</td>
+              <td>$175.0B</td>
+              <td>$198.1B</td>
+              <td>$224.5B</td>
+              <td class="up">+13.3%</td>
+            </tr>
+            <tr>
+              <td>YouTube Ads Revenue</td>
+              <td>$31.5B</td>
+              <td>$36.1B</td>
+              <td>$40.4B</td>
+              <td class="up">+11.7%</td>
+            </tr>
+            <tr>
+              <td>Google Cloud Revenue</td>
+              <td>$33.1B</td>
+              <td>$43.2B</td>
+              <td>$58.7B</td>
+              <td class="up">+35.8%</td>
+            </tr>
+            <tr>
+              <td>Operating Income</td>
+              <td>$84.3B</td>
+              <td>$112.4B</td>
+              <td>$135.3B</td>
+              <td class="up">+20.4%</td>
+            </tr>
+            <tr>
+              <td>Operating Margin</td>
+              <td>27%</td>
+              <td>32%</td>
+              <td>33.6%</td>
+              <td class="up">+160bps</td>
+            </tr>
+            <tr>
+              <td>Net Income</td>
+              <td>$73.8B</td>
+              <td>$100.1B</td>
+              <td>~$130B</td>
+              <td class="up">+30%</td>
+            </tr>
+            <tr>
+              <td>Diluted EPS</td>
+              <td>$5.80</td>
+              <td>$8.04</td>
+              <td>~$10.40</td>
+              <td class="up">+29%</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The numbers are straightforward: Alphabet is a growth company that has found a second gear. Revenue acceleration from 9% growth in FY2023 to 15% in FY2025, combined with expanding operating margins, tells the story of a business where AI is genuinely helping and not just a narrative. The standout is Google Cloud, which nearly doubled revenue in two years and saw operating margins expand from single digits to over 30%.</p>
+        <p>Q1 2026 raised the bar further: total revenue hit $109.9 billion, up 22% year over year, while Google Cloud grew 63% to $20 billion and amassed a $460 billion backlog. Net income for the quarter came in at $62.6 billion, up 81%, in part boosted by equity gains, but the underlying business momentum is undeniable.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Investment Thesis</h2>
+      </div>
+      <div class="section-content">
+        <p>The core thesis is simple: Alphabet owns the largest consumer-facing AI distribution network on earth, and it is just beginning to monetize it. Google Search, YouTube, Gmail, Maps, Chrome, Android, and Google One collectively touch over 3 billion users daily. No AI competitor, not OpenAI, not Anthropic, has anything close to this installed base. That is the moat.</p>
+        <p>The prevailing bear case for the past two years has been that AI chatbots would erode Search. Q1 2026 delivered a direct rebuttal: Search revenue grew 19% year over year to $60.4 billion. AI Overviews, now used by 1.5 billion people monthly, is monetizing at a rate comparable to traditional Search. Alphabet is not being disrupted by AI. It is using AI to make Search stickier and more valuable.</p>
+        <p>YouTube is the second pillar. Cord-cutting among younger demographics is structural and accelerating. YouTube and YouTube TV are the direct beneficiaries. The platform crossed $60 billion in combined ad and subscription revenue in FY2025 and has 350 million paid subscribers, a number that was under 270 million just a year prior. As traditional cable continues to shrink, YouTube is positioned to absorb that spending.</p>
+        <p>Google Cloud is the third and most exciting pillar. Growing at 63% in Q1 2026 with a $460 billion backlog and operating margins now above 32%, Cloud is on a trajectory to become a business of comparable scale to AWS. The Wiz acquisition further strengthens the enterprise security offering. Gemini Enterprise's 40% quarter over quarter growth in paid monthly active users signals that Alphabet is competing meaningfully in the enterprise AI market.</p>
+        <p>Finally, Waymo, while an afterthought in terms of current revenue, represents a potentially massive source of optionality value. Surpassing 500,000 fully autonomous rides per week, it is the most advanced commercialized robotaxi operation in the world and is not priced into the stock in any meaningful way.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Bull Case vs. Bear Case</h2>
+      </div>
+      <div class="section-content">
+        <div class="two-col">
+          <div class="case-block bull">
+            <div class="case-label">Bull Case</div>
+            <ul>
+              <li>AI Overviews proves Search is resilient. Search revenue accelerated to 19% growth in Q1 2026, directly disproving the disruption narrative</li>
+              <li>Google Cloud growing at 63% with a $460B backlog. This is an AWS-scale business in the making</li>
+              <li>YouTube cord-cutting tailwind is secular and structural; 350M paid subscribers and growing</li>
+              <li>Gemini competes meaningfully in enterprise AI, creating a new revenue stream with 40% QoQ growth in paid users</li>
+              <li>3B+ user ecosystem gives Alphabet unmatched AI distribution. No model lab can replicate this</li>
+              <li>Waymo optionality completely unpriced; 500K+ autonomous rides per week is real commercial scale</li>
+            </ul>
+          </div>
+          <div class="case-block bear">
+            <div class="case-label">Bear Case / Risks</div>
+            <ul>
+              <li>Long-term Search erosion risk remains if AI assistants continue improving and users shift query behavior over years rather than quarters</li>
+              <li>Massive capex commitment ($180 to $190B in 2026) creates margin pressure and execution risk if AI ROI does not materialize</li>
+              <li>Gemini trails GPT-4o and Claude in public perception. Losing the AI mindshare battle could limit Cloud and consumer AI monetization</li>
+              <li>YouTube growth moderating. Q1 2026 ad revenue missed estimates slightly at $9.88B vs $9.97B expected</li>
+              <li>DOJ antitrust scrutiny ongoing; potential forced changes to default search agreements could impair Search economics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Valuation</h2>
+      </div>
+      <div class="section-content">
+        <div class="valuation-grid">
+          <div class="val-cell">
+            <div class="val-label">Current Price</div>
+            <div class="val-num">~$358</div>
+            <div class="val-sub">as of June 3, 2026</div>
+          </div>
+          <div class="val-cell">
+            <div class="val-label">Market Cap</div>
+            <div class="val-num">$4.38T</div>
+            <div class="val-sub">as of June 3, 2026</div>
+          </div>
+          <div class="val-cell">
+            <div class="val-label">$10T Target</div>
+            <div class="val-num up">2030 to 2032</div>
+            <div class="val-sub">base case timeline</div>
+          </div>
+          <div class="val-cell">
+            <div class="val-label">P/E (TTM)</div>
+            <div class="val-num">~29x</div>
+            <div class="val-sub">10yr avg: 27x</div>
+          </div>
+          <div class="val-cell">
+            <div class="val-label">Entry Price</div>
+            <div class="val-num">$351.03</div>
+            <div class="val-sub">avg cost basis</div>
+          </div>
+          <div class="val-cell">
+            <div class="val-label">Add More Below</div>
+            <div class="val-num up">$300</div>
+            <div class="val-sub">any dip below is a steal</div>
+          </div>
+        </div>
+        <p>At roughly 29x earnings, Alphabet is trading in line with its 10-year historical average despite meaningfully accelerating growth. A business growing revenue at 15 to 22% annually with expanding margins, $126 billion in cash, and a Cloud segment approaching $100 billion in annual revenue should trade at a premium to its historical multiple. It does not yet. That gap is the opportunity.</p>
+        <p>The path to $10 trillion is a 2.3x from today's market cap. At current revenue growth rates of 15 to 22% annually with continued margin expansion, the base case gets there by 2031 to 2032. The bull case, driven by Cloud acceleration and full AI monetization across the product suite, could get there as early as 2029 to 2030. No company has ever sustained a $10 trillion valuation. Alphabet has the business fundamentals to be the first.</p>
+        <p>Any pullback below $300 represents an exceptional opportunity to add. The March 2026 low of $271 was a gift. If that level is tested again, the position size should increase, not decrease.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Long-Term Outlook</h2>
+      </div>
+      <div class="section-content">
+        <p>This is not a trade. There is no price target in the traditional sense and no planned exit. The intention is to hold Alphabet for the long term and add to the position on any meaningful weakness. The only scenario that would prompt a genuine reassessment is a fundamental breakdown of the underlying business, not a drawdown in the stock price.</p>
+        <p>Drawdowns are part of the process. The stock peaked around $206 in February 2025, fell to roughly $142 during the April 2026 tariff-driven selloff, a decline of about 31%, then rallied to all-time highs above $400 by May 2026. The entire round trip took approximately 15 months. That kind of volatility is noise. The business compounded revenue at over 15% annually through that entire period. Any offering below $300 should be treated as an opportunity to buy more aggressively, not a reason for concern.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Timeline</th>
+              <th>Key Assumption</th>
+              <th>Implied Market Cap</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bull Case</td>
+              <td>2029 to 2030</td>
+              <td>Cloud reaches $150B+, AI monetization accelerates</td>
+              <td class="up">$10 trillion</td>
+            </tr>
+            <tr>
+              <td>Base Case</td>
+              <td>2031 to 2032</td>
+              <td>15 to 18% annual revenue growth, margin expansion continues</td>
+              <td class="up">$10 trillion</td>
+            </tr>
+            <tr>
+              <td>Conservative Case</td>
+              <td>2033 to 2035</td>
+              <td>Growth moderates to 10 to 12%, AI ROI slower to materialize</td>
+              <td style="color:var(--blue)">$7 to $8 trillion</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The only things that would prompt a genuine exit are a sustained, multi-quarter collapse in Search revenue indicating structural, irreversible displacement by AI competitors, a Cloud business that stops growing and loses share to AWS and Azure, or a fundamental change to the business model that removes the monetization engine entirely. Short of those outcomes, this position is not for sale.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Conclusion</h2>
+      </div>
+      <div class="section-content">
+        <p>Alphabet is a rare combination: a cash-generating machine with the distribution scale of a consumer internet giant and the infrastructure positioning of an enterprise cloud leader, all wrapped in an AI narrative that is actually being validated by accelerating revenue growth and not just speculation. The business has earned the right to be held for years, not quarters.</p>
+
+        <p>Google owns the pipes that AI runs through. Whether you use ChatGPT, Gemini, or any other AI tool, the underlying queries, the cloud infrastructure, the YouTube video it references, or the Google One subscription paying for it, chances are Alphabet has a piece of it. The AI disruption story was supposed to kill Google. Instead, it handed Google a second growth engine. I bought in April 2026, I plan to hold for years, and I will add more on any dip below $300. The path to $10 trillion is real and the timeline is closer than most people think.</p>
+
+        <p>I will be monitoring Search revenue growth, Cloud acceleration, and the continued rise of YouTube subscriptions on a quarterly basis. Any weakness in the stock price below $300 is not a warning sign. It is an invitation to buy more of a world-class business at a discount.</p>
+
+        <figure class="article-figure" style="margin-top:2rem;">
+          <img src="../images/googl-chart.png" alt="GOOGL technical chart showing green box support zone" style="max-width:100%;border-radius:4px;border:1px solid var(--rule);" />
+          <figcaption style="font-family:var(--mono);font-size:0.72rem;color:var(--muted);margin-top:0.75rem;">I expect a bit of a further retracement of GOOGL's share price. A tap into equilibrium of the recent leg up and weekly fair value gap would be an ideal price to add to my position.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <p>DISCLOSURE: The author holds a long position in GOOGL at the time of publication. This article represents the author's personal opinion and is for informational purposes only. It does not constitute financial advice. Past performance is not indicative of future results. Investors should conduct their own due diligence before making investment decisions. All financial data sourced from Alphabet Inc. SEC filings and earnings releases.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+        <span>the Bull &amp; the Bear</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Articles</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../strategy.html">My Strategy</a>
+        <a href="../about.html">About</a>
+      </div>
+      <span class="footer-copy">© 2025 to 2026 the Bull &amp; the Bear</span>
+    </div>
+  </footer>
+
+</body>
+</html>
