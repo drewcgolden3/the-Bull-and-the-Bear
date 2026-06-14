@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Truth Behind Big IPO Years: What the Data Tells Us — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+  <div class="article-hero">
+    <img src="../images/ai-ipo-supercycle.png" alt="The Truth Behind Big IPO Years: What the Data Tells Us" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag">Commentary</span>
+      <span class="article-date">June 14, 2026</span>
+    </div>
+    <h1 class="article-title">The Truth Behind Big IPO Years: What the Data Tells Us</h1>
+    <div class="article-body">
+<p>Three of the largest IPOs in history are arriving at the same time, and the first one just landed. SpaceX went public Friday and the debut was a spectacle. It priced at $135, raised about <a href="https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk">$75 billion selling more than 555 million shares</a>, and closed its first session up 19 percent at $160.95 under the ticker SPCX, putting its market value above $2 trillion. Intraday it briefly touched a $2.25 trillion valuation before settling. It was the biggest IPO ever, and it made Elon Musk the world's first trillionaire on paper.</p>
+
+<p>That is only the opening act. Anthropic filed confidentially in early June and is targeting a listing as soon as October at a reported $900 billion valuation. OpenAI filed its own confidential S-1 a week later, aiming for the fourth quarter at as much as $1 trillion. Together with SpaceX, that is roughly $4 trillion in market cap arriving in public markets inside about six months.</p>
+
+<p>For context, the entire US IPO market raised about $70 billion in all of 2025. Goldman analysts project 2026 proceeds could reach <a href="https://www.indmoney.com/blog/us-stocks/spacex-openai-anthropic-ipo-explained">roughly $160 billion</a>, and that estimate came before this wave fully took shape. SpaceX alone raised more in one deal than the entire market did last year. If the AI names price as planned, 2026 will be the biggest dollar year for new issuance in American history, and it will not be close.</p>
+
+<p>With that said, I have spent some time recently researching what major IPO years have meant for the market and how it tends to perform in the stretch that follows.</p>
+
+<h2>Issuance Clusters at Tops</h2>
+
+<p>Companies and their bankers sell equity when it is expensive. This is not a conspiracy, it is just rational behavior, and the academic record on it goes back decades. The biggest IPO years line up uncomfortably well with major peaks. The 1999 to 2000 window saw record issuance of mostly unprofitable companies right before the Nasdaq lost 80 percent. Blackstone, arguably the smartest seller of assets on the planet, took itself public in June 2007, months before the financial crisis. And 2021 set the all time record with over a thousand listings, juiced by SPACs, right before the 2022 bear market. Rivian raised $11.9 billion as the largest US IPO of that year, briefly touched an $86 billion market cap on day one, and <a href="https://dealroom.net/blog/biggest-ipos-of-all-time">trades around $14 billion today</a>.</p>
+
+<p>This is not something with a 100 percent hit rate, though. 2014, for example, was a huge issuance year highlighted by Alibaba's record deal, and the bull market kept running for five more years afterward. So a flood of IPOs does not automatically mean the top is in. It just means smart money thinks prices are attractive to sell into, and that is not the same as buyers being done buying.</p>
+
+<h2>The Float Problem</h2>
+
+<p>The most interesting structural detail of this wave is the math on floats, which <a href="https://tomtunguz.com/spacex-openai-anthropic-ipo-2026/">Tomasz Tunguz laid out well</a>. A typical IPO floats 15 to 25 percent of shares. At standard floats, these three companies would need to pull somewhere between $432 and $576 billion out of public markets in a single quarter. The entire US IPO market raised $469 billion over the full decade from 2016 to 2025. Standard floats are simply impossible here.</p>
+
+<p>So these companies will debut with tiny floats, likely in the 3 to 8 percent range. That creates engineered scarcity. Small supply plus enormous demand means big opening pops and headline valuations set by a sliver of actual shares trading. We just watched it happen. SpaceX traded more than 360 million shares by early afternoon Friday, ten times the full first day volume of Cerebras, the second largest IPO of the year, and the constrained float helped push a 19 percent pop on a company the prospectus shows has accumulated $41.3 billion in losses since 2002. The pop is the point. It is the marketing.</p>
+
+<p>Then, roughly 180 days later, lockups expire and insider supply arrives all at once. We watched this exact second half of the movie with Figma. When it went public in July of 2025 shares soared to over $140, and they now trade at under $20 apiece. Day one is a marketing event. The lockup expiry is the price discovery event, and for SpaceX that points to around December.</p>
+
+<h2>Velocity Is the Tell</h2>
+
+<p>What concerns me more than the size of these deals is the speed of the marks. Anthropic closed a funding round at a <a href="https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html">$380 billion valuation in February</a>. Four months later the reported IPO target is $900 billion. The business is growing extraordinarily fast, but no fundamentals reprice 137 percent in a quarter. That is sentiment. When valuations move at that velocity, you are watching enthusiasm get marked to market, and enthusiasm is the one input that can reverse overnight.</p>
+
+<h2>The Bull Case Is Not Stupid</h2>
+
+<p>I want to be fair to the other side, because this is not 1999. These are real businesses with enormous revenue, and in some cases actual profits, which is more than most of the 2021 class could ever say. There is an estimated $8 trillion sitting in US money market funds. And for years, institutions could only access AI through proxies... Nvidia for the chips, Microsoft for its OpenAI stake, Alphabet for its position in Anthropic and DeepMind. The moment pure play exposure exists, some real demand unlocks. It is entirely possible these deals get absorbed and the market grinds on, the way it did after Alibaba in 2014.</p>
+
+<p>But notice what the existence of this pipeline says regardless of how the deals trade. The most sophisticated private investors in the world, who have had their pick of unlimited late stage capital for years, are choosing this exact moment to establish public exit prices. They are not doing that because they think their shares are cheap. Robert Greifeld, the former head of Nasdaq, said the quiet part out loud on Friday: SpaceX "represents a stock that's trading not on fundamentals," and with the debut behind us, "the window is open, SpaceX has opened it, and you'll see other companies certainly flying through." That is the bullish framing. It is also a precise description of how supply rushes through an open window before it closes.</p>
+
+<h2>How I Am Approaching It</h2>
+
+<p>Readers of my <a href="https://thebullandthebear.blog/portfolio">portfolio page</a> know I am sitting heavily in cash right now, and this wave is part of the reason I am comfortable staying there. A few principles I am holding myself to:</p>
+
+<p><strong>I am not buying day one.</strong> A 3 to 8 percent float is scarcity by design. Chasing the pop means buying a manufactured shortage from the people who manufactured it.</p>
+
+<p><strong>The lockup calendar is the real calendar.</strong> Roughly six months after each pricing, insider supply hits. For SpaceX that points to around December. For the AI names, sometime in the first half of 2027. Historically that is when hyped listings find honest prices, and where patient buyers get their look. Worth noting that even amid Friday's euphoria, CFRA slapped a sell rating on SPCX within hours of the open. Somebody is already doing the fundamental math.</p>
+
+<p><strong>The pipeline itself is a liquidity event for the whole market.</strong> Over $100 billion of issuance in a quarter is money that comes out of something else. That matters for the broad tape, not just for these tickers.</p>
+
+<p><strong>Quality and price are different questions.</strong> I am long term bullish on AI and my holdings reflect that. Cisco was a generational company in March 2000, and it still took two decades to reclaim its high. Great business, wrong price, bad outcome. The framework has to hold both ideas at once.</p>
+
+<p>When the largest private companies on earth all reach for the exit door in the same six months, after the strongest tech rally in a generation, I think it is worth asking who is on the other side of the trade. Usually, the answer is us. Let's not be exit liquidity.</p>
+
+<p><strong><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/">Disclaimer</a></strong></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>
