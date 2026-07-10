@@ -95,6 +95,26 @@
     .date-cell { font-size: 0.85rem; color: var(--muted); font-family: var(--mono); }
     .thesis-link { font-size: 0.78rem; font-weight: 500; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
+    /* RECENT ACTIVITY */
+    .activity-wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 0; }
+    .activity-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
+    .activity-head h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
+    .activity-head .sub { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .activity-list { border-top: 1px solid var(--rule); }
+    .activity-item { display: flex; align-items: center; gap: 1.25rem; padding: 1rem 0.25rem; border-bottom: 1px solid var(--rule); transition: background 0.15s; }
+    .activity-item:hover { background: rgba(0,0,0,0.02); }
+    .activity-date { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); width: 96px; flex-shrink: 0; }
+    .act-badge { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.28rem 0.6rem; border-radius: 2px; width: 54px; text-align: center; flex-shrink: 0; }
+    .act-badge.buy { background: #e8f0f8; color: #1a3a5c; }
+    .act-badge.sell { background: var(--green-bg); color: var(--green); }
+    .activity-ticker { display: flex; align-items: center; gap: 0.85rem; flex: 1; min-width: 0; }
+    .activity-ticker .ticker-icon { width: 34px; height: 34px; font-size: 0.6rem; }
+    .act-tk-name { font-family: var(--serif); font-size: 1rem; font-weight: 600; line-height: 1.1; }
+    .act-tk-full { font-size: 0.75rem; color: var(--muted); }
+    .activity-price { font-family: var(--mono); font-size: 0.85rem; color: var(--ink); text-align: right; flex-shrink: 0; }
+    .activity-price span { color: var(--muted); }
+    .activity-note { font-size: 0.78rem; color: var(--muted); margin-top: 1.25rem; line-height: 1.65; font-style: italic; max-width: 68ch; }
+
     .expanded-row { display: none; }
     .expanded-row.open { display: table-row; }
     .expanded-content { padding: 1.5rem 1rem 2rem 5rem; background: #faf8f5; border-bottom: 2px solid var(--rule); }
@@ -147,6 +167,10 @@
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
       .expanded-content { padding-left: 1rem; }
       .total-return-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .activity-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .activity-item { gap: 0.85rem; }
+      .act-tk-full { display: none; }
+      .activity-date { width: 76px; font-size: 0.72rem; }
     }
   </style>
 </head>
@@ -209,6 +233,80 @@
       <span class="total-return-value" id="overall-return">—</span>
       <span class="total-return-sub" id="overall-sub">weighted avg across all positions</span>
     </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="activity-wrap">
+    <div class="activity-head">
+      <h2>Recent Activity</h2>
+      <span class="sub">Latest buys &amp; sells · Past 30 days</span>
+    </div>
+    <div class="activity-list">
+      <div class="activity-item">
+        <span class="activity-date">Jul 10, 2026</span>
+        <span class="act-badge sell">Sell</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#0082fb18;color:#0082fb">META</div>
+          <div><div class="act-tk-name">META</div><div class="act-tk-full">Meta Platforms — trimmed position</div></div>
+        </div>
+        <span class="activity-price">@ $665.14 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jul 7, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#c89b3c18;color:#c89b3c">VRT</div>
+          <div><div class="act-tk-name">VRT</div><div class="act-tk-full">Vertiv Holdings — added</div></div>
+        </div>
+        <span class="activity-price">@ $299.37 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jul 2, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#c89b3c18;color:#c89b3c">VRT</div>
+          <div><div class="act-tk-name">VRT</div><div class="act-tk-full">Vertiv Holdings — added</div></div>
+        </div>
+        <span class="activity-price">@ $297.33 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jul 1, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#c89b3c18;color:#c89b3c">VRT</div>
+          <div><div class="act-tk-name">VRT</div><div class="act-tk-full">Vertiv Holdings — added</div></div>
+        </div>
+        <span class="activity-price">@ $315.87 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jul 1, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#1f7ac418;color:#1f7ac4">CEG</div>
+          <div><div class="act-tk-name">CEG</div><div class="act-tk-full">Constellation Energy — added</div></div>
+        </div>
+        <span class="activity-price">@ $243.99 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jun 29, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#1f7ac418;color:#1f7ac4">CEG</div>
+          <div><div class="act-tk-name">CEG</div><div class="act-tk-full">Constellation Energy — added</div></div>
+        </div>
+        <span class="activity-price">@ $264.84 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Jun 23, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#c89b3c18;color:#c89b3c">VRT</div>
+          <div><div class="act-tk-name">VRT</div><div class="act-tk-full">Vertiv Holdings — added</div></div>
+        </div>
+        <span class="activity-price">@ $322.29 <span>/ sh</span></span>
+      </div>
+    </div>
+    <p class="activity-note">In keeping with the rest of this page, only per-share execution prices are shown — no position sizes or dollar amounts. The recent theme: trimming META into strength and steadily accumulating the AI-infrastructure energy names, Constellation Energy (CEG) and Vertiv (VRT).</p>
   </div>
 
   <!-- Holdings Table -->
@@ -305,14 +403,14 @@
     const holdings = [
       { ticker:'GOOGL', name:'Alphabet Inc.',             type:'stock', color:'#4285f4', purchased:'April 2026',  shares:2.857496,  avgCost:349.96, thesis:'articles/googl-thesis.html', note:'Bought in April 2026 as part of a broader AI infrastructure thesis. Alphabet\'s dominance in search, cloud, and AI tooling makes it a core long-term hold. Averaged in further in June 2026 at $346.79, lowering the cost basis.' },
       { ticker:'UBER',  name:'Uber Technologies',         type:'stock', color:'#000000', purchased:'April 2026',  shares:17.817287, avgCost:74.50,  thesis:'articles/uber-thesis.html',        note:'Initiated in April 2026. The autonomous vehicle narrative is real, but Uber\'s network effects and platform dominance give it a strong moat in the near term.' },
-      { ticker:'META',  name:'Meta Platforms',            type:'stock', color:'#0082fb', purchased:'April 2026',  shares:4.687155,  avgCost:618.71, thesis:'articles/meta-thesis.html',        note:'Added in April 2026. META\'s ad business is firing on all cylinders and the AI monetization story is just beginning. Averaged in further in June 2026 with additional purchases at $584.54 and $561.82, lowering the cost basis.' },
+      { ticker:'META',  name:'Meta Platforms',            type:'stock', color:'#0082fb', purchased:'April 2026',  shares:3.6,       avgCost:602.99, thesis:'articles/meta-thesis.html',        note:'Added in April 2026. META\'s ad business is firing on all cylinders and the AI monetization story is just beginning. Averaged in further in June 2026 with additional purchases at $584.54 and $561.82, lowering the cost basis.' },
       { ticker:'UNH',   name:'UnitedHealth Group',        type:'stock', color:'#005eb8', purchased:'April 2026',  shares:4,         avgCost:321.72, thesis:'articles/unitedhealth-thesis.html', note:'Initiated April 2026 during a significant drawdown driven by regulatory concerns. The underlying business remained strong.' },
       { ticker:'V',     name:'Visa Inc.',                 type:'stock', color:'#1a1f71', purchased:'June 2026',   shares:2.383903,  avgCost:314.61, thesis:null,                                note:'Initiated June 2026. Visa\'s toll-road business model on global payments is one of the most durable moats in the market.' },
       { ticker:'SCHF',  name:'Schwab Intl Equity ETF',    type:'etf',   color:'#4a90a4', purchased:'May 2026',   shares:28.763183, avgCost:26.08,  thesis:null,                                note:'Added May 2026 for international diversification. Broad exposure to developed markets outside the US.' },
       { ticker:'SCHV',  name:'Schwab US Large-Cap Value', type:'etf',   color:'#7a9a4a', purchased:'May 2026',   shares:23.525721, avgCost:31.88,  thesis:null,                                note:'Started May 2026. A value-tilt ETF to balance the growth-heavy individual stock picks.' },
       { ticker:'SCHB',  name:'Schwab US Broad Market',    type:'etf',   color:'#9a7a4a', purchased:'May 2026',   shares:27.377258, avgCost:27.40,  thesis:null,                                note:'Added May 2026 as a broad market anchor position. Tracks the total US equity market.' },
-      { ticker:'CEG',   name:'Constellation Energy',      type:'stock', color:'#1f7ac4', purchased:'June 2026',  shares:2.715628,  avgCost:276.18, thesis:null,                                note:'Initiated June 2026. The largest nuclear operator in the US and a direct beneficiary of surging power demand from data centers. A way to play the AI buildout through the energy layer rather than the chips and software layer, where I think value has gotten stretched.' },
-      { ticker:'VRT',   name:'Vertiv Holdings',           type:'stock', color:'#c89b3c', purchased:'June 2026',  shares:2.193046,  avgCost:341.99, thesis:null,                                note:'Initiated June 2026. Vertiv builds the power and thermal management infrastructure that data centers run on. A picks and shovels position on the AI capacity buildout, capturing demand for cooling and power distribution as compute density rises.' },
+      { ticker:'CEG',   name:'Constellation Energy',      type:'stock', color:'#1f7ac4', purchased:'June 2026',  shares:4.9,       avgCost:266.77, thesis:null,                                note:'Initiated June 2026. The largest nuclear operator in the US and a direct beneficiary of surging power demand from data centers. A way to play the AI buildout through the energy layer rather than the chips and software layer, where I think value has gotten stretched.' },
+      { ticker:'VRT',   name:'Vertiv Holdings',           type:'stock', color:'#c89b3c', purchased:'June 2026',  shares:5.4,       avgCost:321.92, thesis:null,                                note:'Initiated June 2026. Vertiv builds the power and thermal management infrastructure that data centers run on. A picks and shovels position on the AI capacity buildout, capturing demand for cooling and power distribution as compute density rises.' },
     ];
 
     let liveData = {};
