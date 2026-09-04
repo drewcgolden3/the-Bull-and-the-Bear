@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Thesis: Visa Inc. (V) — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+
+  <div class="article-hero">
+    <img src="../images/visa-thesis.svg" alt="Investment Thesis: Visa Inc. (V)" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">September 4, 2026</span>
+    </div>
+    <h1 class="article-title">Investment Thesis: Visa Inc. (V)</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into Visa stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<h2 class="wp-block-heading">Fundamental Analysis of Visa: </h2>
+<p>Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks.</p>
+<p>What Visa operates is a network. Roughly four billion cards, hundreds of millions of merchants, and thousands of financial institutions, all connected by rails Visa owns. Every time value moves across those rails, Visa takes a small fee.</p>
+<p>It is the closest thing in the public markets to a toll road on global consumer spending. Visa's revenue is a fraction of a percent of the dollars flowing through the network, which means it does not need to win a product cycle or guess which retailer, bank, or country grows fastest. It just needs commerce to happen and it needs that commerce to keep shifting from cash to digital.</p>
+<p>The result is a business with operating margins north of 65%, almost no capital requirements, and a moat built out of four decades of two-sided network effects. A new payments network cannot bootstrap itself, because merchants will not accept a card no consumer carries and consumers will not carry a card no merchant accepts. That problem is why the card networks have functioned as a duopoly for decades despite constant, well-funded attempts to displace them.</p>
+<h3 class="wp-block-heading">The Positives </h3>
+<p>The recent numbers have been better than the market gave this stock credit for through most of 2025.</p>
+<p>In fiscal <a href="https://www.barchart.com/story/news/111965/visa-q1-earnings-growth-engine-roars-stablecoin-dilemma-looms">Q1 2026</a>, net revenue rose 15% year-over-year to $10.9 billion. Payments volume grew 8% in constant dollars to nearly $4 trillion, and cross-border volume, which is the highest margin piece of the business, grew 11% excluding intra-Europe transactions.</p>
+<p>Fiscal <a href="https://www.tikr.com/blog/visa-stock-rose-8-after-q2-2026-earnings-heres-what-the-stablecoin-and-ai-bet-could-mean">Q2 2026</a> was even stronger. Net revenue of $11.2 billion, up 17% year-over-year, which was Visa's fastest revenue growth since 2022. Adjusted EPS came in at $3.31 against a $3.10 consensus.</p>
+<p>A company this large accelerating its revenue growth rate is not the normal pattern, and it is worth asking why.</p>
+<p>Part of the answer is value-added services, which I think most investors still underweight. This is the segment covering fraud prevention, tokenization, dispute management, data analytics, consulting, and issuer processing. VAS revenue grew 28% year-over-year in fiscal Q1 and accounted for nearly half of Visa's total revenue growth. It now makes up roughly 30% of net revenue and is compounding at close to twice the pace of core payment volume.</p>
+<p>That matters for two reasons. It diversifies Visa away from pure interchange economics, which is the piece most exposed to regulators, and it deepens the relationship with issuers and merchants, which makes Visa harder to rip out even if transaction routing changes underneath it.</p>
+<h3 class="wp-block-heading">What About Stablecoins? </h3>
+<p>For most of 2025 the bear case on Visa was simple. Stablecoins settle instantly on public blockchains at almost no cost, so why would anyone keep paying the card networks a fee?</p>
+<p>It is a fair question, and I do not want to dismiss it. But the last two quarters have made something clear that the bears missed. Visa is not being disintermediated by stablecoins. It is turning into their distribution layer.</p>
+<p>Visa now supports roughly <a href="https://seekingalpha.com/article/4930685-visa-recent-performance-shows-stablecoin-threat-was-overstated">160 stablecoin-linked card programs</a> worldwide, with volume on those programs up nearly 200% year-over-year. Their stablecoin settlement business is running at roughly a $7 billion annualized run rate across nine blockchain networks.</p>
+<p>The reason this works is that a stablecoin solves the settlement problem and nothing else. It does not solve acceptance, since merchants still need a way to take the payment. It does not solve fraud liability, chargebacks, dispute resolution, rewards, or consumer protection. Those are the things Visa's fee actually buys, and they are the things consumers refuse to give up.</p>
+<p>So Visa positioned itself as the on-ramp. Hold your value in a stablecoin, spend it anywhere Visa is accepted, and let Visa handle the conversion and the protections. That turns a threat into a new source of volume.</p>
+<p>They have also been building into agentic commerce, with partnerships around AI platforms including OpenAI and Meta, aimed at the question of how an AI agent authenticates and transacts on your behalf. It is early, but identity and trust in agentic payments is exactly the kind of problem a network with forty years of fraud data should be able to own.</p>
+<h3 class="wp-block-heading">The Concerns </h3>
+<p>Regulation is the durable risk here. Interchange fees are politically unpopular in nearly every jurisdiction and get capped by regulators periodically. Each intervention takes a permanent slice out of the take rate, and that is not something Visa can grow its way out of.</p>
+<p>Related to that, Visa and Mastercard have been in more or less continuous merchant litigation for years. Settlements are manageable. Structural remedies would not be.</p>
+<p>The other risk worth watching is account-to-account rails. Real-time payment systems built by central banks, like Pix in Brazil, UPI in India, and FedNow domestically, bypass the card networks entirely and have gained real traction in the markets where governments pushed adoption.</p>
+<p>Finally, valuation. Visa almost never gets cheap. You are paying a premium multiple for quality and consistency, which means the stock lags in risk-on markets and leaves you very little room for error if growth stumbles.</p>
+<h2 class="wp-block-heading">Technical Analysis of $V </h2>
+<p>$V's chart is exactly what you would expect from a business like this. A long, boring, upward-sloping channel with shallow drawdowns and very few dramatic moves in either direction.</p>
+<p>Price has trended steadily higher through 2026 and sits comfortably above a rising 200 day moving average. The pullbacks this year have been shallow and bought quickly, which is what institutional accumulation looks like rather than speculative flow.</p>
+<p>There is no clean technical setup here, and honestly there rarely is with this name. This is not a chart you trade. It is a chart you add to on any pullback toward the 200 day and otherwise leave alone.</p>
+<h2 class="wp-block-heading">Final Verdict </h2>
+<p>I initiated $V in June 2026 at an average cost near $315 and the position is up close to 20% since.</p>
+<p>Visa is the position in my portfolio I think about least, and that is exactly why I own it. Almost everything else I hold, the AI infrastructure names and the power names, is a bet on a specific cycle playing out in a specific window. Visa is a bet that people will keep buying things and will keep doing it with a card instead of cash.</p>
+<p>The cash-to-digital shift still has a lot of room left globally, particularly outside the US. Cross-border travel and commerce keep growing. Value-added services are compounding faster than the core business. And the technology that was supposed to kill the network has instead become another rail plugged into it.</p>
+<p>For those reasons I have $V as a <strong>long term buy</strong>. I do not have a short-term price target here and I am not looking for one. This is a position I intend to keep adding to on weakness rather than trade around.</p>
+<p>What would change my mind is not a bad quarter. It is a regulatory outcome that permanently resets the take rate, or real evidence that account-to-account rails are taking share in developed markets without a government mandate forcing it. I have not seen either yet.</p>
+<p><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/"><strong>Disclaimer</strong></a></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

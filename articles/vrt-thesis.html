@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Thesis: Vertiv Holdings (VRT) — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+
+  <div class="article-hero">
+    <img src="../images/vrt-thesis.svg" alt="Investment Thesis: Vertiv Holdings (VRT)" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">September 4, 2026</span>
+    </div>
+    <h1 class="article-title">Investment Thesis: Vertiv Holdings (VRT)</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into Vertiv Holdings stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<h2 class="wp-block-heading">Fundamental Analysis of Vertiv: </h2>
+<p>Before getting into the numbers, it is worth clarifying what Vertiv actually sells, because it is not an AI company. </p>
+<p>Vertiv builds the power and thermal management equipment that data centers run on. Uninterruptible power supplies, busways, power distribution units, and, increasingly, liquid cooling systems. Every GPU rack that gets installed needs electricity delivered cleanly and heat removed continuously, and Vertiv sells the hardware that does both.</p>
+<p>This matters more now than it used to because rack density has changed completely. A traditional enterprise rack drew somewhere around 5 to 10 kilowatts. Modern AI training racks are pushing past 100kW. Air cooling does not work at that density, so operators have to move to liquid, and very few companies can design, build, install, and service liquid cooling at hyperscale.</p>
+<h3 class="wp-block-heading">The Positives </h3>
+<p>Vertiv's <a href="https://www.fool.com/investing/2026/05/01/data-center-demand-drove-vertivs-earnings-up-83-bu/">Q1 2026 report</a> was excellent. Revenue came in at $2.65 billion, up roughly 30% year-over-year, with the Americas segment growing 53%. Adjusted diluted EPS grew 83% year-over-year.</p>
+<p>What stood out to me more than the growth was the margin. Adjusted operating margin expanded 430 basis points to 20.8%. A hardware and services business growing revenue 30% while also expanding operating margins by over four percentage points is not normal. It tells you Vertiv is not buying that growth with discounts. They have pricing power.</p>
+<p>The backlog is the part of this story I care about most. Vertiv's project backlog has <a href="https://seekingalpha.com/article/4890719-vertiv-holdings-the-15-billion-backlog-liquid-cooling-dominance-and-the-ai-infrastructure-trade-wall-street-is-still-underpricing">more than doubled to over $15 billion</a>, which covers roughly 12 to 18 months of forward revenue. Management has also pointed to a 24 to 36 month order pipeline sitting behind that backlog.</p>
+<p>Vertiv has historically been priced like a cyclical industrial, and cyclical industrials get punished because nobody knows what next year looks like. Having a year and a half of revenue already contracted is a very different risk profile than the market is used to assigning this kind of company.</p>
+<p>Management also <a href="https://simplywall.st/stocks/us/capital-goods/nyse-vrt/vertiv-holdings-co/news/how-raised-2026-guidance-and-ai-data-center-demand-at-vertiv">raised full-year 2026 guidance</a> to $13.5 to $14.0 billion in net sales, implying about 30% organic growth, with adjusted EPS guidance of $6.30 to $6.40. Consensus had been sitting near $6.08.</p>
+<h3 class="wp-block-heading">The Concerns </h3>
+<p>So if the company just raised guidance, why is the stock down over 30% from its May high?</p>
+<p>The answer is August, when management's commentary around execution risk spooked the market. Not demand risk, execution risk. I think that distinction is important and I think the market blurred it.</p>
+<p>When a company sitting on a $15 billion backlog tells you the hard part is delivering, that is a supply chain and labor problem. It is expensive and it is annoying, but it is solvable. A company telling you orders are slowing is a demand problem, and that is not solvable. Vertiv said the former and got priced like it said the latter.</p>
+<p>That said, there are real risks here that I do not want to wave away. </p>
+<p>Customer concentration is the big one. A small group of hyperscalers accounts for an outsized share of demand. If two of them push capex out by a couple of quarters, that backlog stops being a comfort very quickly.</p>
+<p>Competition is also real. Schneider Electric, Eaton, nVent, and Munters all compete in pieces of this stack, and the hyperscalers have every incentive to commoditize their suppliers over time. What protects Vertiv in my eyes is the service layer. Selling a cooling system is a one-time transaction. Maintaining thousands of them globally under uptime guarantees is a relationship, and that installed base is much harder to displace than the hardware itself.</p>
+<p>Finally, valuation. Even after a 30% drawdown this is not a cheap stock on traditional industrial metrics. You are paying for growth, and growth stocks that miss get repriced fast.</p>
+<h2 class="wp-block-heading">Takeaways </h2>
+<p>I own Vertiv because I think the AI buildout is a decade long infrastructure cycle rather than a two year story, and because I would rather own the company that gets paid no matter which model or chip wins.</p>
+<p>Nothing in the last two quarters has changed that. Revenue grew 30%, margins expanded, backlog doubled, guidance went up. The stock fell because management was honest about how hard it will be to deliver on all of it, which is, in a strange way, confirmation of how much demand is actually there.</p>
+<h2 class="wp-block-heading">Technical Analysis of $VRT </h2>
+<p>$VRT hit an all-time high of $379.94 on May 14, 2026 and has been making lower highs ever since. Price is currently trading in the $250 to $280 range, more than 30% off that high.</p>
+<p>The August breakdown is what concerns me technically. Price broke through the 200 day moving average, which had held as support on every prior pullback in this uptrend. That is a genuine change of character and I am not going to pretend otherwise.</p>
+<p>The level I am watching is the $240 to $250 zone. That area lines up with the consolidation range from earlier in the year and is where the last major leg higher began. If it holds and price can reclaim the 200 day, the structure repairs itself and this becomes a healthy correction in a longer uptrend. If it fails, the next real shelf is meaningfully lower.</p>
+<p>My own buying reflects that. I initiated in June near $293 and added twice in July, once at $303.10, which was early, and again at $242.43, which was into the worst of the selloff. That second add is the one that mattered and it brought my average cost back to around $293.</p>
+<h2 class="wp-block-heading">Final Verdict </h2>
+<p>In the short term, $VRT is unpredictable. The trend is down, price is below the 200 day, and the market is clearly not in a mood to give AI infrastructure names the benefit of the doubt. I would not be surprised to see it test the low $240s again.</p>
+<p>But the business is doing exactly what I bought it to do. For that reason I have $VRT as a <strong>long term buy</strong>, and I plan to keep adding on weakness rather than chasing strength.</p>
+<p>The thing that would actually change my mind is not a lower stock price. It is a hyperscaler guiding capex down. Until that happens, I am treating this drawdown as an opportunity.</p>
+<p><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/"><strong>Disclaimer</strong></a></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Thesis: Constellation Energy (CEG) — the Bull &amp; the Bear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
+      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back:hover { opacity: 0.7; }
+    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
+    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
+    .tag.thesis { background: var(--accent2); color: #fff; }
+    .article-date { color: var(--muted); font-size: 0.85rem; }
+    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body a { color: var(--accent); }
+    .article-figure { margin: 2rem 0; text-align: center; }
+    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
+    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .article-wrap { padding: 2rem 1.25rem 4rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#market-commentary">Market Commentary</a>
+      <a href="../index.html#investment-theses">Investment Theses</a>
+      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    </div>
+    <a class="nav-back" href="../index.html">← All Articles</a>
+  </nav>
+
+
+  <div class="article-hero">
+    <img src="../images/ceg-thesis.svg" alt="Investment Thesis: Constellation Energy (CEG)" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="tag thesis">Investment Thesis</span>
+      <span class="article-date">September 4, 2026</span>
+    </div>
+    <h1 class="article-title">Investment Thesis: Constellation Energy (CEG)</h1>
+    <div class="article-body">
+<p>In this article, I will do a deep dive into Constellation Energy stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
+<h2 class="wp-block-heading">Fundamental Analysis of Constellation: </h2>
+<p>Most investors playing the AI theme own semiconductors, hyperscalers, or software. I own some of that too. But there is a constraint in this buildout that gets far less attention than GPU supply, and it is much harder to fix.</p>
+<p>You cannot run a data center without electricity, and the United States is not building generation capacity fast enough to keep up.</p>
+<p>A single large AI campus can draw more power than a mid-sized city. That power has to be clean, because the hyperscalers all have public carbon commitments, and it has to be firm, meaning available around the clock regardless of weather. Solar and wind are cheap but intermittent. Gas is firm but emits carbon. Nuclear is the only technology that is both clean and firm at scale.</p>
+<p>Constellation owns the largest nuclear fleet in the country, roughly 147 million megawatt-hours of annual generation, with about 93% of it inside the PJM footprint. That happens to be exactly where the data center corridors in Virginia, Pennsylvania, and Ohio sit.</p>
+<p>Nobody can replicate that. You cannot go build a competing nuclear fleet. Permitting and construction alone would take decades, and most of the existing fleet was built in a political environment that no longer exists. Constellation's asset base is, in the most literal sense, irreplaceable.</p>
+<h3 class="wp-block-heading">The Positives </h3>
+<p>Let's look at their most recent <a href="https://www.constellationenergy.com/news/2026/08/constellation-reports-second-quarter-2026-results.html">earnings report</a> (Q2 '26). Constellation posted adjusted operating earnings of $2.55 per share, up from $1.91 in the year-ago quarter. GAAP net income came in at $1.42 per share, down from $2.67, though for a company like this the GAAP figure is heavily distorted by mark-to-market and acquisition accounting and is not the number to focus on.</p>
+<p>More importantly, management raised full-year 2026 adjusted operating earnings guidance to $11.50 to $12.50 per share, up from $11.00 to $12.00. Raised guidance in a quarter where the stock has been beaten down is exactly the setup I look for.</p>
+<p>Operationally the nuclear fleet ran at a 93.0% capacity factor, down slightly from 94.8% a year prior. For context, anything above 90% is excellent. These plants are running close to the physical ceiling of what nuclear can deliver.</p>
+<p>The contracts are where the real value is being created. In Q2, Constellation signed an additional <a href="https://www.fool.com/investing/2026/08/07/constellation-signed-920-megawatts-of-new-power-deals-including-a-walmart-ppa-heres-what-it-means-for-ceg-stock/">920 megawatts of long-term power purchase agreements</a> with investment-grade customers, including a 176 MW deal with Walmart. These agreements run 15 to 20 years and commence between 2029 and 2032.</p>
+<p>Think about what that actually does to the business. Constellation is locking in future output at negotiated prices with counterparties that have pristine credit, on terms measured in decades. A merchant power producer, historically one of the most volatile business models in the market, is slowly converting itself into something that looks a lot more like a regulated utility with a growth kicker attached.</p>
+<p>Separately, the Crane Clean Energy Center continues moving toward restart. FERC approved a waiver transferring capacity interconnection rights, and the NRC approved the fuel license amendment, putting the plant on track to resume operations in 2027 to serve Microsoft under a 20 year PPA.</p>
+<p>Restarting a retired nuclear plant to serve one customer would have been unthinkable five years ago. That deal alone tells you how tight the power market has gotten.</p>
+<h3 class="wp-block-heading">The Concerns </h3>
+<p>Constellation closed its acquisition of Calpine in January 2026, which changed the shape of the company significantly. Calpine brought a large natural gas fleet, and the strategic logic makes sense to me. Nuclear provides the clean baseload, gas provides the flexible dispatchable capacity that fills the gaps and captures scarcity pricing. Together they let Constellation sell a complete power solution rather than just an energy block.</p>
+<p>That said, deals this size always carry integration risk, and the required divestitures are still working through, including an agreement to sell the Brazos Valley Energy Center for $860 million. It also means a larger share of earnings is now tied to gas economics and power price spreads. The contracted book reduces that exposure but does not eliminate it.</p>
+<p>The bigger concern for me is regulatory. Behind-the-meter data center arrangements, capacity market rules in PJM, and state level fights over who pays for grid upgrades are all unresolved. The value of a co-located data center PPA depends heavily on rules that are still being written. That is not a risk I can model, only one I can size for.</p>
+<p>There is also a timing issue worth being honest about. Many of these marquee contracts do not start until 2029 through 2032. That is a long time to hold a position on the strength of revenue that has not begun yet.</p>
+<h2 class="wp-block-heading">Technical Analysis of $CEG </h2>
+<p>$CEG has traded in a 52-week range of roughly $229 to $413. It is currently sitting near $290, well below its 200 day moving average and much closer to the bottom of that range than the top.</p>
+<p>The chart is in a clear intermediate-term downtrend. Price broke the 200 day earlier this year and has been rejected from it since, which is textbook bearish behavior and I am not going to argue with it.</p>
+<p>The level I care about is the $228 to $240 area at the low end of the range. That is where the stock found buyers before and where I would expect institutional accumulation if the fundamental story is still intact. A decisive break below it would tell me the market is repricing the entire data center power thesis rather than just working off how overbought this sector got in 2025.</p>
+<p>On the upside, reclaiming the 200 day and holding above it would be the first real sign the downtrend has ended. Until that happens I am treating rallies as unproven.</p>
+<h2 class="wp-block-heading">Final Verdict </h2>
+<p>I initiated $CEG in June 2026 at an average cost near $267, and the position is modestly profitable despite the ugly chart, which tells you how far this stock had already run before I bought it.</p>
+<p>My conviction here is structural rather than technical. Electricity demand in the United States is growing for the first time in roughly twenty years, driven by data centers, electrification, and reshored manufacturing. The supply response is slow because building generation takes years and building nuclear takes far longer. When demand is inelastic and supply is fixed, the owner of the scarce asset wins.</p>
+<p>Constellation owns the scarce asset.</p>
+<p>In the short term I am cautious. The trend is down and I would not be shocked to see a test of the range lows before this turns. For the long term, though, I have $CEG as a <strong>strong long term buy</strong> and I would add on any test of the $230s.</p>
+<p>What I am underwriting is not the next quarter. It is a decade in which the largest clean, firm generation fleet in the country signs away a growing share of its output to the best credit in the world at prices that reflect genuine scarcity. Guidance was just raised, the contracts are getting signed, and Crane comes back online in 2027.</p>
+<p><a href="https://thebullandthebear.blog/2025/11/05/investment-advice-disclaimer/"><strong>Disclaimer</strong></a></p>
+<p></p>
+    </div>
+    <hr class="article-divider" />
+    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      <span>the Bull &amp; the Bear</span>
+    </div>
+    <p>Independent investment research. Think for yourself.</p>
+    <p><a href="../index.html">← Back to all articles</a></p>
+  </footer>
+
+</body>
+</html>

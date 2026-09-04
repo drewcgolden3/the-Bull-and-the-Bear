@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Visa Inc. investment thesis">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="55%" stop-color="#0e0e0e"/>
+      <stop offset="100%" stop-color="#f7b600" stop-opacity="0.42"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 130H1200M0 250H1200M0 370H1200M0 490H1200"/>
+    <path d="M200 0V630M400 0V630M600 0V630M800 0V630M1000 0V630"/>
+  </g>
+  <polyline points="60,520 200,480 340,440 480,420 620,360 760,330 900,270 1040,230 1160,190" fill="none" stroke="#f7b600" stroke-opacity="0.55" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect width="1200" height="630" fill="url(#fade)"/>
+  <text x="90" y="300" font-family="Georgia, 'Playfair Display', serif" font-size="150" font-weight="700" fill="#e8e2d9" letter-spacing="6">V</text>
+  <text x="94" y="356" font-family="'DM Sans', Helvetica, Arial, sans-serif" font-size="34" font-weight="300" fill="#a9a297" letter-spacing="2">Visa Inc.</text>
+  <rect x="92" y="404" width="70" height="3" fill="#f7b600"/>
+  <text x="92" y="462" font-family="'DM Sans', Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#f7b600" letter-spacing="7">INVESTMENT THESIS</text>
+  <text x="92" y="500" font-family="'DM Sans', Helvetica, Arial, sans-serif" font-size="20" font-weight="300" fill="#b3aca1" letter-spacing="3">THE BULL &amp; THE BEAR</text>
+</svg>
