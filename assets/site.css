@@ -197,7 +197,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease-out), transform 1s var(--ease-out); transition-delay: var(--d, 0ms); }
 .js [data-reveal].in { opacity: 1; transform: none; }
 .js [data-reveal="fade"] { transform: none; }
-.line-mask { display: block; overflow: hidden; padding: 0 0.08em 0.06em; margin: 0 -0.08em -0.06em; }
+.line-mask { display: block; overflow: hidden; padding: 0.14em 0.08em 0.08em; margin: -0.14em -0.08em -0.08em; }
 .line-mask > span { display: block; }
 .js .line-mask > span { transform: translateY(105%); transition: transform 1.3s var(--ease-out); transition-delay: var(--d, 0ms); }
 .js .loaded .line-mask > span { transform: none; }
