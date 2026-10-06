@@ -239,9 +239,45 @@
   <div class="activity-wrap">
     <div class="activity-head">
       <h2>Recent Activity</h2>
-      <span class="sub">Latest buys &amp; sells · Updated August 2026</span>
+      <span class="sub">Latest buys &amp; sells · Updated October 2026</span>
     </div>
     <div class="activity-list">
+      <div class="activity-item">
+        <span class="activity-date">Oct 3, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#4285f418;color:#4285f4">GOOGL</div>
+          <div><div class="act-tk-name">GOOGL</div><div class="act-tk-full">Alphabet Inc. — added</div></div>
+        </div>
+        <span class="activity-price">@ $342.59 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Oct 2, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#1a1f7118;color:#1a1f71">V</div>
+          <div><div class="act-tk-name">V</div><div class="act-tk-full">Visa Inc. — added</div></div>
+        </div>
+        <span class="activity-price">@ $360.66 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Sep 23, 2026</span>
+        <span class="act-badge sell">Sell</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#0082fb18;color:#0082fb">META</div>
+          <div><div class="act-tk-name">META</div><div class="act-tk-full">Meta Platforms — trimmed position</div></div>
+        </div>
+        <span class="activity-price">@ $744.10 <span>/ sh</span></span>
+      </div>
+      <div class="activity-item">
+        <span class="activity-date">Sep 16, 2026</span>
+        <span class="act-badge buy">Buy</span>
+        <div class="activity-ticker">
+          <div class="ticker-icon" style="background:#1f7ac418;color:#1f7ac4">CEG</div>
+          <div><div class="act-tk-name">CEG</div><div class="act-tk-full">Constellation Energy — added</div></div>
+        </div>
+        <span class="activity-price">@ $259.53 <span>/ sh</span></span>
+      </div>
       <div class="activity-item">
         <span class="activity-date">Jul 29, 2026</span>
         <span class="act-badge buy">Buy</span>
@@ -342,7 +378,7 @@
         <span class="activity-price">@ $322.29 <span>/ sh</span></span>
       </div>
     </div>
-    <p class="activity-note">In keeping with the rest of this page, only per-share execution prices are shown — no position sizes or dollar amounts. The recent theme: trimming META into strength for a second time, adding to Alphabet on the July pullback, and steadily accumulating the AI-infrastructure names, Constellation Energy (CEG) and Vertiv (VRT) — with VRT bought down hard through late July.</p>
+    <p class="activity-note">In keeping with the rest of this page, only per-share execution prices are shown — no position sizes or dollar amounts. The recent theme: taking more META off the table after its September run past $740, adding to Constellation Energy (CEG) on the mid-September dip, and building out Visa and Alphabet in early October.</p>
   </div>
 
   <!-- Holdings Table -->
@@ -437,15 +473,15 @@
     const FINNHUB_KEY = 'd8gavrhr01qlgcuifalgd8gavrhr01qlgcuifam0';
 
     const holdings = [
-      { ticker:'GOOGL', name:'Alphabet Inc.',             type:'stock', color:'#4285f4', purchased:'April 2026',  shares:4.027506,  avgCost:341.40, thesis:'articles/googl-thesis.html', note:'Bought in April 2026 as part of a broader AI infrastructure thesis. Alphabet\'s dominance in search, cloud, and AI tooling makes it a core long-term hold. Averaged in further in June 2026 at $346.79 and again in July 2026 at $320.51, lowering the cost basis.' },
+      { ticker:'GOOGL', name:'Alphabet Inc.',             type:'stock', color:'#4285f4', purchased:'April 2026',  shares:4.903188,  avgCost:341.61, thesis:'articles/googl-thesis.html', note:'Bought in April 2026 as part of a broader AI infrastructure thesis. Alphabet\'s dominance in search, cloud, and AI tooling makes it a core long-term hold. Averaged in further in June 2026 at $346.79 again in July 2026 at $320.51, and once more in October 2026 at $342.59.' },
       { ticker:'UBER',  name:'Uber Technologies',         type:'stock', color:'#000000', purchased:'April 2026',  shares:17.817287, avgCost:74.50,  thesis:'articles/uber-thesis.html',        note:'Initiated in April 2026. The autonomous vehicle narrative is real, but Uber\'s network effects and platform dominance give it a strong moat in the near term.' },
-      { ticker:'META',  name:'Meta Platforms',            type:'stock', color:'#0082fb', purchased:'April 2026',  shares:2.74469,   avgCost:602.99, thesis:'articles/meta-thesis.html',        note:'Added in April 2026. META\'s ad business is firing on all cylinders and the AI monetization story is just beginning. Averaged in further in June 2026 with additional purchases at $584.54 and $561.82, lowering the cost basis. Trimmed twice into strength in July 2026, at $665.14 and $642.36.' },
+      { ticker:'META',  name:'Meta Platforms',            type:'stock', color:'#0082fb', purchased:'April 2026',  shares:1.736761,  avgCost:602.99, thesis:'articles/meta-thesis.html',        note:'Added in April 2026. META\'s ad business is firing on all cylinders and the AI monetization story is just beginning. Averaged in further in June 2026 with additional purchases at $584.54 and $561.82, lowering the cost basis. Trimmed twice into strength in July 2026, at $665.14 and $642.36, and again in September 2026 at $744.10.' },
       { ticker:'UNH',   name:'UnitedHealth Group',        type:'stock', color:'#005eb8', purchased:'April 2026',  shares:4,         avgCost:321.72, thesis:'articles/unitedhealth-thesis.html', note:'Initiated April 2026 during a significant drawdown driven by regulatory concerns. The underlying business remained strong.' },
-      { ticker:'V',     name:'Visa Inc.',                 type:'stock', color:'#1a1f71', purchased:'June 2026',   shares:2.383903,  avgCost:314.61, thesis:'articles/visa-thesis.html',                                note:'Initiated June 2026. Visa\'s toll-road business model on global payments is one of the most durable moats in the market.' },
+      { ticker:'V',     name:'Visa Inc.',                 type:'stock', color:'#1a1f71', purchased:'June 2026',   shares:3.908885,  avgCost:332.58, thesis:'articles/visa-thesis.html',                                note:'Initiated June 2026. Visa\'s toll-road business model on global payments is one of the most durable moats in the market. Added in October 2026 at $360.66.' },
       { ticker:'SCHF',  name:'Schwab Intl Equity ETF',    type:'etf',   color:'#4a90a4', purchased:'May 2026',   shares:28.763183, avgCost:26.08,  thesis:null,                                note:'Added May 2026 for international diversification. Broad exposure to developed markets outside the US.' },
       { ticker:'SCHV',  name:'Schwab US Large-Cap Value', type:'etf',   color:'#7a9a4a', purchased:'May 2026',   shares:23.525721, avgCost:31.88,  thesis:null,                                note:'Started May 2026. A value-tilt ETF to balance the growth-heavy individual stock picks.' },
       { ticker:'SCHB',  name:'Schwab US Broad Market',    type:'etf',   color:'#9a7a4a', purchased:'May 2026',   shares:27.377258, avgCost:27.40,  thesis:null,                                note:'Added May 2026 as a broad market anchor position. Tracks the total US equity market.' },
-      { ticker:'CEG',   name:'Constellation Energy',      type:'stock', color:'#1f7ac4', purchased:'June 2026',  shares:4.9,       avgCost:266.77, thesis:'articles/ceg-thesis.html',                                note:'Initiated June 2026. The largest nuclear operator in the US and a direct beneficiary of surging power demand from data centers. A way to play the AI buildout through the energy layer rather than the chips and software layer, where I think value has gotten stretched.' },
+      { ticker:'CEG',   name:'Constellation Energy',      type:'stock', color:'#1f7ac4', purchased:'June 2026',  shares:6.248592,  avgCost:265.21, thesis:'articles/ceg-thesis.html',                                note:'Initiated June 2026. The largest nuclear operator in the US and a direct beneficiary of surging power demand from data centers. A way to play the AI buildout through the energy layer rather than the chips and software layer, where I think value has gotten stretched. Added in September 2026 at $259.53, nudging the average cost lower.' },
       { ticker:'VRT',   name:'Vertiv Holdings',           type:'stock', color:'#c89b3c', purchased:'June 2026',  shares:5.954,     avgCost:293.43, thesis:'articles/vrt-thesis.html',                                note:'Initiated June 2026. Vertiv builds the power and thermal management infrastructure that data centers run on. A picks and shovels position on the AI capacity buildout, capturing demand for cooling and power distribution as compute density rises. Added twice in July 2026, at $303.10 and $242.43, bringing the average cost down meaningfully.' },
     ];
 
