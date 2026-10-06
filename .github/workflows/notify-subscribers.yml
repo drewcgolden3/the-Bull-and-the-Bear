@@ -1,0 +1,40 @@
+name: Email subscribers about new articles
+
+on:
+  push:
+    branches: [main]
+    paths: ['articles/*.html']
+  workflow_dispatch:
+    inputs:
+      article:
+        description: 'Article to (re)send, e.g. articles/visa-thesis.html'
+        required: true
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find newly added articles
+        id: find
+        run: |
+          if [ -n "${{ github.event.inputs.article }}" ]; then
+            echo "files=${{ github.event.inputs.article }}" >> "$GITHUB_OUTPUT"
+          else
+            files=$(git diff --name-only --diff-filter=A "${{ github.event.before }}" "${{ github.sha }}" -- 'articles/*.html' | tr '\n' ' ')
+            echo "files=$files" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Give GitHub Pages a head start so the link works when the email lands.
+      - name: Wait for Pages deploy
+        if: steps.find.outputs.files != ''
+        run: sleep 120
+
+      - name: Send emails
+        if: steps.find.outputs.files != ''
+        env:
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
+        run: python3 .github/scripts/notify_subscribers.py ${{ steps.find.outputs.files }}
