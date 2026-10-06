@@ -371,7 +371,7 @@ def build_index(articles, prices, held):
         <span class="line-mask" style="text-align:right"><span style="--d:120ms">the Bear</span></span>
       </h1>
       <div class="hero-foot">
-        <p data-reveal style="--d:300ms">Independent equity research and market commentary by {AUTHOR}. Every position disclosed, every thesis tracked against the market.</p>
+        <p data-reveal style="--d:300ms">Independent equity research and market commentary plus a portfolio page with every position disclosed.</p>
         <div class="hero-actions" data-reveal style="--d:400ms">
           <a class="btn btn--solid" href="articles/{feat['slug']}.html">Latest essay <span class="arr">→</span></a>
           <a class="btn btn--ghost" href="portfolio.html">The portfolio</a>
