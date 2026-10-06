@@ -1,0 +1,204 @@
+[
+  {
+    "slug": "visa-thesis",
+    "category": "thesis",
+    "date": "2026-09-04",
+    "image": "images/visa-thesis.svg",
+    "title": "Investment Thesis: Visa Inc. (V)",
+    "dek": "Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks.",
+    "ticker": "V",
+    "company": "Visa Inc."
+  },
+  {
+    "slug": "ceg-thesis",
+    "category": "thesis",
+    "date": "2026-09-04",
+    "image": "images/ceg-thesis.svg",
+    "title": "Investment Thesis: Constellation Energy (CEG)",
+    "dek": "Most investors playing the AI theme own semiconductors, hyperscalers, or software. I own some of that too. But there is a constraint in this buildout that gets far less attention than GPU supply, and it is much harder to fix.",
+    "ticker": "CEG",
+    "company": "Constellation Energy"
+  },
+  {
+    "slug": "vrt-thesis",
+    "category": "thesis",
+    "date": "2026-09-04",
+    "image": "images/vrt-thesis.svg",
+    "title": "Investment Thesis: Vertiv Holdings (VRT)",
+    "dek": "Before getting into the numbers, it is worth clarifying what Vertiv actually sells, because it is not an AI company.",
+    "ticker": "VRT",
+    "company": "Vertiv Holdings"
+  },
+  {
+    "slug": "ai-ipo-supercycle",
+    "category": "commentary",
+    "date": "2026-06-14",
+    "image": "images/ai-ipo-supercycle.png",
+    "title": "The Truth Behind Big IPO Years: What the Data Tells Us",
+    "dek": "Three of the largest IPOs in history are arriving at the same time, and the first one just landed. SpaceX went public Friday and the debut was a spectacle."
+  },
+  {
+    "slug": "googl-thesis",
+    "category": "thesis",
+    "date": "2026-06-03",
+    "image": "images/googl-thesis.png",
+    "title": "Alphabet Inc.: Investment Thesis",
+    "dek": "Google's parent company is not just surviving the AI transition. It is deploying AI across the most powerful product ecosystem on earth. This is a long-term hold with a path to becoming the first $10 trillion company.",
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc."
+  },
+  {
+    "slug": "nasdaq-meme-coin",
+    "category": "commentary",
+    "date": "2026-04-17",
+    "image": "images/nasdaq-meme-coin.png",
+    "title": "Is the Nasdaq the New Meme Coin?",
+    "dek": "There was a time when \"volatile asset\" meant something like a penny stock, crypto, or something retail traders threw a few hundred dollars at the hopes of becoming rich overnight."
+  },
+  {
+    "slug": "markets-awkward-phase",
+    "category": "commentary",
+    "date": "2026-03-23",
+    "image": "images/markets-awkward-phase.png",
+    "title": "The Market’s Awkward Phase: Understanding the Current Range in Major Indices",
+    "dek": "As I’m writing this in late March 2026, the market has spent the better part of the past six months moving sideways, with little progress since early September."
+  },
+  {
+    "slug": "bitcoin-history",
+    "category": "commentary",
+    "date": "2026-02-24",
+    "image": "images/bitcoin-history.png",
+    "title": "Bitcoin: History, Cycles, and Why Patience Matters",
+    "dek": "As someone who has never fully bought into cryptocurrency, I set out to learn more about Bitcoin. I discuss my findings in this article."
+  },
+  {
+    "slug": "ai-future",
+    "category": "opinion",
+    "date": "2026-02-09",
+    "image": "images/ai-future.png",
+    "title": "Opinion: What I Believe the Future Looks Like With AI Integration",
+    "dek": "AI and the conversations around its future remain blurry. Some believe in an existential risk from AI, seen as a \"doomsday\" scenario."
+  },
+  {
+    "slug": "software-stocks-tank",
+    "category": "commentary",
+    "date": "2026-01-26",
+    "image": "images/software-stocks-tank.png",
+    "title": "Software Stocks Tank: Generational Buying Opportunity or a Trap?",
+    "dek": "Software giants like Adobe, Salesforce, and Intuit have been caught in the market’s growing anxiety over AI as investors fear it could ultimately undercut their business models."
+  },
+  {
+    "slug": "amat-thesis",
+    "category": "thesis",
+    "date": "2026-01-18",
+    "image": "images/amat-thesis.png",
+    "title": "AMAT investment thesis - Is Applied Materials Becoming Overbought?",
+    "dek": "Applied Materials shares have risen more than 100% since early September, driven largely by increasingly aggressive capital expenditure plans from its largest customers.",
+    "ticker": "AMAT",
+    "company": "Applied Materials"
+  },
+  {
+    "slug": "buying-low-vs-wrong",
+    "category": "commentary",
+    "date": "2026-01-06",
+    "image": "images/buying-low-vs-wrong.png",
+    "title": "Buying Low vs. Buying Wrong: Why Some Selloffs are Justified",
+    "dek": "You've probably heard the saying \"buy the dip,\" but what does that really mean? In this post, I will discuss why all dips are not created equal."
+  },
+  {
+    "slug": "market-outlook-2026",
+    "category": "commentary",
+    "date": "2025-12-30",
+    "image": "images/market-outlook-2026.png",
+    "title": "Stock Market Outlook for 2026",
+    "dek": "I approach 2026 with a bit of skepticism, mainly because the margin for error is becoming increasingly narrow."
+  },
+  {
+    "slug": "oracle-thesis",
+    "category": "thesis",
+    "date": "2025-12-13",
+    "image": "images/oracle-thesis.png",
+    "title": "What happened to Oracle (ORCL) Stock: Oracle Investment Thesis",
+    "dek": "Oracle Corp. began in the late 1970s as a database technology company. Since then, it has added both enterprise software and cloud computing to its large array of services offered.",
+    "ticker": "ORCL",
+    "company": "Oracle Corporation"
+  },
+  {
+    "slug": "banks-hedge-funds",
+    "category": "commentary",
+    "date": "2025-12-05",
+    "image": "images/banks-hedge-funds.png",
+    "title": "Do Banks and Hedge Funds Predict Markets… or Create the Moves Themselves?",
+    "dek": "It seems like every week, new headlines light up with the same story: A hedge fund just took a massive position. A big bank upgraded a stock. An institution quietly accumulated millions of shares."
+  },
+  {
+    "slug": "unitedhealth-thesis",
+    "category": "thesis",
+    "date": "2025-11-30",
+    "image": "images/unitedhealth-thesis.png",
+    "title": "Investment Thesis: UnitedHealth Group Inc.",
+    "dek": "UnitedHealth Group has stabilized well after capitulating nearly 60% in April-August of 2025.",
+    "ticker": "UNH",
+    "company": "UnitedHealth Group"
+  },
+  {
+    "slug": "fear-to-opportunity",
+    "category": "commentary",
+    "date": "2025-11-21",
+    "image": "images/fear-to-opportunity.png",
+    "title": "From Fear to Opportunity: Understanding the Market Sell-Off and Why There is No Need to Panic",
+    "dek": "The tech-heavy Nasdaq-100 Index has fallen nearly 9% since Halloween, spooking many traders. In this article I will discuss the catalysts for this sell-off and the case for a bounce."
+  },
+  {
+    "slug": "softbank-nvidia",
+    "category": "commentary",
+    "date": "2025-11-15",
+    "image": "images/softbank-nvidia.png",
+    "title": "SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade",
+    "dek": "While this headline came as a shock to many, SoftBank's reasoning behind the sale of their entire Nvidia position leans bullish for AI."
+  },
+  {
+    "slug": "meta-thesis",
+    "category": "thesis",
+    "date": "2025-11-07",
+    "image": "images/meta-thesis.png",
+    "title": "Investment Thesis: Meta Platforms, Inc.",
+    "dek": "Meta Platforms, Inc. reported Q3 earnings on Oct 29th. Since then, the stock has taken nearly a 20% hit.",
+    "ticker": "META",
+    "company": "Meta Platforms"
+  },
+  {
+    "slug": "uber-thesis",
+    "category": "thesis",
+    "date": "2025-11-05",
+    "image": "images/uber-thesis.png",
+    "title": "Investment Thesis: Uber Technologies",
+    "dek": "Ubers growth remains strong as they reported trip growth of 22% year-over-year and Gross Bookings increased 21% year-over-year.",
+    "ticker": "UBER",
+    "company": "Uber Technologies"
+  },
+  {
+    "slug": "bigtech-earnings",
+    "category": "commentary",
+    "date": "2025-11-02",
+    "image": "images/bigtech-earnings.png",
+    "title": "Big Tech Earnings Remain Strong: Why the AI Surge is Different than the Dot-Com Era",
+    "dek": "AI hype has propelled the Mag 7 to all-time highs and record-breaking valuations. As each company continues to pour more and more money into AI, investors have become increasingly cautious..."
+  },
+  {
+    "slug": "index-fund-investing",
+    "category": "opinion",
+    "date": "2025-10-19",
+    "image": "images/index-fund-investing.jpg",
+    "title": "Why Playing It Safe Could Cost You: Rethinking Index Fund Investing",
+    "dek": "Should investors keep funneling their savings into index funds, or is it time to explore smarter alternatives?"
+  },
+  {
+    "slug": "buying-the-dip",
+    "category": "commentary",
+    "date": "2025-10-14",
+    "image": "images/buying-the-dip.png",
+    "title": "Buying the Dip: What April’s Stock Market Tariff Collapse Teaches Investors",
+    "dek": "In the span of only about twelve days, the S&P 500 fell over 15% while its counterpart, the NASDAQ 100, shed over 20%."
+  }
+]

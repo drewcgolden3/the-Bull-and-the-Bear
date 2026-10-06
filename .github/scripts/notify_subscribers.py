@@ -15,19 +15,20 @@ def text(fragment):
 
 
 def describe(path):
+    """Pull title, summary and image from the built page's meta tags."""
     src = open(path, encoding="utf-8").read()
-    h1 = re.search(r'<h1[^>]*class="article-title"[^>]*>(.*?)</h1>', src, re.S)
-    title = text(h1.group(1)) if h1 else text(re.search(r"<title>(.*?)</title>", src, re.S).group(1)).split(" — ")[0].split(" | ")[0]
-    body = re.search(r'class="article-body"[^>]*>(.*)', src, re.S)
-    excerpt = ""
-    for p in re.findall(r"<p[^>]*>(.*?)</p>", body.group(1) if body else src, re.S):
-        excerpt = text(p)
-        if len(excerpt) > 60:
-            break
+
+    def meta(prop):
+        m = re.search(r'<meta (?:property|name)="%s" content="([^"]*)"' % re.escape(prop), src)
+        return html.unescape(m.group(1)) if m else ""
+
+    title = meta("og:title").rsplit(" — the Bull & the Bear", 1)[0]
+    excerpt = meta("og:description")
     if len(excerpt) > 280:
         excerpt = excerpt[:277].rsplit(" ", 1)[0] + "…"
-    slug = os.path.splitext(os.path.basename(path))[0]
-    image = next((f"{SITE}/images/{slug}.{ext}" for ext in ("png", "jpg") if os.path.exists(f"images/{slug}.{ext}")), None)
+    image = meta("og:image")
+    if not image or image.endswith(("logo.png", ".svg")):
+        image = None
     return {"title": title, "url": f"{SITE}/{path}", "excerpt": excerpt, "image": image}
 
 

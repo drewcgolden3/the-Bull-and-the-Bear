@@ -1,99 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade — the Bull &amp; the Bear</title>
+  <meta name="description" content="While this headline came as a shock to many, SoftBank&#x27;s reasoning behind the sale of their entire Nvidia position leans bullish for AI." />
+  <link rel="canonical" href="https://bullandbearblog.com/articles/softbank-nvidia.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="the Bull &amp; the Bear" />
+  <meta property="og:title" content="SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade — the Bull &amp; the Bear" />
+  <meta property="og:description" content="While this headline came as a shock to many, SoftBank&#x27;s reasoning behind the sale of their entire Nvidia position leans bullish for AI." />
+  <meta property="og:url" content="https://bullandbearblog.com/articles/softbank-nvidia.html" />
+  <meta property="og:image" content="https://bullandbearblog.com/images/softbank-nvidia.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#131820" />
+  <link rel="icon" href="../images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
-      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2.5rem;
-      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
-    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .nav-back:hover { opacity: 0.7; }
-    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
-    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
-    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
-    .tag.thesis { background: var(--accent2); color: #fff; }
-    .article-date { color: var(--muted); font-size: 0.85rem; }
-    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
-    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
-    .article-body p { margin-bottom: 1.5rem; }
-    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
-    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
-    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
-    .article-body strong { color: var(--text); font-weight: 500; }
-    .article-body a { color: var(--accent); }
-    .article-figure { margin: 2rem 0; text-align: center; }
-    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
-    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
-    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
-    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
-    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
-    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
-    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
-    footer p { color: var(--muted); font-size: 0.8rem; }
-    footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .article-wrap { padding: 2rem 1.25rem 4rem; }
-    }
-</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="../assets/portfolio-data.js"></script>
 </head>
 <body>
-
-  <nav>
-    <a class="nav-logo" href="../index.html">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="the Bull &amp; the Bear, home">
+      <img src="../images/logo.png" alt="" width="34" height="34" />
       <span>the Bull &amp; the Bear</span>
     </a>
-    <div class="nav-links">
-      <a href="../index.html#market-commentary">Market Commentary</a>
-      <a href="../index.html#investment-theses">Investment Theses</a>
-      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
-    </div>
-    <a class="nav-back" href="../index.html">← All Articles</a>
-  </nav>
-
-  <div class="article-hero">
-    <img src="../images/softbank-nvidia.png" alt="SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade" onerror="this.parentElement.style.display='none'" />
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="article-wrap">
-    <div class="article-meta">
-      <span class="tag">Commentary</span>
-      <span class="article-date">November 15, 2025</span>
-    </div>
-    <h1 class="article-title">SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade</h1>
-    <div class="article-body">
+    <nav class="nav" aria-label="Primary">
+      <a class="link-line" href="../index.html#journal" aria-current="page">Journal</a>
+      <a class="link-line" href="../index.html#scoreboard">Scoreboard</a>
+      <a class="link-line" href="../portfolio.html">Portfolio</a>
+      <a class="link-line" href="../about.html">About</a>
+      <a class="btn" href="#subscribe">Subscribe</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div><div class="progress"></div>
+</header>
+<main id="main">
+  <article>
+    <header class="a-head">
+      <div class="wrap">
+        <div class="crumbs eyebrow" data-reveal><a href="../index.html#journal">Journal</a> <span class="sep">/</span> <span class="eyebrow--accent">Market Commentary</span></div>
+        <h1 class="a-title"><span class="line-mask"><span>SoftBank Cashes Out $5.8 Billion Stake in Nvidia: Why This Move Is Bullish for the AI Trade</span></span></h1>
+        <p class="a-dek" data-reveal style="--d:150ms">While this headline came as a shock to many, SoftBank&#x27;s reasoning behind the sale of their entire Nvidia position leans bullish for AI.</p>
+        <div class="byline" data-reveal style="--d:250ms">
+          <span class="who"><img src="../images/drew-avatar.jpg" alt="" />Drew Golden</span>
+          <time datetime="2025-11-15">November 15, 2025</time>
+          <span>2 min read</span>
+        </div>
+      </div>
+    </header>
+    <div class="a-cover" data-reveal="fade"><div class="media media--duo"><img src="../images/softbank-nvidia.png" alt="" loading="eager" decoding="async" /></div></div>
+    <div class="a-layout">
+      <div class="prose">
 <p>While this headline came as a shock to many, SoftBank's reasoning behind the sale of their entire Nvidia position leans bullish for AI. </p>
 <figure class="article-figure"><img src="/images/wp/screenshot-2025-11-12-at-7.17.14-pm.png" alt="" class="wp-image-221"/><figcaption class="wp-element-caption">Nvidia CEO, Jensen Huang embraces SoftBank CEO, Masayoshi Son</figcaption></figure>
 <p class="is-style-text-subtitle">What is SoftBank?</p>
@@ -110,22 +73,92 @@
 <p class="is-style-text-subtitle">Takeaways: </p>
 <p>Opportunity in AI is far from over, but the days of simply buying anything with an “AI” label are likely behind us. Investors need to be cautious and selective... prioritizing companies that have real avenues to profit. </p>
 <p>Though companies like Nvidia remain at the pinnacle of the AI trade, SoftBank's move may suggest that higher returns could lie in the software application of artificial intelligence. </p>
-<p></p>
+
+      </div>
+      <footer class="a-end">
+        <div class="author">
+          <img src="../images/drew-avatar.jpg" alt="" />
+          <div>
+            <h3>Drew Golden</h3>
+            <p>Student at Lehigh University's College of Business, investing since high school. I write about the companies I own and the markets they trade in. <a class="link-line" href="../about.html">More about me</a></p>
+          </div>
+        </div>
+        <p class="disclaim">This is personal research, not financial advice. I may hold positions in the securities discussed. <a href="../disclaimer.html">Read the full disclaimer</a>.</p>
+        <section class="a-sub" id="subscribe">
+          <span class="eyebrow eyebrow--accent">Newsletter</span>
+          <h3>Get the next essay by email.</h3>
+          <div data-subscribe></div><p class="sub-note">One email per new essay. Unsubscribe anytime.</p>
+        </section>
+      </footer>
     </div>
-    <div data-subscribe></div>
-    <hr class="article-divider" />
-    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </article>
+  <section class="wrap more" aria-label="More from the journal">
+    <div class="archive-bar" style="border:0;padding:0"><span class="eyebrow">Keep reading</span><a class="arrow-link" href="../index.html#journal">All essays <span class="arr">→</span></a></div>
+    <div class="trio" data-stagger="110">
+      <article class="tile" data-reveal>
+        <a href="../articles/ai-ipo-supercycle.html"><div class="media media--duo"><img src="../images/ai-ipo-supercycle.png" alt="" loading="lazy" decoding="async" /></div></a>
+        <div>
+          <span class="eyebrow">Market Commentary</span>
+          <h4><a class="link-line" href="../articles/ai-ipo-supercycle.html">The Truth Behind Big IPO Years: What the Data Tells Us</a></h4>
+          <div class="meta"><span>Jun 14, 2026</span><span>6 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/nasdaq-meme-coin.html"><div class="media media--duo"><img src="../images/nasdaq-meme-coin.png" alt="" loading="lazy" decoding="async" /></div></a>
+        <div>
+          <span class="eyebrow">Market Commentary</span>
+          <h4><a class="link-line" href="../articles/nasdaq-meme-coin.html">Is the Nasdaq the New Meme Coin?</a></h4>
+          <div class="meta"><span>Apr 17, 2026</span><span>3 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/markets-awkward-phase.html"><div class="media media--duo"><img src="../images/markets-awkward-phase.png" alt="" loading="lazy" decoding="async" /></div></a>
+        <div>
+          <span class="eyebrow">Market Commentary</span>
+          <h4><a class="link-line" href="../articles/markets-awkward-phase.html">The Market’s Awkward Phase: Understanding the Current Range in Major Indices</a></h4>
+          <div class="meta"><span>Mar 23, 2026</span><span>3 min</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div style="height:var(--section)"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p>Independent equity research and market commentary by Drew Golden. Every position disclosed. Nothing here is financial advice.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a class="link-line" href="../index.html#journal">Journal</a></li>
+          <li><a class="link-line" href="../index.html#scoreboard">Thesis scoreboard</a></li>
+          <li><a class="link-line" href="../portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a class="link-line" href="../about.html">The author</a></li>
+          <li><a class="link-line" href="../disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a class="link-line" href="#subscribe">Email newsletter</a></li>
+          <li><a class="link-line" href="https://www.linkedin.com/in/drewcgolden/" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a class="link-line" href="https://www.instagram.com/drewgolden_" rel="noopener" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-mark" aria-hidden="true">Bull <em>&amp;</em> Bear</div>
   </div>
-
-  <footer>
-    <div class="footer-logo">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
-      <span>the Bull &amp; the Bear</span>
-    </div>
-    <p>Independent investment research. Think for yourself.</p>
-    <p><a href="../index.html">← Back to all articles</a></p>
-  </footer>
-
-  <script src="../subscribe.js" defer></script>
+  <div class="wrap foot-base">
+    <span>© 2025–2026 the Bull &amp; the Bear</span>
+    <span>Prices delayed. Returns shown as percentages only.</span>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+<script src="../subscribe.js" defer></script>
 </body>
 </html>

@@ -1,99 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Investment Thesis: Uber Technologies — the Bull &amp; the Bear</title>
+  <meta name="description" content="Ubers growth remains strong as they reported trip growth of 22% year-over-year and Gross Bookings increased 21% year-over-year." />
+  <link rel="canonical" href="https://bullandbearblog.com/articles/uber-thesis.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="the Bull &amp; the Bear" />
+  <meta property="og:title" content="Investment Thesis: Uber Technologies — the Bull &amp; the Bear" />
+  <meta property="og:description" content="Ubers growth remains strong as they reported trip growth of 22% year-over-year and Gross Bookings increased 21% year-over-year." />
+  <meta property="og:url" content="https://bullandbearblog.com/articles/uber-thesis.html" />
+  <meta property="og:image" content="https://bullandbearblog.com/images/uber-thesis.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#131820" />
+  <link rel="icon" href="../images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
-      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2.5rem;
-      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
-    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .nav-back:hover { opacity: 0.7; }
-    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
-    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
-    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
-    .tag.thesis { background: var(--accent2); color: #fff; }
-    .article-date { color: var(--muted); font-size: 0.85rem; }
-    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
-    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
-    .article-body p { margin-bottom: 1.5rem; }
-    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
-    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
-    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
-    .article-body strong { color: var(--text); font-weight: 500; }
-    .article-body a { color: var(--accent); }
-    .article-figure { margin: 2rem 0; text-align: center; }
-    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
-    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
-    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
-    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
-    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
-    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
-    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
-    footer p { color: var(--muted); font-size: 0.8rem; }
-    footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .article-wrap { padding: 2rem 1.25rem 4rem; }
-    }
-</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="../assets/portfolio-data.js"></script>
 </head>
 <body>
-
-  <nav>
-    <a class="nav-logo" href="../index.html">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="the Bull &amp; the Bear, home">
+      <img src="../images/logo.png" alt="" width="34" height="34" />
       <span>the Bull &amp; the Bear</span>
     </a>
-    <div class="nav-links">
-      <a href="../index.html#market-commentary">Market Commentary</a>
-      <a href="../index.html#investment-theses">Investment Theses</a>
-      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="link-line" href="../index.html#journal" aria-current="page">Journal</a>
+      <a class="link-line" href="../index.html#scoreboard">Scoreboard</a>
+      <a class="link-line" href="../portfolio.html">Portfolio</a>
+      <a class="link-line" href="../about.html">About</a>
+      <a class="btn" href="#subscribe">Subscribe</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div><div class="progress"></div>
+</header>
+<main id="main">
+  <article>
+    <header class="a-head">
+      <div class="wrap">
+        <div class="crumbs eyebrow" data-reveal><a href="../index.html#journal">Journal</a> <span class="sep">/</span> <span class="eyebrow--accent">Investment Thesis</span> <span class="sep">/</span> <span class="mono">UBER</span></div>
+        <h1 class="a-title"><span class="line-mask"><span>Investment Thesis: Uber Technologies</span></span></h1>
+        <p class="a-dek" data-reveal style="--d:150ms">Ubers growth remains strong as they reported trip growth of 22% year-over-year and Gross Bookings increased 21% year-over-year.</p>
+        <div class="byline" data-reveal style="--d:250ms">
+          <span class="who"><img src="../images/drew-avatar.jpg" alt="" />Drew Golden</span>
+          <time datetime="2025-11-05">November 5, 2025</time>
+          <span>3 min read</span>
+        </div>
+    <div class="tracker" data-reveal>
+      <div><span class="eyebrow">Published</span><b>$92.75</b><small>Nov 5, 2025</small></div>
+      <div><span class="eyebrow">Price now</span><b data-price="UBER">—</b><small data-today="UBER">&nbsp;</small></div>
+      <div><span class="eyebrow">Since publication</span><b data-since="92.75" data-tk="UBER">—</b><small>live, delayed</small></div>
+      <div><span class="eyebrow">Position</span><b>Held</b><small>In the portfolio</small></div>
     </div>
-    <a class="nav-back" href="../index.html">← All Articles</a>
-  </nav>
-
-  <div class="article-hero">
-    <img src="../images/uber-thesis.png" alt="Investment Thesis: Uber Technologies" onerror="this.parentElement.style.display='none'" />
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="article-wrap">
-    <div class="article-meta">
-      <span class="tag thesis">Investment Thesis</span>
-      <span class="article-date">November 5, 2025</span>
-    </div>
-    <h1 class="article-title">Investment Thesis: Uber Technologies</h1>
-    <div class="article-body">
+      </div>
+    </header>
+    <div class="a-cover" data-reveal="fade"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>11.05.25</span></div>
+  <div><div class="cover-tk">UBER</div><div class="cover-name">Uber Technologies</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,11.21 L0.35,12.12 L0.69,11.54 L1.04,10.33 L1.38,8.94 L1.73,7.58 L2.08,9.19 L2.42,8.68 L2.77,6.10 L3.11,7.75 L3.46,6.36 L3.81,7.57 L4.15,6.94 L4.50,9.17 L4.84,10.12 L5.19,9.99 L5.54,10.96 L5.88,11.95 L6.23,8.55 L6.57,7.45 L6.92,8.70 L7.27,8.23 L7.61,7.01 L7.96,4.02 L8.30,5.05 L8.65,9.98 L9.00,8.21 L9.34,4.36 L9.69,3.48 L10.03,5.08 L10.38,5.10 L10.73,5.28 L11.07,4.42 L11.42,3.29 L11.76,4.91 L12.11,6.28 L12.46,6.28 L12.80,6.29 L13.15,2.76 L13.49,5.08 L13.84,3.59 L14.19,6.90 L14.53,9.52 L14.88,8.84 L15.22,8.66 L15.57,8.39 L15.92,10.41 L16.26,10.63 L16.61,9.22 L16.96,9.90 L17.30,10.72 L17.65,8.30 L17.99,8.85 L18.34,6.47 L18.69,7.47 L19.03,7.14 L19.38,6.40 L19.72,6.39 L20.07,3.14 L20.42,8.24 L20.76,10.18 L21.11,10.81 L21.45,10.95 L21.80,8.82 L22.15,9.32 L22.49,9.35 L22.84,11.16 L23.18,11.32 L23.53,10.82 L23.88,12.09 L24.22,13.43 L24.57,19.66 L24.91,19.14 L25.26,19.32 L25.61,19.32 L25.95,17.34 L26.30,15.44 L26.64,16.42 L26.99,15.41 L27.34,12.27 L27.68,11.95 L28.03,11.62 L28.37,10.36 L28.72,13.89 L29.07,18.85 L29.41,17.56 L29.76,17.89 L30.10,21.17 L30.45,22.12 L30.80,23.92 L31.14,23.36 L31.49,23.75 L31.83,21.78 L32.18,22.07 L32.53,21.89 L32.87,21.78 L33.22,21.53 L33.56,20.91 L33.91,21.32 L34.26,20.16 L34.60,22.30 L34.95,17.46 L35.29,16.80 L35.64,15.39 L35.99,17.56 L36.33,18.33 L36.68,17.59 L37.02,18.35 L37.37,18.63 L37.72,18.15 L38.06,19.29 L38.41,18.75 L38.75,20.46 L39.10,20.72 L39.45,21.05 L39.79,21.80 L40.14,23.27 L40.48,21.33 L40.83,23.00 L41.18,22.20 L41.52,25.14 L41.87,29.19 L42.21,27.88 L42.56,28.33 L42.91,29.20 L43.25,29.61 L43.60,32.12 L43.94,31.91 L44.29,33.15 L44.64,32.61 L44.98,30.35 L45.33,30.18 L45.67,29.25 L46.02,32.42 L46.37,31.75 L46.71,30.29 L47.06,28.30 L47.40,27.67 L47.75,27.14 L48.10,26.72 L48.44,26.43 L48.79,27.65 L49.13,27.96 L49.48,29.27 L49.83,30.76 L50.17,28.13 L50.52,30.14 L50.87,29.78 L51.21,28.44 L51.56,25.28 L51.90,26.42 L52.25,27.75 L52.60,29.22 L52.94,27.97 L53.29,30.78 L53.63,30.03 L53.98,32.59 L54.33,33.97 L54.67,33.23 L55.02,31.19 L55.36,31.42 L55.71,31.29 L56.06,30.95 L56.40,31.40 L56.75,30.74 L57.09,31.32 L57.44,32.66 L57.79,30.78 L58.13,30.21 L58.48,25.79 L58.82,26.60 L59.17,25.96 L59.52,25.58 L59.86,25.81 L60.21,27.51 L60.55,28.40 L60.90,28.46 L61.25,26.81 L61.59,28.99 L61.94,28.63 L62.28,28.49 L62.63,27.97 L62.98,29.18 L63.32,30.17 L63.67,23.89 L64.01,26.35 L64.36,27.64 L64.71,26.93 L65.05,26.72 L65.40,28.40 L65.74,28.41 L66.09,28.00 L66.44,28.02 L66.78,29.01 L67.13,28.50 L67.47,29.50 L67.82,31.31 L68.17,33.02 L68.51,32.41 L68.86,32.21 L69.20,32.74 L69.55,29.34 L69.90,31.51 L70.24,31.44 L70.59,30.91 L70.93,32.43 L71.28,33.08 L71.63,32.76 L71.97,34.55 L72.32,33.60 L72.66,34.30 L73.01,30.27 L73.36,29.86 L73.70,32.22 L74.05,31.49 L74.39,31.70 L74.74,33.48 L75.09,29.26 L75.43,30.87 L75.78,26.88 L76.12,27.59 L76.47,30.96 L76.82,30.46 L77.16,28.67 L77.51,30.70 L77.85,28.77 L78.20,29.51 L78.55,28.75 L78.89,28.56 L79.24,28.84 L79.58,31.04 L79.93,30.45 L80.28,29.06 L80.62,30.66 L80.97,30.95 L81.31,31.58 L81.66,32.81 L82.01,34.24 L82.35,37.24 L82.70,34.98 L83.04,32.40 L83.39,31.93 L83.74,32.77 L84.08,32.78 L84.43,31.52 L84.78,31.13 L85.12,34.98 L85.47,32.67 L85.81,28.08 L86.16,25.04 L86.51,24.52 L86.85,27.73 L87.20,27.21 L87.54,27.14 L87.89,28.11 L88.24,28.44 L88.58,25.03 L88.93,24.51 L89.27,24.26 L89.62,23.77 L89.97,22.70 L90.31,24.57 L90.66,26.13 L91.00,24.24 L91.35,27.44 L91.70,27.85 L92.04,26.63 L92.39,27.13 L92.73,27.33 L93.08,29.98 L93.43,32.05 L93.77,30.56 L94.12,31.46 L94.46,30.49 L94.81,31.70 L95.16,32.16 L95.50,32.26 L95.85,32.64 L96.19,32.30 L96.54,33.25 L96.89,33.73 L97.23,33.93 L97.58,33.53 L97.92,35.00 L98.27,33.79 L98.62,34.65 L98.96,35.28 L99.31,35.05 L99.65,33.67 L100.00,34.07 L100,40 L0,40 Z"/><path class="line" d="M0.00,11.21 L0.35,12.12 L0.69,11.54 L1.04,10.33 L1.38,8.94 L1.73,7.58 L2.08,9.19 L2.42,8.68 L2.77,6.10 L3.11,7.75 L3.46,6.36 L3.81,7.57 L4.15,6.94 L4.50,9.17 L4.84,10.12 L5.19,9.99 L5.54,10.96 L5.88,11.95 L6.23,8.55 L6.57,7.45 L6.92,8.70 L7.27,8.23 L7.61,7.01 L7.96,4.02 L8.30,5.05 L8.65,9.98 L9.00,8.21 L9.34,4.36 L9.69,3.48 L10.03,5.08 L10.38,5.10 L10.73,5.28 L11.07,4.42 L11.42,3.29 L11.76,4.91 L12.11,6.28 L12.46,6.28 L12.80,6.29 L13.15,2.76 L13.49,5.08 L13.84,3.59 L14.19,6.90 L14.53,9.52 L14.88,8.84 L15.22,8.66 L15.57,8.39 L15.92,10.41 L16.26,10.63 L16.61,9.22 L16.96,9.90 L17.30,10.72 L17.65,8.30 L17.99,8.85 L18.34,6.47 L18.69,7.47 L19.03,7.14 L19.38,6.40 L19.72,6.39 L20.07,3.14 L20.42,8.24 L20.76,10.18 L21.11,10.81 L21.45,10.95 L21.80,8.82 L22.15,9.32 L22.49,9.35 L22.84,11.16 L23.18,11.32 L23.53,10.82 L23.88,12.09 L24.22,13.43 L24.57,19.66 L24.91,19.14 L25.26,19.32 L25.61,19.32 L25.95,17.34 L26.30,15.44 L26.64,16.42 L26.99,15.41 L27.34,12.27 L27.68,11.95 L28.03,11.62 L28.37,10.36 L28.72,13.89 L29.07,18.85 L29.41,17.56 L29.76,17.89 L30.10,21.17 L30.45,22.12 L30.80,23.92 L31.14,23.36 L31.49,23.75 L31.83,21.78 L32.18,22.07 L32.53,21.89 L32.87,21.78 L33.22,21.53 L33.56,20.91 L33.91,21.32 L34.26,20.16 L34.60,22.30 L34.95,17.46 L35.29,16.80 L35.64,15.39 L35.99,17.56 L36.33,18.33 L36.68,17.59 L37.02,18.35 L37.37,18.63 L37.72,18.15 L38.06,19.29 L38.41,18.75 L38.75,20.46 L39.10,20.72 L39.45,21.05 L39.79,21.80 L40.14,23.27 L40.48,21.33 L40.83,23.00 L41.18,22.20 L41.52,25.14 L41.87,29.19 L42.21,27.88 L42.56,28.33 L42.91,29.20 L43.25,29.61 L43.60,32.12 L43.94,31.91 L44.29,33.15 L44.64,32.61 L44.98,30.35 L45.33,30.18 L45.67,29.25 L46.02,32.42 L46.37,31.75 L46.71,30.29 L47.06,28.30 L47.40,27.67 L47.75,27.14 L48.10,26.72 L48.44,26.43 L48.79,27.65 L49.13,27.96 L49.48,29.27 L49.83,30.76 L50.17,28.13 L50.52,30.14 L50.87,29.78 L51.21,28.44 L51.56,25.28 L51.90,26.42 L52.25,27.75 L52.60,29.22 L52.94,27.97 L53.29,30.78 L53.63,30.03 L53.98,32.59 L54.33,33.97 L54.67,33.23 L55.02,31.19 L55.36,31.42 L55.71,31.29 L56.06,30.95 L56.40,31.40 L56.75,30.74 L57.09,31.32 L57.44,32.66 L57.79,30.78 L58.13,30.21 L58.48,25.79 L58.82,26.60 L59.17,25.96 L59.52,25.58 L59.86,25.81 L60.21,27.51 L60.55,28.40 L60.90,28.46 L61.25,26.81 L61.59,28.99 L61.94,28.63 L62.28,28.49 L62.63,27.97 L62.98,29.18 L63.32,30.17 L63.67,23.89 L64.01,26.35 L64.36,27.64 L64.71,26.93 L65.05,26.72 L65.40,28.40 L65.74,28.41 L66.09,28.00 L66.44,28.02 L66.78,29.01 L67.13,28.50 L67.47,29.50 L67.82,31.31 L68.17,33.02 L68.51,32.41 L68.86,32.21 L69.20,32.74 L69.55,29.34 L69.90,31.51 L70.24,31.44 L70.59,30.91 L70.93,32.43 L71.28,33.08 L71.63,32.76 L71.97,34.55 L72.32,33.60 L72.66,34.30 L73.01,30.27 L73.36,29.86 L73.70,32.22 L74.05,31.49 L74.39,31.70 L74.74,33.48 L75.09,29.26 L75.43,30.87 L75.78,26.88 L76.12,27.59 L76.47,30.96 L76.82,30.46 L77.16,28.67 L77.51,30.70 L77.85,28.77 L78.20,29.51 L78.55,28.75 L78.89,28.56 L79.24,28.84 L79.58,31.04 L79.93,30.45 L80.28,29.06 L80.62,30.66 L80.97,30.95 L81.31,31.58 L81.66,32.81 L82.01,34.24 L82.35,37.24 L82.70,34.98 L83.04,32.40 L83.39,31.93 L83.74,32.77 L84.08,32.78 L84.43,31.52 L84.78,31.13 L85.12,34.98 L85.47,32.67 L85.81,28.08 L86.16,25.04 L86.51,24.52 L86.85,27.73 L87.20,27.21 L87.54,27.14 L87.89,28.11 L88.24,28.44 L88.58,25.03 L88.93,24.51 L89.27,24.26 L89.62,23.77 L89.97,22.70 L90.31,24.57 L90.66,26.13 L91.00,24.24 L91.35,27.44 L91.70,27.85 L92.04,26.63 L92.39,27.13 L92.73,27.33 L93.08,29.98 L93.43,32.05 L93.77,30.56 L94.12,31.46 L94.46,30.49 L94.81,31.70 L95.16,32.16 L95.50,32.26 L95.85,32.64 L96.19,32.30 L96.54,33.25 L96.89,33.73 L97.23,33.93 L97.58,33.53 L97.92,35.00 L98.27,33.79 L98.62,34.65 L98.96,35.28 L99.31,35.05 L99.65,33.67 L100.00,34.07"/><line class="pub" x1="20.76" x2="20.76" y1="0" y2="40"/></svg>
+</div></div>
+    <div class="a-layout">
+      <div class="prose">
 <p>In this article, I will do a deep dive into Uber stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
 <figure class="article-figure"><img src="/images/wp/Screenshot-2025-11-30-at-10.22.29-PM-1024x687.png" alt="" class="wp-image-324"/></figure>
 <h2 class="wp-block-heading"><strong>Fundamental Analysis of Uber: </strong></h2>
@@ -115,22 +88,104 @@
 <figure class="article-figure"><img src="/images/wp/screenshot-2025-11-05-at-4.02.44-pm.png" alt="" class="wp-image-172"/><figcaption class="wp-element-caption">Photo 1: Early Jan 2025 - Mid Feb 2025; Photo 2: Late Feb 2025 - Mid May 2025</figcaption></figure>
 <p>It's very possible that Uber stock will retreat a little deeper into the 50 day SMA but I believe it will soon bounce. Though history doesn't always repeat itself, the strength of Uber's fundamentals paired with this sharp drop below the 50 day SMA gives me confidence that Uber stock will be able to break out of the rut that it's been in for the past few months. In the short term, I think Uber is a <strong>strong buy</strong> but I recommend to exercise caution in the long run as Robotaxi concerns are very real.</p>
 <p><strong><a href="../disclaimer.html">Disclaimer</a></strong></p>
-<p></p>
+
+      </div>
+      <footer class="a-end">
+        <div class="author">
+          <img src="../images/drew-avatar.jpg" alt="" />
+          <div>
+            <h3>Drew Golden</h3>
+            <p>Student at Lehigh University's College of Business, investing since high school. I write about the companies I own and the markets they trade in. <a class="link-line" href="../about.html">More about me</a></p>
+          </div>
+        </div>
+        <p class="disclaim">This is personal research, not financial advice. I may hold positions in the securities discussed. <a href="../disclaimer.html">Read the full disclaimer</a>.</p>
+        <section class="a-sub" id="subscribe">
+          <span class="eyebrow eyebrow--accent">Newsletter</span>
+          <h3>Get the next essay by email.</h3>
+          <div data-subscribe></div><p class="sub-note">One email per new essay. Unsubscribe anytime.</p>
+        </section>
+      </footer>
     </div>
-    <div data-subscribe></div>
-    <hr class="article-divider" />
-    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </article>
+  <section class="wrap more" aria-label="More from the journal">
+    <div class="archive-bar" style="border:0;padding:0"><span class="eyebrow">Keep reading</span><a class="arrow-link" href="../index.html#journal">All essays <span class="arr">→</span></a></div>
+    <div class="trio" data-stagger="110">
+      <article class="tile" data-reveal>
+        <a href="../articles/visa-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">V</div><div class="cover-name">Visa Inc.</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,35.17 L1.23,37.24 L2.47,35.47 L3.70,34.71 L4.94,29.79 L6.17,31.24 L7.41,32.90 L8.64,33.24 L9.88,32.25 L11.11,30.26 L12.35,31.16 L13.58,28.14 L14.81,25.27 L16.05,24.51 L17.28,20.27 L18.52,14.42 L19.75,17.00 L20.99,19.68 L22.22,22.15 L23.46,21.80 L24.69,21.39 L25.93,16.74 L27.16,17.66 L28.40,18.12 L29.63,12.82 L30.86,16.31 L32.10,15.25 L33.33,17.76 L34.57,19.03 L35.80,20.00 L37.04,17.80 L38.27,14.21 L39.51,12.06 L40.74,10.92 L41.98,12.23 L43.21,12.30 L44.44,12.54 L45.68,10.47 L46.91,11.02 L48.15,10.00 L49.38,14.22 L50.62,14.85 L51.85,14.05 L53.09,15.85 L54.32,12.66 L55.56,13.35 L56.79,16.16 L58.02,13.30 L59.26,12.61 L60.49,12.51 L61.73,9.70 L62.96,3.68 L64.20,2.76 L65.43,2.89 L66.67,5.13 L67.90,4.10 L69.14,5.29 L70.37,8.84 L71.60,5.80 L72.84,5.61 L74.07,7.56 L75.31,10.97 L76.54,11.63 L77.78,11.73 L79.01,10.01 L80.25,7.45 L81.48,7.27 L82.72,9.76 L83.95,10.29 L85.19,11.16 L86.42,10.28 L87.65,14.47 L88.89,14.74 L90.12,11.32 L91.36,11.64 L92.59,11.45 L93.83,12.43 L95.06,15.90 L96.30,15.63 L97.53,15.20 L98.77,10.40 L100.00,9.91 L100,40 L0,40 Z"/><path class="line" d="M0.00,35.17 L1.23,37.24 L2.47,35.47 L3.70,34.71 L4.94,29.79 L6.17,31.24 L7.41,32.90 L8.64,33.24 L9.88,32.25 L11.11,30.26 L12.35,31.16 L13.58,28.14 L14.81,25.27 L16.05,24.51 L17.28,20.27 L18.52,14.42 L19.75,17.00 L20.99,19.68 L22.22,22.15 L23.46,21.80 L24.69,21.39 L25.93,16.74 L27.16,17.66 L28.40,18.12 L29.63,12.82 L30.86,16.31 L32.10,15.25 L33.33,17.76 L34.57,19.03 L35.80,20.00 L37.04,17.80 L38.27,14.21 L39.51,12.06 L40.74,10.92 L41.98,12.23 L43.21,12.30 L44.44,12.54 L45.68,10.47 L46.91,11.02 L48.15,10.00 L49.38,14.22 L50.62,14.85 L51.85,14.05 L53.09,15.85 L54.32,12.66 L55.56,13.35 L56.79,16.16 L58.02,13.30 L59.26,12.61 L60.49,12.51 L61.73,9.70 L62.96,3.68 L64.20,2.76 L65.43,2.89 L66.67,5.13 L67.90,4.10 L69.14,5.29 L70.37,8.84 L71.60,5.80 L72.84,5.61 L74.07,7.56 L75.31,10.97 L76.54,11.63 L77.78,11.73 L79.01,10.01 L80.25,7.45 L81.48,7.27 L82.72,9.76 L83.95,10.29 L85.19,11.16 L86.42,10.28 L87.65,14.47 L88.89,14.74 L90.12,11.32 L91.36,11.64 L92.59,11.45 L93.83,12.43 L95.06,15.90 L96.30,15.63 L97.53,15.20 L98.77,10.40 L100.00,9.91"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/visa-thesis.html">Investment Thesis: Visa Inc. (V)</a></h4>
+          <div class="meta"><span>Sep 4, 2026</span><span>6 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/ceg-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">CEG</div><div class="cover-name">Constellation Energy</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,34.11 L1.23,31.73 L2.47,27.93 L3.70,23.29 L4.94,20.24 L6.17,20.69 L7.41,16.97 L8.64,16.18 L9.88,19.02 L11.11,20.26 L12.35,19.87 L13.58,22.39 L14.81,24.93 L16.05,30.84 L17.28,37.24 L18.52,35.76 L19.75,32.18 L20.99,35.51 L22.22,32.91 L23.46,29.56 L24.69,29.21 L25.93,25.87 L27.16,26.49 L28.40,25.58 L29.63,29.00 L30.86,28.67 L32.10,28.07 L33.33,23.36 L34.57,16.52 L35.80,16.14 L37.04,16.82 L38.27,19.16 L39.51,24.66 L40.74,25.67 L41.98,22.64 L43.21,23.08 L44.44,17.16 L45.68,20.65 L46.91,21.80 L48.15,23.97 L49.38,19.22 L50.62,18.93 L51.85,14.65 L53.09,14.48 L54.32,14.50 L55.56,12.42 L56.79,14.74 L58.02,20.87 L59.26,16.91 L60.49,17.59 L61.73,17.61 L62.96,17.31 L64.20,14.62 L65.43,14.03 L66.67,12.47 L67.90,15.52 L69.14,16.59 L70.37,13.60 L71.60,8.35 L72.84,11.04 L74.07,3.54 L75.31,3.49 L76.54,6.27 L77.78,10.55 L79.01,11.20 L80.25,22.09 L81.48,24.62 L82.72,24.81 L83.95,23.05 L85.19,27.41 L86.42,23.42 L87.65,22.69 L88.89,22.47 L90.12,23.69 L91.36,22.80 L92.59,24.33 L93.83,22.09 L95.06,27.79 L96.30,25.14 L97.53,25.91 L98.77,20.45 L100.00,2.76 L100,40 L0,40 Z"/><path class="line" d="M0.00,34.11 L1.23,31.73 L2.47,27.93 L3.70,23.29 L4.94,20.24 L6.17,20.69 L7.41,16.97 L8.64,16.18 L9.88,19.02 L11.11,20.26 L12.35,19.87 L13.58,22.39 L14.81,24.93 L16.05,30.84 L17.28,37.24 L18.52,35.76 L19.75,32.18 L20.99,35.51 L22.22,32.91 L23.46,29.56 L24.69,29.21 L25.93,25.87 L27.16,26.49 L28.40,25.58 L29.63,29.00 L30.86,28.67 L32.10,28.07 L33.33,23.36 L34.57,16.52 L35.80,16.14 L37.04,16.82 L38.27,19.16 L39.51,24.66 L40.74,25.67 L41.98,22.64 L43.21,23.08 L44.44,17.16 L45.68,20.65 L46.91,21.80 L48.15,23.97 L49.38,19.22 L50.62,18.93 L51.85,14.65 L53.09,14.48 L54.32,14.50 L55.56,12.42 L56.79,14.74 L58.02,20.87 L59.26,16.91 L60.49,17.59 L61.73,17.61 L62.96,17.31 L64.20,14.62 L65.43,14.03 L66.67,12.47 L67.90,15.52 L69.14,16.59 L70.37,13.60 L71.60,8.35 L72.84,11.04 L74.07,3.54 L75.31,3.49 L76.54,6.27 L77.78,10.55 L79.01,11.20 L80.25,22.09 L81.48,24.62 L82.72,24.81 L83.95,23.05 L85.19,27.41 L86.42,23.42 L87.65,22.69 L88.89,22.47 L90.12,23.69 L91.36,22.80 L92.59,24.33 L93.83,22.09 L95.06,27.79 L96.30,25.14 L97.53,25.91 L98.77,20.45 L100.00,2.76"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/ceg-thesis.html">Investment Thesis: Constellation Energy (CEG)</a></h4>
+          <div class="meta"><span>Sep 4, 2026</span><span>6 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/vrt-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">VRT</div><div class="cover-name">Vertiv Holdings</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,22.43 L1.23,18.11 L2.47,16.84 L3.70,14.52 L4.94,17.67 L6.17,13.08 L7.41,9.13 L8.64,2.76 L9.88,12.89 L11.11,13.37 L12.35,11.04 L13.58,16.56 L14.81,15.79 L16.05,8.67 L17.28,14.65 L18.52,17.44 L19.75,12.85 L20.99,16.15 L22.22,13.02 L23.46,11.46 L24.69,12.75 L25.93,16.07 L27.16,16.66 L28.40,16.40 L29.63,19.08 L30.86,20.24 L32.10,19.70 L33.33,16.42 L34.57,17.28 L35.80,16.54 L37.04,20.04 L38.27,20.74 L39.51,25.35 L40.74,37.24 L41.98,36.10 L43.21,32.51 L44.44,27.02 L45.68,25.26 L46.91,23.21 L48.15,23.92 L49.38,24.63 L50.62,25.21 L51.85,22.22 L53.09,20.55 L54.32,20.88 L55.56,19.15 L56.79,19.51 L58.02,24.59 L59.26,27.54 L60.49,26.61 L61.73,27.30 L62.96,29.08 L64.20,28.88 L65.43,26.82 L66.67,25.42 L67.90,28.54 L69.14,28.12 L70.37,28.83 L71.60,28.64 L72.84,25.54 L74.07,22.55 L75.31,19.92 L76.54,27.06 L77.78,30.83 L79.01,28.55 L80.25,33.57 L81.48,34.28 L82.72,33.06 L83.95,32.53 L85.19,30.51 L86.42,30.13 L87.65,29.47 L88.89,30.66 L90.12,31.55 L91.36,29.51 L92.59,31.87 L93.83,30.78 L95.06,32.57 L96.30,31.34 L97.53,29.79 L98.77,29.43 L100.00,29.55 L100,40 L0,40 Z"/><path class="line" d="M0.00,22.43 L1.23,18.11 L2.47,16.84 L3.70,14.52 L4.94,17.67 L6.17,13.08 L7.41,9.13 L8.64,2.76 L9.88,12.89 L11.11,13.37 L12.35,11.04 L13.58,16.56 L14.81,15.79 L16.05,8.67 L17.28,14.65 L18.52,17.44 L19.75,12.85 L20.99,16.15 L22.22,13.02 L23.46,11.46 L24.69,12.75 L25.93,16.07 L27.16,16.66 L28.40,16.40 L29.63,19.08 L30.86,20.24 L32.10,19.70 L33.33,16.42 L34.57,17.28 L35.80,16.54 L37.04,20.04 L38.27,20.74 L39.51,25.35 L40.74,37.24 L41.98,36.10 L43.21,32.51 L44.44,27.02 L45.68,25.26 L46.91,23.21 L48.15,23.92 L49.38,24.63 L50.62,25.21 L51.85,22.22 L53.09,20.55 L54.32,20.88 L55.56,19.15 L56.79,19.51 L58.02,24.59 L59.26,27.54 L60.49,26.61 L61.73,27.30 L62.96,29.08 L64.20,28.88 L65.43,26.82 L66.67,25.42 L67.90,28.54 L69.14,28.12 L70.37,28.83 L71.60,28.64 L72.84,25.54 L74.07,22.55 L75.31,19.92 L76.54,27.06 L77.78,30.83 L79.01,28.55 L80.25,33.57 L81.48,34.28 L82.72,33.06 L83.95,32.53 L85.19,30.51 L86.42,30.13 L87.65,29.47 L88.89,30.66 L90.12,31.55 L91.36,29.51 L92.59,31.87 L93.83,30.78 L95.06,32.57 L96.30,31.34 L97.53,29.79 L98.77,29.43 L100.00,29.55"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/vrt-thesis.html">Investment Thesis: Vertiv Holdings (VRT)</a></h4>
+          <div class="meta"><span>Sep 4, 2026</span><span>5 min</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div style="height:var(--section)"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p>Independent equity research and market commentary by Drew Golden. Every position disclosed. Nothing here is financial advice.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a class="link-line" href="../index.html#journal">Journal</a></li>
+          <li><a class="link-line" href="../index.html#scoreboard">Thesis scoreboard</a></li>
+          <li><a class="link-line" href="../portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a class="link-line" href="../about.html">The author</a></li>
+          <li><a class="link-line" href="../disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a class="link-line" href="#subscribe">Email newsletter</a></li>
+          <li><a class="link-line" href="https://www.linkedin.com/in/drewcgolden/" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a class="link-line" href="https://www.instagram.com/drewgolden_" rel="noopener" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-mark" aria-hidden="true">Bull <em>&amp;</em> Bear</div>
   </div>
-
-  <footer>
-    <div class="footer-logo">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
-      <span>the Bull &amp; the Bear</span>
-    </div>
-    <p>Independent investment research. Think for yourself.</p>
-    <p><a href="../index.html">← Back to all articles</a></p>
-  </footer>
-
-  <script src="../subscribe.js" defer></script>
+  <div class="wrap foot-base">
+    <span>© 2025–2026 the Bull &amp; the Bear</span>
+    <span>Prices delayed. Returns shown as percentages only.</span>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+<script src="../subscribe.js" defer></script>
 </body>
 </html>

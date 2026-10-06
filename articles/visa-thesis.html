@@ -1,100 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Investment Thesis: Visa Inc. (V) — the Bull &amp; the Bear</title>
+  <meta name="description" content="Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks." />
+  <link rel="canonical" href="https://bullandbearblog.com/articles/visa-thesis.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="the Bull &amp; the Bear" />
+  <meta property="og:title" content="Investment Thesis: Visa Inc. (V) — the Bull &amp; the Bear" />
+  <meta property="og:description" content="Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks." />
+  <meta property="og:url" content="https://bullandbearblog.com/articles/visa-thesis.html" />
+  <meta property="og:image" content="https://bullandbearblog.com/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#131820" />
+  <link rel="icon" href="../images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
-      --text: #e8e2d9; --muted: #888; --accent: #c9a84c; --accent2: #4c7fc9;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2.5rem;
-      background: rgba(14,14,14,0.96); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo img { height: 32px; width: 32px; object-fit: contain; border-radius: 4px; }
-    .nav-logo span { font-family: var(--serif); font-size: 1.1rem; color: var(--text); }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-back { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .nav-back:hover { opacity: 0.7; }
-    .article-hero { width: 100%; max-height: 480px; overflow: hidden; position: relative; }
-    .article-hero img { width: 100%; height: 480px; object-fit: cover; display: block; filter: brightness(0.6); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, var(--bg) 100%); }
-    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; background: var(--accent); color: #0e0e0e; font-weight: 500; }
-    .tag.thesis { background: var(--accent2); color: #fff; }
-    .article-date { color: var(--muted); font-size: 0.85rem; }
-    h1.article-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2.5rem; color: var(--text); }
-    .article-body { font-size: 1.05rem; line-height: 1.85; color: #ccc4b8; }
-    .article-body p { margin-bottom: 1.5rem; }
-    .article-body h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--text); margin: 2.5rem 0 1rem; font-weight: 700; }
-    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text); margin: 2rem 0 0.75rem; }
-    .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.5rem; }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1.5rem; margin: 2rem 0; color: var(--muted); font-style: italic; font-family: var(--serif); }
-    .article-body strong { color: var(--text); font-weight: 500; }
-    .article-body a { color: var(--accent); }
-    .article-figure { margin: 2rem 0; text-align: center; }
-    .article-figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
-    .article-figure figcaption { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; }
-    .article-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
-    footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
-    .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
-    .footer-logo img { height: 28px; width: 28px; object-fit: contain; border-radius: 3px; }
-    .footer-logo span { font-family: var(--serif); font-size: 1rem; color: var(--text); }
-    footer p { color: var(--muted); font-size: 0.8rem; }
-    footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .article-wrap { padding: 2rem 1.25rem 4rem; }
-    }
-</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="../assets/portfolio-data.js"></script>
 </head>
 <body>
-
-  <nav>
-    <a class="nav-logo" href="../index.html">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="the Bull &amp; the Bear, home">
+      <img src="../images/logo.png" alt="" width="34" height="34" />
       <span>the Bull &amp; the Bear</span>
     </a>
-    <div class="nav-links">
-      <a href="../index.html#market-commentary">Market Commentary</a>
-      <a href="../index.html#investment-theses">Investment Theses</a>
-      <a href="https://thebullandthebear.blog/about/" target="_blank">About</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="link-line" href="../index.html#journal" aria-current="page">Journal</a>
+      <a class="link-line" href="../index.html#scoreboard">Scoreboard</a>
+      <a class="link-line" href="../portfolio.html">Portfolio</a>
+      <a class="link-line" href="../about.html">About</a>
+      <a class="btn" href="#subscribe">Subscribe</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div><div class="progress"></div>
+</header>
+<main id="main">
+  <article>
+    <header class="a-head">
+      <div class="wrap">
+        <div class="crumbs eyebrow" data-reveal><a href="../index.html#journal">Journal</a> <span class="sep">/</span> <span class="eyebrow--accent">Investment Thesis</span> <span class="sep">/</span> <span class="mono">V</span></div>
+        <h1 class="a-title"><span class="line-mask"><span>Investment Thesis: Visa Inc. (V)</span></span></h1>
+        <p class="a-dek" data-reveal style="--d:150ms">Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks.</p>
+        <div class="byline" data-reveal style="--d:250ms">
+          <span class="who"><img src="../images/drew-avatar.jpg" alt="" />Drew Golden</span>
+          <time datetime="2026-09-04">September 4, 2026</time>
+          <span>6 min read</span>
+        </div>
+    <div class="tracker" data-reveal>
+      <div><span class="eyebrow">Published</span><b>$375.07</b><small>Sep 4, 2026</small></div>
+      <div><span class="eyebrow">Price now</span><b data-price="V">—</b><small data-today="V">&nbsp;</small></div>
+      <div><span class="eyebrow">Since publication</span><b data-since="375.07" data-tk="V">—</b><small>live, delayed</small></div>
+      <div><span class="eyebrow">Position</span><b>Held</b><small>In the portfolio</small></div>
     </div>
-    <a class="nav-back" href="../index.html">← All Articles</a>
-  </nav>
-
-
-  <div class="article-hero">
-    <img src="../images/visa-thesis.svg" alt="Investment Thesis: Visa Inc. (V)" onerror="this.parentElement.style.display='none'" />
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="article-wrap">
-    <div class="article-meta">
-      <span class="tag thesis">Investment Thesis</span>
-      <span class="article-date">September 4, 2026</span>
-    </div>
-    <h1 class="article-title">Investment Thesis: Visa Inc. (V)</h1>
-    <div class="article-body">
+      </div>
+    </header>
+    <div class="a-cover" data-reveal="fade"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">V</div><div class="cover-name">Visa Inc.</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,35.17 L1.23,37.24 L2.47,35.47 L3.70,34.71 L4.94,29.79 L6.17,31.24 L7.41,32.90 L8.64,33.24 L9.88,32.25 L11.11,30.26 L12.35,31.16 L13.58,28.14 L14.81,25.27 L16.05,24.51 L17.28,20.27 L18.52,14.42 L19.75,17.00 L20.99,19.68 L22.22,22.15 L23.46,21.80 L24.69,21.39 L25.93,16.74 L27.16,17.66 L28.40,18.12 L29.63,12.82 L30.86,16.31 L32.10,15.25 L33.33,17.76 L34.57,19.03 L35.80,20.00 L37.04,17.80 L38.27,14.21 L39.51,12.06 L40.74,10.92 L41.98,12.23 L43.21,12.30 L44.44,12.54 L45.68,10.47 L46.91,11.02 L48.15,10.00 L49.38,14.22 L50.62,14.85 L51.85,14.05 L53.09,15.85 L54.32,12.66 L55.56,13.35 L56.79,16.16 L58.02,13.30 L59.26,12.61 L60.49,12.51 L61.73,9.70 L62.96,3.68 L64.20,2.76 L65.43,2.89 L66.67,5.13 L67.90,4.10 L69.14,5.29 L70.37,8.84 L71.60,5.80 L72.84,5.61 L74.07,7.56 L75.31,10.97 L76.54,11.63 L77.78,11.73 L79.01,10.01 L80.25,7.45 L81.48,7.27 L82.72,9.76 L83.95,10.29 L85.19,11.16 L86.42,10.28 L87.65,14.47 L88.89,14.74 L90.12,11.32 L91.36,11.64 L92.59,11.45 L93.83,12.43 L95.06,15.90 L96.30,15.63 L97.53,15.20 L98.77,10.40 L100.00,9.91 L100,40 L0,40 Z"/><path class="line" d="M0.00,35.17 L1.23,37.24 L2.47,35.47 L3.70,34.71 L4.94,29.79 L6.17,31.24 L7.41,32.90 L8.64,33.24 L9.88,32.25 L11.11,30.26 L12.35,31.16 L13.58,28.14 L14.81,25.27 L16.05,24.51 L17.28,20.27 L18.52,14.42 L19.75,17.00 L20.99,19.68 L22.22,22.15 L23.46,21.80 L24.69,21.39 L25.93,16.74 L27.16,17.66 L28.40,18.12 L29.63,12.82 L30.86,16.31 L32.10,15.25 L33.33,17.76 L34.57,19.03 L35.80,20.00 L37.04,17.80 L38.27,14.21 L39.51,12.06 L40.74,10.92 L41.98,12.23 L43.21,12.30 L44.44,12.54 L45.68,10.47 L46.91,11.02 L48.15,10.00 L49.38,14.22 L50.62,14.85 L51.85,14.05 L53.09,15.85 L54.32,12.66 L55.56,13.35 L56.79,16.16 L58.02,13.30 L59.26,12.61 L60.49,12.51 L61.73,9.70 L62.96,3.68 L64.20,2.76 L65.43,2.89 L66.67,5.13 L67.90,4.10 L69.14,5.29 L70.37,8.84 L71.60,5.80 L72.84,5.61 L74.07,7.56 L75.31,10.97 L76.54,11.63 L77.78,11.73 L79.01,10.01 L80.25,7.45 L81.48,7.27 L82.72,9.76 L83.95,10.29 L85.19,11.16 L86.42,10.28 L87.65,14.47 L88.89,14.74 L90.12,11.32 L91.36,11.64 L92.59,11.45 L93.83,12.43 L95.06,15.90 L96.30,15.63 L97.53,15.20 L98.77,10.40 L100.00,9.91"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></div>
+    <div class="a-layout">
+      <div class="prose">
 <p>In this article, I will do a deep dive into Visa stock. Through both fundamental and technical analysis, I will give my thoughts on whether or not it is a good investment in the short and long term.</p>
 <h2 class="wp-block-heading">Fundamental Analysis of Visa: </h2>
 <p>Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks.</p>
@@ -130,23 +102,104 @@
 <p>The cash-to-digital shift still has a lot of room left globally, particularly outside the US. Cross-border travel and commerce keep growing. Value-added services are compounding faster than the core business. And the technology that was supposed to kill the network has instead become another rail plugged into it.</p>
 <p>For those reasons I have $V as a <strong>long term buy</strong>. I do not have a short-term price target here and I am not looking for one. This is a position I intend to keep adding to on weakness rather than trade around.</p>
 <p>What would change my mind is not a bad quarter. It is a regulatory outcome that permanently resets the take rate, or real evidence that account-to-account rails are taking share in developed markets without a government mandate forcing it. I have not seen either yet.</p>
-<p><a href="../disclaimer.html"><strong>Disclaimer</strong></a></p>
-<p></p>
+
+      </div>
+      <footer class="a-end">
+        <div class="author">
+          <img src="../images/drew-avatar.jpg" alt="" />
+          <div>
+            <h3>Drew Golden</h3>
+            <p>Student at Lehigh University's College of Business, investing since high school. I write about the companies I own and the markets they trade in. <a class="link-line" href="../about.html">More about me</a></p>
+          </div>
+        </div>
+        <p class="disclaim">This is personal research, not financial advice. I may hold positions in the securities discussed. <a href="../disclaimer.html">Read the full disclaimer</a>.</p>
+        <section class="a-sub" id="subscribe">
+          <span class="eyebrow eyebrow--accent">Newsletter</span>
+          <h3>Get the next essay by email.</h3>
+          <div data-subscribe></div><p class="sub-note">One email per new essay. Unsubscribe anytime.</p>
+        </section>
+      </footer>
     </div>
-    <div data-subscribe></div>
-    <hr class="article-divider" />
-    <p style="color:var(--muted);font-size:0.85rem;text-align:center;">© 2025–2026 the Bull &amp; the Bear &nbsp;·&nbsp; Independent investment research</p>
+  </article>
+  <section class="wrap more" aria-label="More from the journal">
+    <div class="archive-bar" style="border:0;padding:0"><span class="eyebrow">Keep reading</span><a class="arrow-link" href="../index.html#journal">All essays <span class="arr">→</span></a></div>
+    <div class="trio" data-stagger="110">
+      <article class="tile" data-reveal>
+        <a href="../articles/ceg-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">CEG</div><div class="cover-name">Constellation Energy</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,34.11 L1.23,31.73 L2.47,27.93 L3.70,23.29 L4.94,20.24 L6.17,20.69 L7.41,16.97 L8.64,16.18 L9.88,19.02 L11.11,20.26 L12.35,19.87 L13.58,22.39 L14.81,24.93 L16.05,30.84 L17.28,37.24 L18.52,35.76 L19.75,32.18 L20.99,35.51 L22.22,32.91 L23.46,29.56 L24.69,29.21 L25.93,25.87 L27.16,26.49 L28.40,25.58 L29.63,29.00 L30.86,28.67 L32.10,28.07 L33.33,23.36 L34.57,16.52 L35.80,16.14 L37.04,16.82 L38.27,19.16 L39.51,24.66 L40.74,25.67 L41.98,22.64 L43.21,23.08 L44.44,17.16 L45.68,20.65 L46.91,21.80 L48.15,23.97 L49.38,19.22 L50.62,18.93 L51.85,14.65 L53.09,14.48 L54.32,14.50 L55.56,12.42 L56.79,14.74 L58.02,20.87 L59.26,16.91 L60.49,17.59 L61.73,17.61 L62.96,17.31 L64.20,14.62 L65.43,14.03 L66.67,12.47 L67.90,15.52 L69.14,16.59 L70.37,13.60 L71.60,8.35 L72.84,11.04 L74.07,3.54 L75.31,3.49 L76.54,6.27 L77.78,10.55 L79.01,11.20 L80.25,22.09 L81.48,24.62 L82.72,24.81 L83.95,23.05 L85.19,27.41 L86.42,23.42 L87.65,22.69 L88.89,22.47 L90.12,23.69 L91.36,22.80 L92.59,24.33 L93.83,22.09 L95.06,27.79 L96.30,25.14 L97.53,25.91 L98.77,20.45 L100.00,2.76 L100,40 L0,40 Z"/><path class="line" d="M0.00,34.11 L1.23,31.73 L2.47,27.93 L3.70,23.29 L4.94,20.24 L6.17,20.69 L7.41,16.97 L8.64,16.18 L9.88,19.02 L11.11,20.26 L12.35,19.87 L13.58,22.39 L14.81,24.93 L16.05,30.84 L17.28,37.24 L18.52,35.76 L19.75,32.18 L20.99,35.51 L22.22,32.91 L23.46,29.56 L24.69,29.21 L25.93,25.87 L27.16,26.49 L28.40,25.58 L29.63,29.00 L30.86,28.67 L32.10,28.07 L33.33,23.36 L34.57,16.52 L35.80,16.14 L37.04,16.82 L38.27,19.16 L39.51,24.66 L40.74,25.67 L41.98,22.64 L43.21,23.08 L44.44,17.16 L45.68,20.65 L46.91,21.80 L48.15,23.97 L49.38,19.22 L50.62,18.93 L51.85,14.65 L53.09,14.48 L54.32,14.50 L55.56,12.42 L56.79,14.74 L58.02,20.87 L59.26,16.91 L60.49,17.59 L61.73,17.61 L62.96,17.31 L64.20,14.62 L65.43,14.03 L66.67,12.47 L67.90,15.52 L69.14,16.59 L70.37,13.60 L71.60,8.35 L72.84,11.04 L74.07,3.54 L75.31,3.49 L76.54,6.27 L77.78,10.55 L79.01,11.20 L80.25,22.09 L81.48,24.62 L82.72,24.81 L83.95,23.05 L85.19,27.41 L86.42,23.42 L87.65,22.69 L88.89,22.47 L90.12,23.69 L91.36,22.80 L92.59,24.33 L93.83,22.09 L95.06,27.79 L96.30,25.14 L97.53,25.91 L98.77,20.45 L100.00,2.76"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/ceg-thesis.html">Investment Thesis: Constellation Energy (CEG)</a></h4>
+          <div class="meta"><span>Sep 4, 2026</span><span>6 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/vrt-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>09.04.26</span></div>
+  <div><div class="cover-tk">VRT</div><div class="cover-name">Vertiv Holdings</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,22.43 L1.23,18.11 L2.47,16.84 L3.70,14.52 L4.94,17.67 L6.17,13.08 L7.41,9.13 L8.64,2.76 L9.88,12.89 L11.11,13.37 L12.35,11.04 L13.58,16.56 L14.81,15.79 L16.05,8.67 L17.28,14.65 L18.52,17.44 L19.75,12.85 L20.99,16.15 L22.22,13.02 L23.46,11.46 L24.69,12.75 L25.93,16.07 L27.16,16.66 L28.40,16.40 L29.63,19.08 L30.86,20.24 L32.10,19.70 L33.33,16.42 L34.57,17.28 L35.80,16.54 L37.04,20.04 L38.27,20.74 L39.51,25.35 L40.74,37.24 L41.98,36.10 L43.21,32.51 L44.44,27.02 L45.68,25.26 L46.91,23.21 L48.15,23.92 L49.38,24.63 L50.62,25.21 L51.85,22.22 L53.09,20.55 L54.32,20.88 L55.56,19.15 L56.79,19.51 L58.02,24.59 L59.26,27.54 L60.49,26.61 L61.73,27.30 L62.96,29.08 L64.20,28.88 L65.43,26.82 L66.67,25.42 L67.90,28.54 L69.14,28.12 L70.37,28.83 L71.60,28.64 L72.84,25.54 L74.07,22.55 L75.31,19.92 L76.54,27.06 L77.78,30.83 L79.01,28.55 L80.25,33.57 L81.48,34.28 L82.72,33.06 L83.95,32.53 L85.19,30.51 L86.42,30.13 L87.65,29.47 L88.89,30.66 L90.12,31.55 L91.36,29.51 L92.59,31.87 L93.83,30.78 L95.06,32.57 L96.30,31.34 L97.53,29.79 L98.77,29.43 L100.00,29.55 L100,40 L0,40 Z"/><path class="line" d="M0.00,22.43 L1.23,18.11 L2.47,16.84 L3.70,14.52 L4.94,17.67 L6.17,13.08 L7.41,9.13 L8.64,2.76 L9.88,12.89 L11.11,13.37 L12.35,11.04 L13.58,16.56 L14.81,15.79 L16.05,8.67 L17.28,14.65 L18.52,17.44 L19.75,12.85 L20.99,16.15 L22.22,13.02 L23.46,11.46 L24.69,12.75 L25.93,16.07 L27.16,16.66 L28.40,16.40 L29.63,19.08 L30.86,20.24 L32.10,19.70 L33.33,16.42 L34.57,17.28 L35.80,16.54 L37.04,20.04 L38.27,20.74 L39.51,25.35 L40.74,37.24 L41.98,36.10 L43.21,32.51 L44.44,27.02 L45.68,25.26 L46.91,23.21 L48.15,23.92 L49.38,24.63 L50.62,25.21 L51.85,22.22 L53.09,20.55 L54.32,20.88 L55.56,19.15 L56.79,19.51 L58.02,24.59 L59.26,27.54 L60.49,26.61 L61.73,27.30 L62.96,29.08 L64.20,28.88 L65.43,26.82 L66.67,25.42 L67.90,28.54 L69.14,28.12 L70.37,28.83 L71.60,28.64 L72.84,25.54 L74.07,22.55 L75.31,19.92 L76.54,27.06 L77.78,30.83 L79.01,28.55 L80.25,33.57 L81.48,34.28 L82.72,33.06 L83.95,32.53 L85.19,30.51 L86.42,30.13 L87.65,29.47 L88.89,30.66 L90.12,31.55 L91.36,29.51 L92.59,31.87 L93.83,30.78 L95.06,32.57 L96.30,31.34 L97.53,29.79 L98.77,29.43 L100.00,29.55"/><line class="pub" x1="74.07" x2="74.07" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/vrt-thesis.html">Investment Thesis: Vertiv Holdings (VRT)</a></h4>
+          <div class="meta"><span>Sep 4, 2026</span><span>5 min</span></div>
+        </div>
+      </article><article class="tile" data-reveal>
+        <a href="../articles/googl-thesis.html"><div class="cover">
+  <div class="cover-top"><span>Thesis</span><span>06.03.26</span></div>
+  <div><div class="cover-tk">GOOGL</div><div class="cover-name">Alphabet Inc.</div></div>
+  <svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0.00,28.47 L0.68,28.28 L1.37,27.84 L2.05,29.22 L2.74,29.56 L3.42,28.68 L4.11,27.25 L4.79,28.11 L5.48,28.26 L6.16,29.90 L6.85,29.61 L7.53,32.72 L8.22,32.59 L8.90,35.26 L9.59,37.02 L10.27,37.24 L10.96,33.49 L11.64,30.86 L12.33,31.29 L13.01,30.17 L13.70,28.71 L14.38,25.54 L15.07,25.23 L15.75,25.56 L16.44,24.47 L17.12,21.38 L17.81,20.25 L18.49,20.54 L19.18,19.03 L19.86,20.17 L20.55,21.54 L21.23,19.66 L21.92,19.78 L22.60,18.31 L23.29,16.72 L23.97,16.87 L24.66,16.83 L25.34,7.52 L26.03,7.28 L26.71,7.93 L27.40,6.55 L28.08,3.98 L28.77,4.00 L29.45,3.24 L30.14,6.49 L30.82,6.84 L31.51,2.76 L32.19,3.17 L32.88,4.32 L33.56,4.28 L34.25,6.75 L34.93,6.42 L35.62,6.75 L36.30,8.01 L36.99,6.43 L37.67,6.44 L38.36,6.09 L39.04,8.71 L39.73,9.77 L40.41,13.65 L41.10,14.41 L41.78,10.89 L42.47,11.86 L43.15,13.26 L43.84,13.00 L44.52,15.11 L45.21,14.74 L45.89,14.23 L46.58,11.64 L47.26,10.60 L47.95,13.13 L48.63,12.00 L49.32,16.90 L50.00,17.84 L50.68,18.07 L51.37,18.49 L52.05,20.18 L52.74,15.84 L53.42,14.84 L54.11,13.82 L54.79,14.16 L55.48,12.42 L56.16,12.26 L56.85,13.63 L57.53,14.44 L58.22,14.89 L58.90,16.14 L59.59,14.27 L60.27,11.22 L60.96,15.62 L61.64,17.67 L62.33,16.28 L63.01,17.57 L63.70,18.92 L64.38,25.44 L65.07,24.89 L65.75,23.07 L66.44,21.16 L67.12,20.36 L67.81,21.18 L68.49,15.17 L69.18,10.53 L69.86,9.43 L70.55,13.49 L71.23,14.74 L71.92,15.66 L72.60,14.80 L73.29,18.47 L73.97,18.54 L74.66,17.78 L75.34,17.91 L76.03,18.41 L76.71,18.36 L77.40,18.22 L78.08,19.30 L78.77,18.19 L79.45,17.33 L80.14,17.62 L80.82,18.95 L81.51,19.31 L82.19,17.72 L82.88,19.66 L83.56,20.81 L84.25,20.25 L84.93,18.82 L85.62,19.89 L86.30,19.92 L86.99,21.98 L87.67,21.46 L88.36,19.88 L89.04,16.97 L89.73,18.15 L90.41,18.72 L91.10,17.52 L91.78,16.93 L92.47,15.48 L93.15,16.50 L93.84,20.06 L94.52,18.85 L95.21,18.44 L95.89,18.75 L96.58,19.24 L97.26,18.39 L97.95,19.95 L98.63,18.55 L99.32,17.75 L100.00,17.43 L100,40 L0,40 Z"/><path class="line" d="M0.00,28.47 L0.68,28.28 L1.37,27.84 L2.05,29.22 L2.74,29.56 L3.42,28.68 L4.11,27.25 L4.79,28.11 L5.48,28.26 L6.16,29.90 L6.85,29.61 L7.53,32.72 L8.22,32.59 L8.90,35.26 L9.59,37.02 L10.27,37.24 L10.96,33.49 L11.64,30.86 L12.33,31.29 L13.01,30.17 L13.70,28.71 L14.38,25.54 L15.07,25.23 L15.75,25.56 L16.44,24.47 L17.12,21.38 L17.81,20.25 L18.49,20.54 L19.18,19.03 L19.86,20.17 L20.55,21.54 L21.23,19.66 L21.92,19.78 L22.60,18.31 L23.29,16.72 L23.97,16.87 L24.66,16.83 L25.34,7.52 L26.03,7.28 L26.71,7.93 L27.40,6.55 L28.08,3.98 L28.77,4.00 L29.45,3.24 L30.14,6.49 L30.82,6.84 L31.51,2.76 L32.19,3.17 L32.88,4.32 L33.56,4.28 L34.25,6.75 L34.93,6.42 L35.62,6.75 L36.30,8.01 L36.99,6.43 L37.67,6.44 L38.36,6.09 L39.04,8.71 L39.73,9.77 L40.41,13.65 L41.10,14.41 L41.78,10.89 L42.47,11.86 L43.15,13.26 L43.84,13.00 L44.52,15.11 L45.21,14.74 L45.89,14.23 L46.58,11.64 L47.26,10.60 L47.95,13.13 L48.63,12.00 L49.32,16.90 L50.00,17.84 L50.68,18.07 L51.37,18.49 L52.05,20.18 L52.74,15.84 L53.42,14.84 L54.11,13.82 L54.79,14.16 L55.48,12.42 L56.16,12.26 L56.85,13.63 L57.53,14.44 L58.22,14.89 L58.90,16.14 L59.59,14.27 L60.27,11.22 L60.96,15.62 L61.64,17.67 L62.33,16.28 L63.01,17.57 L63.70,18.92 L64.38,25.44 L65.07,24.89 L65.75,23.07 L66.44,21.16 L67.12,20.36 L67.81,21.18 L68.49,15.17 L69.18,10.53 L69.86,9.43 L70.55,13.49 L71.23,14.74 L71.92,15.66 L72.60,14.80 L73.29,18.47 L73.97,18.54 L74.66,17.78 L75.34,17.91 L76.03,18.41 L76.71,18.36 L77.40,18.22 L78.08,19.30 L78.77,18.19 L79.45,17.33 L80.14,17.62 L80.82,18.95 L81.51,19.31 L82.19,17.72 L82.88,19.66 L83.56,20.81 L84.25,20.25 L84.93,18.82 L85.62,19.89 L86.30,19.92 L86.99,21.98 L87.67,21.46 L88.36,19.88 L89.04,16.97 L89.73,18.15 L90.41,18.72 L91.10,17.52 L91.78,16.93 L92.47,15.48 L93.15,16.50 L93.84,20.06 L94.52,18.85 L95.21,18.44 L95.89,18.75 L96.58,19.24 L97.26,18.39 L97.95,19.95 L98.63,18.55 L99.32,17.75 L100.00,17.43"/><line class="pub" x1="41.10" x2="41.10" y1="0" y2="40"/></svg>
+</div></a>
+        <div>
+          <span class="eyebrow">Investment Thesis</span>
+          <h4><a class="link-line" href="../articles/googl-thesis.html">Alphabet Inc.: Investment Thesis</a></h4>
+          <div class="meta"><span>Jun 3, 2026</span><span>8 min</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div style="height:var(--section)"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p>Independent equity research and market commentary by Drew Golden. Every position disclosed. Nothing here is financial advice.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a class="link-line" href="../index.html#journal">Journal</a></li>
+          <li><a class="link-line" href="../index.html#scoreboard">Thesis scoreboard</a></li>
+          <li><a class="link-line" href="../portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a class="link-line" href="../about.html">The author</a></li>
+          <li><a class="link-line" href="../disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a class="link-line" href="#subscribe">Email newsletter</a></li>
+          <li><a class="link-line" href="https://www.linkedin.com/in/drewcgolden/" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a class="link-line" href="https://www.instagram.com/drewgolden_" rel="noopener" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-mark" aria-hidden="true">Bull <em>&amp;</em> Bear</div>
   </div>
-
-  <footer>
-    <div class="footer-logo">
-      <img src="../images/logo.png" alt="Logo" onerror="this.style.display='none'" />
-      <span>the Bull &amp; the Bear</span>
-    </div>
-    <p>Independent investment research. Think for yourself.</p>
-    <p><a href="../index.html">← Back to all articles</a></p>
-  </footer>
-
-  <script src="../subscribe.js" defer></script>
+  <div class="wrap foot-base">
+    <span>© 2025–2026 the Bull &amp; the Bear</span>
+    <span>Prices delayed. Returns shown as percentages only.</span>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+<script src="../subscribe.js" defer></script>
 </body>
 </html>
