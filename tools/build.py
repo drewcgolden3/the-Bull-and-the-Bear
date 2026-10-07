@@ -141,7 +141,6 @@ def header(rel, current, ink=False, progress=False):
     </a>
     <nav class="nav" aria-label="Primary">
       {item('index.html#journal', 'Journal', 'journal')}
-      {item('index.html#scoreboard', 'Scoreboard', 'scoreboard')}
       {item('portfolio.html', 'Portfolio', 'portfolio')}
       {item('about.html', 'About', 'about')}
       <a class="btn" href="#subscribe">Subscribe</a>
@@ -164,7 +163,6 @@ def footer(rel, scripts=''):
         <h4>Read</h4>
         <ul>
           <li><a class="link-line" href="{rel}index.html#journal">Journal</a></li>
-          <li><a class="link-line" href="{rel}index.html#scoreboard">Thesis scoreboard</a></li>
           <li><a class="link-line" href="{rel}portfolio.html">Portfolio</a></li>
         </ul>
       </div>
@@ -319,19 +317,6 @@ def build_index(articles, prices, held):
     n_thesis = sum(a['category'] == 'thesis' for a in articles)
     n_comm = len(articles) - n_thesis
 
-    board = []
-    theses = sorted([a for a in articles if a['category'] == 'thesis' and a.get('ticker') in prices], key=lambda a: a['date'], reverse=True)
-    for a in theses:
-        p = prices[a['ticker']]
-        board.append(f'''<li class="board-item" data-reveal>
-          <a href="articles/{a['slug']}.html">
-            <span class="board-tk">{esc(a['ticker'])}</span>
-            <span class="board-name">{esc(a['company'])}</span>
-            {sparkline(p, 'spark board-spark')}
-            <span class="board-ret" data-since="{p['pubPrice']}" data-tk="{a['ticker']}">—</span>
-            <span class="board-since">since {fmt_date(a['date'], True)}</span>
-          </a>
-        </li>''')
 
     rows = []
     for a in articles:
@@ -380,24 +365,13 @@ def build_index(articles, prices, held):
     </div>
   </section>
 
-  <section class="board" id="scoreboard" aria-labelledby="board-title">
-    <div class="wrap">
-      <div class="board-head">
-        <h2 id="board-title">Thesis scoreboard</h2>
-        <p>Return since each thesis was published. Live, delayed quotes.</p>
-      </div>
-      <ul class="board-list" data-stagger="70">
-        {''.join(board)}
-      </ul>
-    </div>
-  </section>
   </div>
 
   <section class="section" aria-labelledby="latest">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <h2 id="latest">The <em>latest</em></h2>
-        <p>Long-form essays on the companies I own and the markets they trade in.</p>
+        <p>Long-form essays on individual companies and the markets they trade in.</p>
       </div>
       <article class="feature">
         <a href="articles/{feat['slug']}.html" data-reveal>{visual(feat, rel, prices, big=True)}</a>
