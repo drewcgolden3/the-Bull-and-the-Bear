@@ -387,9 +387,10 @@ a:hover .cover .spark { transform: scaleY(1.06); }
 .foot-top h4 { font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--d-muted); font-weight: 500; margin-bottom: 1rem; }
 .foot-top ul { list-style: none; display: grid; gap: 0.55rem; font-size: var(--fs-sm); }
 .foot-top a:hover { color: var(--d-text); }
-.foot-mark { font-family: var(--serif); font-weight: 400; font-size: min(25vw, 24rem); line-height: 0.8; letter-spacing: -0.04em; color: var(--d-text); white-space: nowrap; margin-bottom: -0.12em; opacity: 0.95; }
+.foot-markwrap { container-type: inline-size; margin-top: clamp(1.5rem, 1rem + 2vw, 3rem); }
+.foot-mark { font-family: var(--serif); font-weight: 400; font-size: calc(100cqi / 4.62); line-height: 0.8; letter-spacing: -0.04em; color: var(--d-text); white-space: nowrap; margin-bottom: -0.1em; opacity: 0.92; font-variation-settings: 'opsz' 72; }
 .foot-mark em { font-style: italic; color: var(--champagne-lt); font-weight: 300; }
-.foot-base { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: var(--fs-xs); color: var(--d-muted); border-top: 1px solid var(--d-rule); padding-block: 1.25rem; }
+.foot-base { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: var(--fs-xs); color: var(--d-muted); background: linear-gradient(var(--d-rule), var(--d-rule)) top center / calc(100% - 2 * var(--gutter)) 1px no-repeat; padding-block: 1.25rem; }
 
 /* ==========================================================================
    Article

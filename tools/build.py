@@ -181,7 +181,7 @@ def footer(rel, scripts=''):
         </ul>
       </div>
     </div>
-    <div class="foot-mark" aria-hidden="true">Bull <em>&amp;</em> Bear</div>
+    <div class="foot-markwrap"><div class="foot-mark" aria-hidden="true">Bull <em>&amp;</em> Bear</div></div>
   </div>
   <div class="wrap foot-base">
     <span>© 2025–{year} the Bull &amp; the Bear</span>
