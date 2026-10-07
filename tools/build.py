@@ -29,7 +29,6 @@ SHORT = {'thesis': 'Thesis', 'commentary': 'Commentary', 'opinion': 'Opinion'}
 CATS = {'thesis': 'Investment Thesis', 'commentary': 'Market Commentary', 'opinion': 'Opinion'}
 FONTS = ('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500'
          '&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap')
-TAPE = 'SPY,QQQ,DIA,IWM,GOOGL,META,V,CEG,VRT,UBER,UNH,AMAT,ORCL'
 
 
 def path(*p):
@@ -338,7 +337,7 @@ def build_index(articles, prices, held):
     out = head('the Bull & the Bear — Independent equity research', desc, rel, SITE + '/')
     out += '\n<body>'
     out += f'''
-<div class="tape" data-tape="{TAPE}" aria-label="Market prices"><div class="tape-track"></div></div>'''
+<div class="tape" data-tape aria-label="Prices of current holdings"><div class="tape-track"></div></div>'''
     out += header(rel, None, ink=True)
     out += f'''
 <main id="main">

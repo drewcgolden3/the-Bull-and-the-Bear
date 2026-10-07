@@ -47,8 +47,9 @@
   /* ---------- Ticker tape ---------- */
   var tape = document.querySelector('[data-tape]');
   if (tape) {
-    var syms = tape.getAttribute('data-tape').split(',');
-    var labels = { SPY: 'S&P 500', QQQ: 'Nasdaq 100', DIA: 'Dow 30', IWM: 'Russell 2000' };
+    // Current holdings only, straight from assets/portfolio-data.js.
+    var syms = (window.BB_HOLDINGS || []).map(function (h) { return h.ticker; });
+    var labels = {};
     Promise.all(syms.map(quote)).then(function (qs) {
       var items = syms.map(function (s, i) {
         var q = qs[i];
