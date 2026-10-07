@@ -200,7 +200,7 @@ def visual(a, rel, prices, big=False):
     if a['category'] == 'thesis' and a.get('ticker') in prices:
         p = prices[a['ticker']]
         return f'''<div class="cover">
-  <div class="cover-top"><span>Thesis</span><span>{mono_date(a['date'])}</span></div>
+  <div class="cover-top"><span>Thesis · {mono_date(a['date'])}</span>{verdict_pill(a.get('call', {}).get('verdict', 'open'))}</div>
   <div><div class="cover-tk">{esc(a['ticker'])}</div><div class="cover-name">{esc(a.get('company', ''))}</div></div>
   {sparkline(p)}
 </div>'''
@@ -209,6 +209,14 @@ def visual(a, rel, prices, big=False):
         return '<div class="media media--duo"></div>'
     loading = 'eager' if big else 'lazy'
     return f'<div class="media media--duo"><img src="{rel}{esc(img)}" alt="" loading="{loading}" decoding="async" /></div>'
+
+
+VERDICTS = {'correct': ('Correct', '✓'), 'incorrect': ('Incorrect', '✕'), 'open': ('Open', '◦')}
+
+
+def verdict_pill(v, short=False):
+    label, mark = VERDICTS.get(v, VERDICTS['open'])
+    return f'<span class="verdict verdict--{v}">{mark} {label}</span>'
 
 
 def cat_label(a):
@@ -234,11 +242,11 @@ def build_article(a, articles, prices, held):
     if is_thesis:
         p = prices[a['ticker']]
         t = a['ticker']
+        c = a.get('call') or {'call': '—', 'verdict': 'open', 'detail': ''}
         tracker = f'''
     <div class="tracker" data-reveal>
-      <div><span class="eyebrow">Published</span><b>${p['pubPrice']:.2f}</b><small>{fmt_date(a['date'], True)}</small></div>
-      <div><span class="eyebrow">Price now</span><b data-price="{t}">—</b><small data-today="{t}">&nbsp;</small></div>
-      <div><span class="eyebrow">Since publication</span><b data-since="{p['pubPrice']}" data-tk="{t}">—</b><small>live, delayed</small></div>
+      <div><span class="eyebrow">The call</span><b>{esc(c['call'])}</b><small>Published {fmt_date(a['date'], True)} at ${p['pubPrice']:.2f}</small></div>
+      <div><span class="eyebrow">Verdict</span><b>{verdict_pill(c['verdict'])}</b><small>{esc(c['detail'])}</small></div>
       <div><span class="eyebrow">Position</span><b>{'Held' if t in held else 'Not held'}</b><small>{'In the portfolio' if t in held else 'Not in the portfolio'}</small></div>
     </div>'''
 
@@ -322,6 +330,8 @@ def build_index(articles, prices, held):
         body = open(path('content/articles', a['slug'] + '.html')).read()
         cat = 'thesis' if a['category'] == 'thesis' else 'commentary'
         tk = f'<span class="tk">{esc(a["ticker"])}</span>' if a.get('ticker') else ''
+        if a.get('call'):
+            tk += ' ' + verdict_pill(a['call']['verdict'])
         rows.append(f'''<li class="row" data-cat="{cat}">
           <a href="articles/{a['slug']}.html">
             <span class="row-date">{mono_date(a['date'])}</span>

@@ -10,9 +10,11 @@ Pages are generated from `content/` by `tools/build.py`. Don't hand-edit the gen
    ```json
    { "slug": "nvda-thesis", "title": "Investment Thesis: NVIDIA", "dek": "One-sentence summary.",
      "category": "thesis", "date": "2026-10-10", "image": "images/nvda-thesis.png",
-     "ticker": "NVDA", "company": "NVIDIA Corporation" }
+     "ticker": "NVDA", "company": "NVIDIA Corporation",
+     "call": { "call": "Long-term buy", "verdict": "open", "detail": "Long-term call in progress" } }
    ```
-   `category` is `thesis`, `commentary` or `opinion`. `ticker`/`company` are for theses only.
+   `category` is `thesis`, `commentary` or `opinion`. `ticker`/`company`/`call` are for theses only.
+   `verdict` is `correct`, `incorrect` or `open`. Update it in `articles.json` and rebuild once a call plays out.
 3. Build: `python3 tools/build.py` (add `--prices` for a new thesis so its cover chart and tracker get price history).
 4. Commit and push. The GitHub Action emails newsletter subscribers about any **new** file in `articles/`.
 

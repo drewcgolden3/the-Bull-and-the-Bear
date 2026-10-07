@@ -318,7 +318,7 @@ a:hover .cover .spark { transform: scaleY(1.06); }
 .archive-count { font-size: var(--fs-sm); color: var(--muted); }
 .rows { list-style: none; }
 .row a {
-  display: grid; grid-template-columns: 7.5rem 9rem minmax(0, 1fr) 5.5rem 1.5rem; gap: 1.5rem; align-items: baseline;
+  display: grid; grid-template-columns: 7rem 12rem minmax(0, 1fr) 5rem 1.5rem; gap: 1.5rem; align-items: baseline;
   padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
   transition: padding 0.5s var(--ease-out), color 0.3s var(--ease-ui);
 }
@@ -411,12 +411,25 @@ a:hover .cover .spark { transform: scaleY(1.06); }
 .a-cover .cover-tk { font-size: clamp(3.5rem, 1.5rem + 7vw, 8.5rem); }
 
 /* Thesis tracker */
-.tracker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 4px; margin-top: 2.25rem; background: color-mix(in srgb, var(--paper-2) 55%, transparent); }
+.tracker { display: grid; grid-template-columns: 1.4fr 1fr 1fr; border: 1px solid var(--rule); border-radius: 4px; margin-top: 2.25rem; background: color-mix(in srgb, var(--paper-2) 55%, transparent); }
 .tracker > div { padding: 1rem 1.15rem; }
 .tracker > div + div { border-left: 1px solid var(--rule); }
 .tracker .eyebrow { font-size: 0.66rem; }
 .tracker b { display: block; font-family: var(--mono); font-weight: 400; font-size: 1.15rem; margin-top: 0.35rem; font-variant-numeric: tabular-nums; }
 .tracker small { display: block; color: var(--muted); font-size: var(--fs-xs); margin-top: 0.15rem; }
+
+/* Verdicts */
+.verdict { display: inline-flex; align-items: center; gap: 0.35em; font-family: var(--sans); font-size: 0.72em; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3em 0.65em; border-radius: 2px; white-space: nowrap; vertical-align: middle; }
+.verdict--correct { color: var(--up); background: color-mix(in srgb, var(--up) 11%, transparent); }
+.verdict--incorrect { color: var(--down); background: color-mix(in srgb, var(--down) 11%, transparent); }
+.verdict--open { color: var(--muted); background: color-mix(in srgb, var(--muted) 11%, transparent); }
+.tracker .verdict { font-size: 0.75rem; }
+.tracker b { font-size: 1.05rem; font-family: var(--serif); }
+.cover .verdict { font-size: 0.62rem; }
+.cover .verdict--correct { color: var(--d-up); background: rgba(124,191,152,.12); }
+.cover .verdict--incorrect { color: var(--d-down); background: rgba(224,138,126,.12); }
+.cover .verdict--open { color: var(--d-muted); background: rgba(236,230,218,.06); }
+.row-cat .verdict { font-size: 0.62rem; margin-left: 0.35rem; padding: 0.15em 0.45em; letter-spacing: 0.08em; }
 
 /* Body */
 .a-layout { max-width: 1080px; margin: 0 auto; padding: clamp(3rem, 2rem + 3vw, 5rem) var(--gutter) 0; }

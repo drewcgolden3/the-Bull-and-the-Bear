@@ -7,7 +7,12 @@
     "title": "Investment Thesis: Visa Inc. (V)",
     "dek": "Visa does not lend money. It does not take credit risk, it does not hold deposits, and it does not fund balances. That confuses a lot of people who lump it in with the banks.",
     "ticker": "V",
-    "company": "Visa Inc."
+    "company": "Visa Inc.",
+    "call": {
+      "call": "Long-term buy",
+      "verdict": "open",
+      "detail": "Long-term call in progress"
+    }
   },
   {
     "slug": "ceg-thesis",
@@ -17,7 +22,12 @@
     "title": "Investment Thesis: Constellation Energy (CEG)",
     "dek": "Most investors playing the AI theme own semiconductors, hyperscalers, or software. I own some of that too. But there is a constraint in this buildout that gets far less attention than GPU supply, and it is much harder to fix.",
     "ticker": "CEG",
-    "company": "Constellation Energy"
+    "company": "Constellation Energy",
+    "call": {
+      "call": "Strong long-term buy",
+      "verdict": "correct",
+      "detail": "Call played out"
+    }
   },
   {
     "slug": "vrt-thesis",
@@ -27,7 +37,12 @@
     "title": "Investment Thesis: Vertiv Holdings (VRT)",
     "dek": "Before getting into the numbers, it is worth clarifying what Vertiv actually sells, because it is not an AI company.",
     "ticker": "VRT",
-    "company": "Vertiv Holdings"
+    "company": "Vertiv Holdings",
+    "call": {
+      "call": "Long-term buy",
+      "verdict": "open",
+      "detail": "Long-term call in progress"
+    }
   },
   {
     "slug": "ai-ipo-supercycle",
@@ -45,7 +60,12 @@
     "title": "Alphabet Inc.: Investment Thesis",
     "dek": "Google's parent company is not just surviving the AI transition. It is deploying AI across the most powerful product ecosystem on earth. This is a long-term hold with a path to becoming the first $10 trillion company.",
     "ticker": "GOOGL",
-    "company": "Alphabet Inc."
+    "company": "Alphabet Inc.",
+    "call": {
+      "call": "Long-term buy",
+      "verdict": "open",
+      "detail": "Long-term call in progress"
+    }
   },
   {
     "slug": "nasdaq-meme-coin",
@@ -95,7 +115,12 @@
     "title": "AMAT investment thesis - Is Applied Materials Becoming Overbought?",
     "dek": "Applied Materials shares have risen more than 100% since early September, driven largely by increasingly aggressive capital expenditure plans from its largest customers.",
     "ticker": "AMAT",
-    "company": "Applied Materials"
+    "company": "Applied Materials",
+    "call": {
+      "call": "Hold / sell at $327",
+      "verdict": "incorrect",
+      "detail": "Stock kept rising"
+    }
   },
   {
     "slug": "buying-low-vs-wrong",
@@ -121,7 +146,12 @@
     "title": "What happened to Oracle (ORCL) Stock: Oracle Investment Thesis",
     "dek": "Oracle Corp. began in the late 1970s as a database technology company. Since then, it has added both enterprise software and cloud computing to its large array of services offered.",
     "ticker": "ORCL",
-    "company": "Oracle Corporation"
+    "company": "Oracle Corporation",
+    "call": {
+      "call": "Short-term target $202",
+      "verdict": "correct",
+      "detail": "Target hit Jan 12, 2026"
+    }
   },
   {
     "slug": "banks-hedge-funds",
@@ -139,7 +169,12 @@
     "title": "Investment Thesis: UnitedHealth Group Inc.",
     "dek": "UnitedHealth Group has stabilized well after capitulating nearly 60% in April-August of 2025.",
     "ticker": "UNH",
-    "company": "UnitedHealth Group"
+    "company": "UnitedHealth Group",
+    "call": {
+      "call": "Short-term target ~$400",
+      "verdict": "correct",
+      "detail": "Target hit May 13, 2026"
+    }
   },
   {
     "slug": "fear-to-opportunity",
@@ -165,7 +200,12 @@
     "title": "Investment Thesis: Meta Platforms, Inc.",
     "dek": "Meta Platforms, Inc. reported Q3 earnings on Oct 29th. Since then, the stock has taken nearly a 20% hit.",
     "ticker": "META",
-    "company": "Meta Platforms"
+    "company": "Meta Platforms",
+    "call": {
+      "call": "Short-term target $680",
+      "verdict": "correct",
+      "detail": "Target hit Jan 29, 2026"
+    }
   },
   {
     "slug": "uber-thesis",
@@ -175,7 +215,12 @@
     "title": "Investment Thesis: Uber Technologies",
     "dek": "Ubers growth remains strong as they reported trip growth of 22% year-over-year and Gross Bookings increased 21% year-over-year.",
     "ticker": "UBER",
-    "company": "Uber Technologies"
+    "company": "Uber Technologies",
+    "call": {
+      "call": "Strong short-term buy",
+      "verdict": "incorrect",
+      "detail": "Short-term move never came"
+    }
   },
   {
     "slug": "bigtech-earnings",
