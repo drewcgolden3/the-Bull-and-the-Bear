@@ -37,7 +37,7 @@
           if (!res.ok) throw new Error(res.d.error || 'Something went wrong.');
           form.reset();
           msg.className = 'sub-msg ok';
-          msg.textContent = 'Almost done. Check your inbox for a confirmation link.';
+          msg.textContent = "You're subscribed. New essays will land in your inbox.";
         })
         .catch(function (err) {
           msg.className = 'sub-msg err';
